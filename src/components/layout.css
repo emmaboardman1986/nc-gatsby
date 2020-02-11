@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+
+
+
+/* Typography */
+@font-face {
+    font-family: 'Axiforma-Regular';
+    src: url('../../static/assets/fonts/Axiforma-Regular.woff') format('woff'),;
+    src: url('../../static/assets/fonts/Axiforma-Regular.woff2') format('woff2');
+  }
+@font-face {
+    font-family: 'Axiforma-Medium';
+    src: url('../../static/assets/fonts/Axiforma-Medium.woff') format('woff'),;
+    src: url('../../static/assets/fonts/Axiforma-Medium.woff2') format('woff2');
+  }
+@font-face {
+    font-family: 'Axiforma-SemiBold';
+    src: url('../../static/assets/fonts/Axiforma-SemiBold.woff') format('woff'),;
+    src: url('../../static/assets/fonts/Axiforma-SemiBold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Axiforma-Black';
+    src: url('../../static/assets/fonts/Axiforma-Black.woff') format('woff'),;
+    src: url('../../static/assets/fonts/Axiforma-Black.woff2') format('woff2');
+  }
+
+h1 {
+    font-family: 'Axiforma-Black';
+    text-rendering: optimizeLegibility;
+    font-size: 3.8rem;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+}
+h2 {
+    font-family: 'Axiforma-Regular';
+    text-rendering: optimizeLegibility;
+    font-size: 1.5rem;
+    line-height: 1.6; 
+    max-width: 650px; 
+    letter-spacing: 0.03em;
+}
+h3 {
+    font-family: 'Axiforma-Black';
+    text-rendering: optimizeLegibility;
+    font-size:2rem;
+    line-height: 1.5;  
+    color: #316DB5;
+}
+h4 {
+    font-family: 'Axiforma-SemiBold';
+    text-rendering: optimizeLegibility;
+    font-size: 1.3rem;
+}
+p {
+    font-family: 'Axiforma-Regular';
+    font-size: 1rem;
+}
+  
+img {
+    width: 100%;
+}
+button {
+    padding: 2%;
+    margin-top: 2%;
+}
+ 
