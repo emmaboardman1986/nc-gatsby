@@ -1,5 +1,5 @@
 export const setColor = {
-    brandPrimary: "#316DB5",
+    brandPrimary: "#2F549C",
     brandSecondary: "#ED2530",
     brandWhite: "#FFF",
     brandBlack: "#000"

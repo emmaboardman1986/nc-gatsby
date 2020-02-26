@@ -1,68 +1,153 @@
 body {
-    margin: 0;
+  margin: 0;
 }
-
-
 
 /* Typography */
 @font-face {
-    font-family: 'Axiforma-Regular';
-    src: url('../../static/assets/fonts/Axiforma-Regular.woff') format('woff'),;
-    src: url('../../static/assets/fonts/Axiforma-Regular.woff2') format('woff2');
-  }
-@font-face {
-    font-family: 'Axiforma-Medium';
-    src: url('../../static/assets/fonts/Axiforma-Medium.woff') format('woff'),;
-    src: url('../../static/assets/fonts/Axiforma-Medium.woff2') format('woff2');
-  }
-@font-face {
-    font-family: 'Axiforma-SemiBold';
-    src: url('../../static/assets/fonts/Axiforma-SemiBold.woff') format('woff'),;
-    src: url('../../static/assets/fonts/Axiforma-SemiBold.woff2') format('woff2');
+  font-family: "Poppins-Regular";
+  src: url("../../static/assets/fonts/poppins-regular-webfont.woff")
+    format("woff");
+  src: url("../../static/assets/fonts/poppins-regular-webfont.woff2")
+    format("woff2");
 }
 @font-face {
-    font-family: 'Axiforma-Black';
-    src: url('../../static/assets/fonts/Axiforma-Black.woff') format('woff'),;
-    src: url('../../static/assets/fonts/Axiforma-Black.woff2') format('woff2');
+  font-family: "Poppins-SemiBold";
+  src: url("../../static/assets/fonts/poppins-semibold-webfont.woff")
+    format("woff");
+  src: url("../../static/assets/fonts/poppins-semibold-webfont.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../../static/assets/fonts/poppins-bold-webfont.woff") format("woff");
+  src: url("../../static/assets/fonts/poppins-bold-webfont.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "AnonymousPro-Regular";
+  src: url("../../static/assets/fonts/anonymouspro-regular-webfont.woff") format("woff");
+  src: url("../../static/assets/fonts/anonymouspro-regular-webfont.woff2")
+    format("woff2");
+}
+@font-face {
+    font-family: "AnonymousPro-Bold";
+    src: url("../../static/assets/fonts/anonymouspro-bold-webfont.woff") format("woff");
+    src: url("../../static/assets/fonts/anonymouspro-bold-webfont.woff2")
+      format("woff2");
   }
 
 h1 {
-    font-family: 'Axiforma-Black';
-    text-rendering: optimizeLegibility;
-    font-size: 3.8rem;
-    line-height: 1.1;
-    letter-spacing: 0.03em;
+  font-family: "Poppins-Bold", Arial;
+  text-rendering: optimizeLegibility;
+  font-size: 4.6rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
 }
 h2 {
-    font-family: 'Axiforma-Regular';
-    text-rendering: optimizeLegibility;
-    font-size: 1.5rem;
-    line-height: 1.6; 
-    max-width: 650px; 
-    letter-spacing: 0.03em;
+  font-family: "AnonymousPro-Regular";
+  text-rendering: optimizeLegibility;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
 }
 h3 {
-    font-family: 'Axiforma-Black';
-    text-rendering: optimizeLegibility;
-    font-size:2rem;
-    line-height: 1.5;  
-    color: #316DB5;
+  font-family: "Poppins-Bold";
+  text-rendering: optimizeLegibility;
+  font-size: 2.2rem;
+  line-height: 1.5;
+  color: #316db5;
 }
 h4 {
-    font-family: 'Axiforma-SemiBold';
-    text-rendering: optimizeLegibility;
-    font-size: 1.3rem;
+  font-family: "Poppins-SemiBold";
+  text-rendering: optimizeLegibility;
+  font-size: 1.3rem;
+  text-transform: uppercase;
 }
 p {
-    font-family: 'Axiforma-Regular';
+  font-family: "AnonymousPro-Regular";
+  font-size: 1rem;
+  letter-spacing: 0.01rem;
+  line-height: 1.2rem;
+}
+a {
+    font-family: "Poppins-SemiBold";
     font-size: 1rem;
 }
-  
+
 img {
-    width: 100%;
+  width: 100%;
 }
-button {
-    padding: 2%;
-    margin-top: 2%;
+footer {
+  background-color: #2F549C;
+  color: #fff;
+  padding: 2%;
+  font-family: "AnonymousPro-Regular";
+  display: flex;
+  align-items: center;
 }
- 
+@media (max-width: 550px){
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer div {
+    margin-top: 1%;
+  }
+  
+}
+.footer__info {
+  margin-left: 5%;
+}
+.footer__info a {
+  color: white;
+  font-family: "AnonymousPro-Bold";
+  border-bottom: 1px solid #2F549C;
+  text-decoration: none;
+  padding-bottom: 0.01%;
+}
+.footer__info a:hover {
+    border-bottom: 1px solid white;
+}
+ul {
+  font-family: "Poppins-Regular";
+  font-size: 1rem;
+  padding-left: 9%;
+  position: relative;
+}
+li {
+  margin-top: 5%;
+  margin-bottom: 1%;
+  list-style: none;
+  margin-left: 2%;
+  font-size: 15px;
+}
+li:before {
+    content: " ";
+    background: url('../../static/assets/star.svg') no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    fill: white;
+    stroke: white;
+    position: absolute;
+    margin-left: -11%;
+
+}
+.flex-box {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-family: "Poppins-Regular";
+}
+span {
+    font-family: "Poppins-Regular";
+}
+.muted {
+    font-size: 0.8em;
+}
+.button-wrapper {
+  margin-top: 4%;
+  display: flex;
+  justify-content: flex-end;
+}

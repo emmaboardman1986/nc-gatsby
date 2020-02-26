@@ -12,13 +12,19 @@ const Grid= ({children}) => {
 }
 
 const GridWrapper = styled.div`
-display: block;
-margin-top: -20%;
+display: flex;
+flex-direction: column;
+margin-top: -22%;
 @media (min-width: 576px){
+    margin-top: -10%;
+}
+@media (min-width: 992px){
     margin-top: 0;
+    margin-left: 3%;
+    margin-right: 3%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(11, 1fr);
 }
 `
 

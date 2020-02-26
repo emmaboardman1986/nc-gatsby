@@ -20,9 +20,9 @@ const HeroWrapper = styled.div`
   }
   div:first-child {
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 70%;
+    margin-top: -2%;
     @media (min-width: 576px) {
       margin-left: -10%;
       padding-right: 10%;
@@ -41,6 +41,7 @@ const HeroWrapper = styled.div`
     h1 {
       margin-bottom: 0;
     }
+
     @media (min-width: 787px) {
       text-align: right;
       margin-right: 8%;

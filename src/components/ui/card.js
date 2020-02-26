@@ -12,12 +12,13 @@ const Card = ({children}) => {
 }
 
 const CardWrapper = styled.div`
-  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem;
   padding-left: 1.5rem;
   border-radius: 10px;
   position: relative;
-  background: #f9f9f9;
+  background: white;
   color: black;
   h3 {
       margin-bottom: 0;
@@ -29,8 +30,12 @@ const CardWrapper = styled.div`
       
   }
   p {
-      margin-bottom: 0;
+      margin-bottom: 1%;
       font-size: 1.1rem;
+      :last-child {
+          margin-bottom: 5%;
+          padding-bottom: 5%;
+      }
   }
 `
 
