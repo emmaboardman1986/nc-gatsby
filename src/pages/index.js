@@ -16,7 +16,7 @@ import GridCoordinates from "../components/ui/gridCoordinates"
 import FormEmphasis from "../components/ui/formEmphasis"
 import SpeechBubble from "../components/ui/speechBubble"
 import Title from "../components/ui/title"
-import Button from "../components/ui/Button"
+import Button from "../components/ui/button"
 import Text from "../components/ui/text"
 import "../components/layout.css"
 
