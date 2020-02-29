@@ -10,11 +10,12 @@ import TitleJP from "../../static/assets/title--jp.svg"
 import Gradient from "../components/ui/gradient"
 import Card from "../components/ui/card"
 import Grid from "../components/ui/grid"
-import { setColor } from "../styleHelpers"
+import { setColor } from "../utils/styleHelpers"
 import ResponsiveImg from "../components/ui/responsiveImg"
 import GridCoordinates from "../components/ui/gridCoordinates"
 import FormEmphasis from "../components/ui/formEmphasis"
 import SpeechBubble from "../components/ui/speechBubble"
+import StarredListItem from "../components/ui/starredListItem"
 import Title from "../components/ui/title"
 import Button from "../components/ui/button"
 import Text from "../components/ui/text"
@@ -183,9 +184,9 @@ export default function Homepage() {
                 <p>Sign up for information on:</p>
 
                 <ul>
-                  <li>Japanese-language outings </li>
-                  <li>JLPT Preparation Bootcamp Weekends</li>
-                  <li>Friday study-club resources</li>
+                  <StarredListItem>Japanese-language outings</StarredListItem>
+                  <StarredListItem>JLPT Preparation Bootcamp Weekends</StarredListItem>
+                  <StarredListItem>Friday study-club resources</StarredListItem>
                 </ul>
 
                 <FormEmphasis>
@@ -195,7 +196,7 @@ export default function Homepage() {
                   </div>
                   <div>
                     <input type="checkbox"></input>
-                    <span class="muted">
+                    <span className="muted">
                       I consent to stuff. I consent to stuff. I consent to stuff
                     </span>
                   </div>

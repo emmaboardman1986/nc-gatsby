@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import React from "react"
 import PropTypes from "prop-types"
+import { setPadding } from "../utils/styleHelpers"
 
 const Hero = ({ children }) => {
   return <HeroWrapper>{children}</HeroWrapper>
@@ -44,7 +45,7 @@ const HeroWrapper = styled.div`
 
     @media (min-width: 787px) {
       text-align: right;
-      margin-right: 8%;
+      margin-right: ${setPadding.heroRightOffset};
     }
   }
 `

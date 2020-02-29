@@ -70,7 +70,7 @@ const SpeechBubbleWrapper = styled.div`
     position: absolute;
     /* bottom: 0; */
     width: 175px;
-    height: 200px;
+    height: 100px;
     margin-bottom: -114px;
     transform: ${props => props.bgColor == "#ED2530" ? "none" : "rotateY(180deg)"};
     @media (min-width: 992px){

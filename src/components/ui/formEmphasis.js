@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React from 'react';
 import PropTypes from 'prop-types'
-import { setColor } from "../../styleHelpers"
+import { setColor } from "../../utils/styleHelpers"
 
 
 const FormEmphasis= ({children}) => {

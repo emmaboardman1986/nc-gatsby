@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import React from "react"
-import { setFlex } from "../../styleHelpers"
-import { setColor } from "../../styleHelpers"
+import { setFlex } from "../../utils/styleHelpers"
+import { setColor } from "../../utils/styleHelpers"
+import { setPadding } from "../../utils/styleHelpers"
 import PropTypes from "prop-types"
 
 
@@ -15,7 +16,7 @@ const Section = styled.section`
   background-image: url(${props => (props.bgImg ? props.bgImg : "none")});
   background-repeat: no-repeat;
   background-position: 50% 20%;
-  padding: 5%;
+  padding: ${setPadding.sectionPadding};
 `
 
 Section.propTypes = {

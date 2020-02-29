@@ -30,10 +30,10 @@ if (typeof window !== `undefined`) {
       
         <main>{children}</main>
         <footer>
-        <div class="footer__logo">
+        <div className="footer__logo">
         <img src={NCLogoSm} alt="Nihongo Connection" style={{width: `200px`}}></img>
         </div>
-        <div class="footer__info">
+        <div className="footer__info">
         <p>Nihongo Scotland is a part of <a href="https://nihongoconnection.com" target="_blank">Nihongo Connection</a>.
          Check out <a href="https://nihongoconnection.com" target="_blank">NihongoConnection.com</a> for more Japanese learning opportunities and
           resources.</p>
