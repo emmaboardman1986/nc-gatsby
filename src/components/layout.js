@@ -15,11 +15,12 @@ const Layout = ({ children }) => {
 //         }
 //       }
 //     }
-//   `)
-
-window.prismic = {
-  endpoint: 'https://nihongoscotland.cdn.prismic.io/api/v2'
-};
+//   `
+if (typeof window !== `undefined`) {
+  window.prismic = {
+    endpoint: 'https://nihongoscotland.cdn.prismic.io/api/v2'
+  };
+}
 
   return (
     <>
