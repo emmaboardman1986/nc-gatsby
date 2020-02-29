@@ -17,6 +17,12 @@ const Layout = ({ children }) => {
 //     }
 //   `
 
+if (typeof window !== `undefined`) {
+  window.prismic = {
+    endpoint: 'https://nihongoscotland.cdn.prismic.io/api/v2'
+  };
+}
+
 
   return (
     <>
