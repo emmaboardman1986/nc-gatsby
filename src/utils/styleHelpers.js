@@ -22,7 +22,8 @@ export const setFlex = ({x='center',y='center'} = {}) => {
 }
 
 export const setPadding = {
-    sectionPadding: "3rem",
+    sectionPadding: "1.5rem",
+    sectionPaddingDesktop: "3rem",
     heroRightOffset: "4rem",
 }
 

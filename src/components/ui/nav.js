@@ -143,23 +143,24 @@ const NavWrapper = styled.nav`
         margin-left: 2rem;
         a {
             white-space: nowrap;
-    color: ${setColor.brandWhite};
-    font-size: 1.1rem;
-    border-bottom: 2px solid ${setColor.brandPrimary};
-    padding-bottom: 0.1%;
-    &:hover {
-      border-bottom: 2px solid white;
+            color: ${setColor.brandWhite};
+            font-size: 1.1rem;
+            border-bottom: 2px solid ${setColor.brandPrimary};
+            padding-bottom: 0.1%;
+                &:hover {
+                border-bottom: 2px solid white;
+                }
+            }
+        }
+        li:nth-of-type(1),
+        li:nth-of-type(2),
+        li:nth-of-type(3),
+        li:nth-of-type(4),
+        li:nth-of-type(5)
+        {
+            background-color: ${setColor.brandPrimary};
+        }
     }
-    }
-}
-    li:nth-of-type(1),
-    li:nth-of-type(2),
-    li:nth-of-type(3),
-    li:nth-of-type(4)
-     {
-        background-color: ${setColor.brandPrimary};
-    }
-  }
       
     `}
 `
