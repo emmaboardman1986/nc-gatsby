@@ -24,7 +24,7 @@ export default function HTML(props) {
         }
       }
       </script> */}
-      <script async defer src="https//static.cdn.prismic.io/prismic.js?repo=nihongoscotland&new=true"></script>
+      <script async defer src="https://static.cdn.prismic.io/prismic.js?repo=nihongoscotland&new=true"></script>
 
         {props.headComponents}
       </head>
