@@ -25,6 +25,9 @@ const Nav = ({ children }) => {
           <Link to="/jlpt-bootcamp">JLPT Bootcamp</Link>
         </LinkListItem>
         <LinkListItem>
+          <Link to="/jlpt-bootcamp">Beginner's Bootcamp</Link>
+        </LinkListItem>
+        <LinkListItem>
           <Link to="/friday-study-club">Friday Study Club</Link>
         </LinkListItem>
         <LinkListItem>
@@ -85,26 +88,29 @@ const NavWrapper = styled.nav`
       align-items: center;
       padding: 2rem 4rem;
       a {
-        color: ${setColor.brandBlack};
+        color: ${setColor.brandGreyDark};
         font-size: 1.2rem;
       }
     }
     li:nth-of-type(1) {
-      background-color: ${setColor.gradientGreenLight};
+      background-color: ${setColor.gradientCyanLight};
     }
     li:nth-of-type(2) {
-      background-color: ${setColor.gradientYellowLight};
+      background-color: ${setColor.gradientGreenLight};
     }
     li:nth-of-type(3) {
-      background-color: ${setColor.gradientOrange};
+      background-color: ${setColor.gradientYellowLight};
     }
     li:nth-of-type(4) {
+      background-color: ${setColor.gradientOrange};
+    }
+    li:nth-of-type(5) {
       background-color: ${setColor.gradientRed};
     }
   }
   a {
     text-decoration: none;
-    font-family: "Poppins-Regular";
+    font-family: "Poppins-Medium";
   }
   ${breakpoint.sm`
   background-color: transparent;
