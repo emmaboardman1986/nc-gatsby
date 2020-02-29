@@ -40,7 +40,7 @@ const NavWrapper = styled.nav`
   position: fixed;
   z-index: 1;
   width: 100vw;
-  height: 100vh;
+  height: 10vh;
   top: 0;
   right: 0;
   button[aria-expanded="false"] + ul {
