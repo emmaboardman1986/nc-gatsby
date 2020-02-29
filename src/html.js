@@ -2,6 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 
 export default function HTML(props) {
+  // const windowEndPoint;
+  // if (typeof window !== `undefined`) {
+  //   windowEndPoint = window.prismic = {
+  //     endpoint: 'https://nihongoscotland.cdn.prismic.io/api/v2'
+  //   }
+  // }
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -11,7 +17,15 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-      <script type="text/javascript" src="https://static.cdn.prismic.io/prismic.min.js?new=true"></script>
+      {/* <script>
+      if (typeof window !== `undefined`) {
+        window.prismic = {
+          endpoint: 'https://nihongoscotland.cdn.prismic.io/api/v2'
+        }
+      }
+      </script> */}
+      <script src=//prismic.io/prismic.js?repo=nihongoscotland></script>
+      
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
