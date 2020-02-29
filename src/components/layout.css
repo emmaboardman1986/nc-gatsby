@@ -114,25 +114,7 @@ ul {
   padding-left: 9%;
   position: relative;
 }
-li {
-  margin-top: 5%;
-  margin-bottom: 1%;
-  list-style: none;
-  margin-left: 2%;
-  font-size: 15px;
-}
-li:before {
-    content: " ";
-    background: url('../../static/assets/star.svg') no-repeat;
-    background-size: contain;
-    width: 20px;
-    height: 20px;
-    fill: white;
-    stroke: white;
-    position: absolute;
-    margin-left: -11%;
 
-}
 .flex-box {
     display: flex;
     flex-direction: column;
