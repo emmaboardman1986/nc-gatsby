@@ -1,11 +1,10 @@
 import styled from "styled-components"
 import React from "react"
-import PropTypes from "prop-types"
 import LinkListItem from "../ui/linkListItem"
 import { Link } from "gatsby"
-import { setColor, breakpoint } from "../../utils/styleHelpers"
+import { setColor, breakpoint, setSharedHeights, setSharedSpacing } from "../../utils/styleHelpers"
 
-const Nav = ({ children }) => {
+const Nav = ({}) => {
   const handleMenuButtonClick = () => {
     const navButton = document.querySelector("nav button")
     let expanded = navButton.getAttribute("aria-expanded") === "true"
@@ -43,7 +42,7 @@ const NavWrapper = styled.nav`
   position: fixed;
   z-index: 1;
   width: 100vw;
-  height: 10vh;
+  height: ${setSharedHeights.navHeight};
   top: 0;
   right: 0;
   button[aria-expanded="false"] + ul {
@@ -61,14 +60,14 @@ const NavWrapper = styled.nav`
     z-index: 2;
     top: 0;
     right: 0;
-    height: 10vh;
+    height: ${setSharedHeights.navHeight};
     border: 0;
     width: 20vw;
   }
   ul {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 92vh;
     position: fixed;
     z-index: 1;
     bottom: 0;
@@ -77,7 +76,7 @@ const NavWrapper = styled.nav`
     transition: 0.5s;
     padding-left: 0;
     margin-bottom: 0;
-    width: 80vw;
+    width: 85vw;
     align-items: center;
     border-top-left-radius: 20px;
     li {
@@ -112,14 +111,17 @@ const NavWrapper = styled.nav`
     text-decoration: none;
     font-family: "Poppins-Medium";
   }
+  ${breakpoint.xs`
+    ul {
+        width: 60vw;
+    }
+  `}
   ${breakpoint.sm`
   background-color: transparent;
   width: initial;
   height: initial;
   position: relative;
   flex: 1;
-  padding-right: 3rem;
-  margin-right: 6%;
   button {
       display: none;
   }
@@ -146,7 +148,7 @@ const NavWrapper = styled.nav`
             color: ${setColor.brandWhite};
             font-size: 1.1rem;
             border-bottom: 2px solid ${setColor.brandPrimary};
-            padding-bottom: 0.1%;
+            padding-bottom: 0.25rem;
                 &:hover {
                 border-bottom: 2px solid white;
                 }
@@ -163,7 +165,12 @@ const NavWrapper = styled.nav`
     }
       
     `}
+    ${breakpoint.lg`
+      margin-right: ${setSharedSpacing.heroRightOffset};
+      `}
 `
+   
+
 
 const NavLogo = styled.div``
 
