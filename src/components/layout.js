@@ -35,7 +35,7 @@ if (typeof window !== `undefined`) {
         </div>
         <div className="footer__info">
         <p>Nihongo Scotland is a part of <a href="https://nihongoconnection.com" target="_blank">Nihongo Connection</a>.
-         Check out <a href="https://nihongoconnection.com" target="_blank">NihongoConnection.com</a> for more Japanese learning opportunities and
+         Visit <a href="https://nihongoconnection.com" target="_blank">NihongoConnection.com</a> for more Japanese learning opportunities and
           resources.</p>
           © {new Date().getFullYear()} Nihongo Connection
           </div>
