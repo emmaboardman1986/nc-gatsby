@@ -24,6 +24,8 @@ const HeroWrapper = styled.div`
   div:first-child {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    height: auto;
     width: 70%;
     img {
       width: 100%;
