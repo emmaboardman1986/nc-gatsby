@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React from "react"
-import redSpeechBubble from "../../../static/assets/speech-bubble__tail--red.svg"
-import { setColor, setSharedBorderRadius } from "../../utils/styleHelpers"
+import redSpeechBubble from "../../static/assets/speech-bubble__tail--red.svg"
+import { setColor, setSharedBorderRadius, breakpoint } from "../utils/styleHelpers"
 
 const SpeechBubble = ({ children }) => {
   return (
@@ -15,13 +15,14 @@ const SpeechBubble = ({ children }) => {
 
 const SpeechBubbleWrapper = styled.div`
   background-color: ${setColor.brandSecondary};
-  border-radius: ${setSharedBorderRadius.radiusLarge};
+  border-radius: ${setSharedBorderRadius.radiusSpeechBubble};
   padding: 2rem;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   height: auto;
   margin-bottom: 4rem;
+  margin-top: -9rem;
   &:after {
     content: "";
     background: url(${redSpeechBubble});
@@ -30,7 +31,12 @@ const SpeechBubbleWrapper = styled.div`
     position: absolute;
     width: 45%;
     height: 6rem;
+    ${breakpoint.sm`
+    width: 40%;
+    height: 8rem;
+  `
   }
+ 
 `
 
 

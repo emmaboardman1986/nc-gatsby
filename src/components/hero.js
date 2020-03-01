@@ -61,7 +61,7 @@ const HeroWrapper = styled.div`
     `}
   ${breakpoint.md`
   
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
     div:first-child {
       width: 55%;
     }
@@ -70,7 +70,6 @@ const HeroWrapper = styled.div`
     }
     `}
     ${breakpoint.lg`
-    padding-bottom: 2rem;
     div:first-child {
       width: 35%;
     }

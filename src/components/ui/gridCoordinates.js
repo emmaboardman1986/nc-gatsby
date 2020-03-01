@@ -15,7 +15,7 @@ const GridCoordinatesWrapper = styled.div`
   grid-column: ${props => props.colStart} / ${props => props.colFinish};
   grid-row: ${props => props.rowStart} / ${props => props.rowFinish};
   position: relative;
-  /* order: ${props => props.mobileOrder} ; */
+  order: ${props => props.mobileOrder} ;
 `
 
 export default GridCoordinates

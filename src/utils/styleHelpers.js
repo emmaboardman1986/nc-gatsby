@@ -30,8 +30,9 @@ export const setSharedSpacing = {
 
 export const setSharedBorderRadius = {
 	radiusInput: "0.4rem",
-	radiusMedium: "0.8rem",
-	radiusLarge: "1.6rem",
+	radiusMedium: "1rem",
+	radiusLarge: "2rem",
+	radiusSpeechBubble: "4rem",
 }
 
 

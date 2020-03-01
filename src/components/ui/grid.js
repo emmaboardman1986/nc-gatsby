@@ -20,12 +20,12 @@ margin-top: -6.5rem;
     margin-top: -10%;
 }
 @media (min-width: 992px){
-    margin-top: 0;
+    margin-top: -0.5rem;
     margin-left: 3%;
     margin-right: 3%;
     display: grid;
     grid-template-columns: repeat(24, 1fr);
-    grid-template-rows: repeat(24, 1fr);
+    grid-template-rows: repeat(23, 2.5rem);
 }
 `
 

@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const LinkListItem = ({ children }) => {

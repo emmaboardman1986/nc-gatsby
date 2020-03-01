@@ -12,10 +12,10 @@ const Gradient = ({children}) => {
 }
 
 const GradientWrapper = styled.div`
+box-sizing: border-box;
  @media(min-width: 992px) {
      width: 100%;
      margin-bottom: 0;
-     margin-top: -3%;
  }
 
      padding: 1rem;

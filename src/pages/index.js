@@ -1,7 +1,5 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { RichText } from "prismic-reactjs"
-
 import Layout from "../components/layout"
 import Section from "../components/ui/section"
 import Hero from "../components/hero"
@@ -11,14 +9,12 @@ import Gradient from "../components/ui/gradient"
 import Card from "../components/ui/card"
 import Grid from "../components/ui/grid"
 import { setColor } from "../utils/styleHelpers"
-import ResponsiveImg from "../components/ui/responsiveImg"
 import GridCoordinates from "../components/ui/gridCoordinates"
 import FormEmphasis from "../components/ui/formEmphasis"
-import SpeechBubble from "../components/ui/speechBubble"
+import SpeechBubble from "../components/speechBubble"
 import StarredListItem from "../components/ui/starredListItem"
-import Title from "../components/ui/title"
 import Button from "../components/ui/button"
-import Text from "../components/ui/text"
+import Testimonial from "../components/testimonial"
 import "../components/layout.css"
 
 export default function Homepage() {
@@ -91,11 +87,12 @@ export default function Homepage() {
         </Section>
         <Section bgColor="#f0f0f9">
           <Grid>
+            {/* Friday Study Club */}
             <GridCoordinates
               colStart="1"
-              colFinish="7"
+              colFinish="14"
               rowStart="1"
-              rowFinish="6"
+              rowFinish="10"
               mobileOrder="0"
             >
               <Gradient>
@@ -116,11 +113,12 @@ export default function Homepage() {
                 </Card>
               </Gradient>
             </GridCoordinates>
+            {/* JLPT Bootcamp */}
             <GridCoordinates
               colStart="1"
-              colFinish="7"
-              rowStart="7"
-              rowFinish="12"
+              colFinish="14"
+              rowStart="12"
+              rowFinish="21"
               mobileOrder="4"
             >
               <Gradient>
@@ -142,37 +140,22 @@ export default function Homepage() {
               </Gradient>
             </GridCoordinates>
 
+            {/* Speech Bubble decorative */}
             <GridCoordinates
-              colStart="8"
-              colFinish="13"
-              rowStart="7"
-              rowFinish="12"
-              mobileOrder="4"
+              colStart="15"
+              colFinish="25"
+              rowStart="3"
+              rowFinish="22"
+              mobileOrder="2"
             >
-              <Gradient>
-                <Card>
-                  <h3>Beginner's Bootcamp</h3>
-                  <h4>{homepage.data.second_card_subtitle.text}</h4>
-                  <p>{homepage.data.second_card_content_line_one.text}</p>
-                  {/* <p>{homepage.data.second_card_content_line_two.text}</p> */}
-                  <p>{homepage.data.second_card_content_line_three.text}</p>
-
-                  <Button
-                    link="/friday-study-club"
-                    linkText="Find out more"
-                    bgColor={setColor.brandPrimary}
-                  >
-                    Find out more
-                  </Button>
-                </Card>
-              </Gradient>
+              <div className="speech-bubble__background"></div>
             </GridCoordinates>
-
+            {/* Speech Bubble w/ content*/}
             <GridCoordinates
-              colStart="8"
-              colFinish="13"
+              colStart="15"
+              colFinish="25"
               rowStart="1"
-              rowFinish="6"
+              rowFinish="18"
               mobileOrder="2"
             >
               <SpeechBubble>
@@ -201,6 +184,54 @@ export default function Homepage() {
                 </FormEmphasis>
               </SpeechBubble>
             </GridCoordinates>
+            {/* Beginners Bootcamp */}
+            <GridCoordinates
+              colStart="16"
+              colFinish="25"
+              rowStart="14"
+              rowFinish="24"
+              mobileOrder="4"
+            >
+              <Gradient>
+                <Card>
+                  <h3>Beginner's Bootcamp</h3>
+                  <h4>{homepage.data.second_card_subtitle.text}</h4>
+                  <p>{homepage.data.second_card_content_line_one.text}</p>
+                  {/* <p>{homepage.data.second_card_content_line_two.text}</p> */}
+                  <p>{homepage.data.second_card_content_line_three.text}</p>
+
+                  <Button
+                    link="/friday-study-club"
+                    linkText="Find out more"
+                    bgColor={setColor.brandPrimary}
+                  >
+                    Find out more
+                  </Button>
+                </Card>
+              </Gradient>
+            </GridCoordinates>
+
+            {/* Testimonial
+            <GridCoordinates
+              colStart="1"
+              colFinish="22"
+              rowStart="24"
+              rowFinish="28"
+              mobileOrder="4"
+            >
+              <Testimonial>
+              <h2>Testimonia</h2>
+               <p>This is a wonderful group! I had the great opportunity to meet
+                and practice with many other learners and lots of native
+                speakers.</p>
+                <p>Absolutely loving the Friday meetings and the other
+                in-person events where the atmosphere is super relaxed and very
+                welcoming for learners of any level.
+                </p>
+                <p>Angelo, Community Member since 2016</p>
+              </Testimonial>
+            </GridCoordinates> */}
+          
           </Grid>
         </Section>
       </div>
