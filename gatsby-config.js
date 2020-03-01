@@ -18,7 +18,16 @@ module.exports = {
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
-    `gatsby-plugin-styled-components`
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/static/assets/`
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`
   ],
 }
 

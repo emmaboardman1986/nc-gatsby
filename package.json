@@ -16,8 +16,11 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.18.12",
+    "gatsby-image": "^2.2.41",
+    "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-styled-components": "^3.1.18",
     "gatsby-source-prismic": "^2.3.0-alpha.3",
+    "gatsby-transformer-sharp": "^2.3.16",
     "prismic-reactjs": "^1.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
