@@ -23,10 +23,17 @@ export const setFlex = ({x='center',y='center'} = {}) => {
 }
 
 export const setSharedSpacing = {
-    sectionPadding: "1.5rem",
+    sectionPadding: "1rem",
     sectionPaddingDesktop: "3rem",
     heroRightOffset: "4rem",
 }
+
+export const setSharedBorderRadius = {
+	radiusInput: "0.4rem",
+	radiusMedium: "0.8rem",
+	radiusLarge: "1.6rem",
+}
+
 
 export const breakpoints = {
 	xs: '480px',

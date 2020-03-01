@@ -78,11 +78,7 @@ export default function Homepage() {
     <Layout>
       {/* <SEO title="Home" /> */}
       <div>
-        <Section
-          bgColor={setColor.brandPrimary}
-          bgImg={TitleJP}
-          style={{ marginTop: `-2%` }}
-        >
+        <Section bgColor={setColor.brandPrimary} bgImg={TitleJP}>
           <Hero>
             <div>
               <img src={Logo} alt="Nihongo Scotland"></img>
@@ -179,13 +175,15 @@ export default function Homepage() {
               rowFinish="6"
               mobileOrder="2"
             >
-              <SpeechBubble bgColor={setColor.brandSecondary}>
+              <SpeechBubble>
                 <h3>{homepage.data.speech_bubble_title.text}</h3>
                 <p>Sign up for information on:</p>
 
                 <ul>
                   <StarredListItem>Japanese-language outings</StarredListItem>
-                  <StarredListItem>JLPT Preparation Bootcamp Weekends</StarredListItem>
+                  <StarredListItem>
+                    JLPT Preparation Bootcamp Weekends
+                  </StarredListItem>
                   <StarredListItem>Friday study-club resources</StarredListItem>
                 </ul>
 
