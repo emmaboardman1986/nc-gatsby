@@ -74,6 +74,7 @@ a {
     font-size: 1rem;
 }
 .speech-bubble__background {
+  display: block;
   background: url(../../static/assets/speech-bubble.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -87,6 +88,11 @@ a {
   margin-left: 11rem;
   margin-top: 1rem;
 }
+}
+@media(max-width: 991px){
+  .speech-bubble__background {
+    display: none;
+  }
 }
 footer {
   background-color: #2F549C;
