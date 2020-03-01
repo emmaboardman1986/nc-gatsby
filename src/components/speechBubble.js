@@ -21,21 +21,26 @@ const SpeechBubbleWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   height: auto;
-  margin-bottom: 4rem;
-  margin-top: -9rem;
+  margin-top: 1rem;
+  margin-bottom: 6rem;
   &:after {
     content: "";
     background: url(${redSpeechBubble});
     background-size: 100% auto;
     background-repeat: no-repeat;
     position: absolute;
-    width: 45%;
+    width: 10rem;
     height: 6rem;
-    ${breakpoint.sm`
-    width: 40%;
-    height: 8rem;
-  `
   }
+  ${breakpoint.md`
+  margin-top: -7rem;
+  &:after {
+    width: 10rem;
+    height: 8rem;
+  }
+  `}
+  ${breakpoint.lg`
+  margin-top: -9rem;`}
  
 `
 
