@@ -28,14 +28,14 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /assets/
-        }
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-react-svg',
+    //   options: {
+    //     rule: {
+    //       include: /assets/
+    //     }
+    //   }
+    // },
     `gatsby-plugin-react-helmet`
   ],
 }

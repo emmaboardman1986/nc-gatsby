@@ -75,8 +75,8 @@ export default function Homepage({ data }) {
         <Section bgColor={setColor.brandPrimary} bgImg={TitleJP}>
           <Hero>
             <div>
-              <Logo />
-              {/* <img src={Logo} alt="Nihongo Scotland"></img> */}
+              {/* <Logo /> */}
+              <img src={Logo} alt="Nihongo Scotland"></img>
               {/* <Img fixed={data.headerLogo.childImageSharp.fixed} /> */}
             </div>
             <div>
