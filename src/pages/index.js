@@ -14,62 +14,60 @@ import FormEmphasis from "../components/ui/formEmphasis"
 import SpeechBubble from "../components/speechBubble"
 import StarredListItem from "../components/ui/starredListItem"
 import Button from "../components/ui/button"
-import Testimonial from "../components/testimonial"
 import "../components/layout.css"
 
-export default function Homepage() {
-  const { homepage } = useStaticQuery(graphql`
-    query {
-      homepage: prismicHomepage {
-        id
-        data {
-          first_card_content_line_one {
-            text
-          }
-          first_card_content_line_two {
-            text
-          }
-          first_card_content_line_three {
-            text
-          }
-          first_card_title {
-            text
-          }
-          first_card_sub_title {
-            text
-          }
-          main_title {
-            text
-          }
-          second_card_content_line_one {
-            text
-          }
-          second_card_content_line_two {
-            text
-          }
-          second_card_content_line_three {
-            text
-          }
-          second_card_title {
-            text
-          }
-          second_card_subtitle {
-            text
-          }
-          speech_bubble_content {
-            text
-          }
-          speech_bubble_title {
-            text
-          }
-          sub_title {
-            text
-          }
+export const query = graphql`
+  query {
+    homepage: prismicHomepage {
+      id
+      data {
+        first_card_content_line_one {
+          text
+        }
+        first_card_content_line_two {
+          text
+        }
+        first_card_content_line_three {
+          text
+        }
+        first_card_title {
+          text
+        }
+        first_card_sub_title {
+          text
+        }
+        main_title {
+          text
+        }
+        second_card_content_line_one {
+          text
+        }
+        second_card_content_line_two {
+          text
+        }
+        second_card_content_line_three {
+          text
+        }
+        second_card_title {
+          text
+        }
+        second_card_subtitle {
+          text
+        }
+        speech_bubble_content {
+          text
+        }
+        speech_bubble_title {
+          text
+        }
+        sub_title {
+          text
         }
       }
     }
-  `)
-
+  }
+`
+export default function Homepage({ data }) {
   return (
     <Layout>
       {/* <SEO title="Home" /> */}
@@ -77,11 +75,13 @@ export default function Homepage() {
         <Section bgColor={setColor.brandPrimary} bgImg={TitleJP}>
           <Hero>
             <div>
-              <img src={Logo} alt="Nihongo Scotland"></img>
+              <Logo />
+              {/* <img src={Logo} alt="Nihongo Scotland"></img> */}
+              {/* <Img fixed={data.headerLogo.childImageSharp.fixed} /> */}
             </div>
             <div>
-              <h1>{homepage.data.main_title.text}</h1>
-              <h2>{homepage.data.sub_title.text}</h2>
+              <h1>{data.homepage.data.main_title.text}</h1>
+              <h2>{data.homepage.data.sub_title.text}</h2>
             </div>
           </Hero>
         </Section>
@@ -97,11 +97,11 @@ export default function Homepage() {
             >
               <Gradient>
                 <Card>
-                  <h3>{homepage.data.first_card_title.text}</h3>
-                  <h4>{homepage.data.first_card_sub_title.text}</h4>
-                  <p>{homepage.data.first_card_content_line_one.text}</p>
-                  {/* <p>{homepage.data.first_card_content_line_two.text}</p> */}
-                  <p>{homepage.data.first_card_content_line_three.text}</p>
+                  <h3>{data.homepage.data.first_card_title.text}</h3>
+                  <h4>{data.homepage.data.first_card_sub_title.text}</h4>
+                  <p>{data.homepage.data.first_card_content_line_one.text}</p>
+                  {/* <p>{data.homepage.data.first_card_content_line_two.text}</p> */}
+                  <p>{data.homepage.data.first_card_content_line_three.text}</p>
 
                   <Button
                     link="/friday-study-club"
@@ -123,11 +123,13 @@ export default function Homepage() {
             >
               <Gradient>
                 <Card>
-                  <h3>{homepage.data.second_card_title.text}</h3>
-                  <h4>{homepage.data.second_card_subtitle.text}</h4>
-                  <p>{homepage.data.second_card_content_line_one.text}</p>
-                  {/* <p>{homepage.data.second_card_content_line_two.text}</p> */}
-                  <p>{homepage.data.second_card_content_line_three.text}</p>
+                  <h3>{data.homepage.data.second_card_title.text}</h3>
+                  <h4>{data.homepage.data.second_card_subtitle.text}</h4>
+                  <p>{data.homepage.data.second_card_content_line_one.text}</p>
+                  {/* <p>{data.homepage.data.second_card_content_line_two.text}</p> */}
+                  <p>
+                    {data.homepage.data.second_card_content_line_three.text}
+                  </p>
 
                   <Button
                     link="/friday-study-club"
@@ -159,7 +161,7 @@ export default function Homepage() {
               mobileOrder="2"
             >
               <SpeechBubble>
-                <h3>{homepage.data.speech_bubble_title.text}</h3>
+                <h3>{data.homepage.data.speech_bubble_title.text}</h3>
                 <p>Sign up for information on:</p>
 
                 <ul>
@@ -195,10 +197,12 @@ export default function Homepage() {
               <Gradient>
                 <Card>
                   <h3>Beginner's Bootcamp</h3>
-                  <h4>{homepage.data.second_card_subtitle.text}</h4>
-                  <p>{homepage.data.second_card_content_line_one.text}</p>
-                  {/* <p>{homepage.data.second_card_content_line_two.text}</p> */}
-                  <p>{homepage.data.second_card_content_line_three.text}</p>
+                  <h4>{data.homepage.data.second_card_subtitle.text}</h4>
+                  <p>{data.homepage.data.second_card_content_line_one.text}</p>
+                  {/* <p>{data.homepage.data.second_card_content_line_two.text}</p> */}
+                  <p>
+                    {data.homepage.data.second_card_content_line_three.text}
+                  </p>
 
                   <Button
                     link="/friday-study-club"
@@ -231,7 +235,6 @@ export default function Homepage() {
                 <p>Angelo, Community Member since 2016</p>
               </Testimonial>
             </GridCoordinates> */}
-          
           </Grid>
         </Section>
       </div>
