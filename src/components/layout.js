@@ -7,7 +7,7 @@ import NCLogoSm from "../../static/assets/logoNCsm.svg"
 import "./layout.css"
 
 import H1Font from "../../static/assets/fonts/poppins-bold-webfont.woff2"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 
 const Layout = ({ children }) => {
   //   const data = useStaticQuery(graphql`
