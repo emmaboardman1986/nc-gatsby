@@ -28,12 +28,12 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
-    {
-      resolve: 'gatsby-plugin-zopfli',
-      options: {
-        extensions: ['css', 'html', 'js', 'svg', 'woff', 'woff2']
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-zopfli',
+    //   options: {
+    //     extensions: ['css', 'html', 'js', 'svg', 'woff', 'woff2']
+    //   }
+    // },
     `gatsby-plugin-react-helmet`
   ],
 }
