@@ -10,7 +10,8 @@ background-color: ${props => props.bgColor};
   ${breakpoint.sm`
   background-image: url(${props => (props.bgImg ? props.bgImg : "none")});
   background-repeat: no-repeat;
-  background-position: 50% 20%;
+  background-size: 150% auto;
+  background-position: 15vw 8vh;
   padding: ${setSharedSpacing.sectionPaddingDesktop};
   `
 }
