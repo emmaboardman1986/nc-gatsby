@@ -9,6 +9,7 @@ body {
     format("woff");
   src: url("../../static/assets/fonts/poppins-regular-webfont.woff2")
     format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins-SemiBold";
@@ -16,25 +17,31 @@ body {
     format("woff");
   src: url("../../static/assets/fonts/poppins-semibold-webfont.woff2")
     format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins-Bold";
   src: url("../../static/assets/fonts/poppins-bold-webfont.woff") format("woff");
   src: url("../../static/assets/fonts/poppins-bold-webfont.woff2")
     format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "AnonymousPro-Regular";
-  src: url("../../static/assets/fonts/anonymouspro-regular-webfont.woff") format("woff");
+  src: url("../../static/assets/fonts/anonymouspro-regular-webfont.woff")
+    format("woff");
   src: url("../../static/assets/fonts/anonymouspro-regular-webfont.woff2")
     format("woff2");
+  font-display: swap;
 }
 @font-face {
-    font-family: "AnonymousPro-Bold";
-    src: url("../../static/assets/fonts/anonymouspro-bold-webfont.woff") format("woff");
-    src: url("../../static/assets/fonts/anonymouspro-bold-webfont.woff2")
-      format("woff2");
-  }
+  font-family: "AnonymousPro-Bold";
+  src: url("../../static/assets/fonts/anonymouspro-bold-webfont.woff")
+    format("woff");
+  src: url("../../static/assets/fonts/anonymouspro-bold-webfont.woff2")
+    format("woff2");
+  font-display: swap;
+}
 
 h1 {
   font-family: "Poppins-Bold", Arial;
@@ -70,8 +77,8 @@ p {
   line-height: 1.2rem;
 }
 a {
-    font-family: "Poppins-SemiBold";
-    font-size: 1rem;
+  font-family: "Poppins-SemiBold";
+  font-size: 1rem;
 }
 .speech-bubble__background {
   display: block;
@@ -83,26 +90,26 @@ a {
   margin-left: 8rem;
   margin-top: 2.5rem;
 }
-@media (min-width: 1100px){
-.speech-bubble__background {
-  margin-left: 11rem;
-  margin-top: 1rem;
+@media (min-width: 1100px) {
+  .speech-bubble__background {
+    margin-left: 11rem;
+    margin-top: 1rem;
+  }
 }
-}
-@media(max-width: 991px){
+@media (max-width: 991px) {
   .speech-bubble__background {
     display: none;
   }
 }
 footer {
-  background-color: #2F549C;
+  background-color: #2f549c;
   color: #fff;
   padding: 2%;
   font-family: "AnonymousPro-Regular";
   display: flex;
   align-items: center;
 }
-@media (max-width: 550px){
+@media (max-width: 550px) {
   footer {
     flex-direction: column;
     text-align: center;
@@ -110,7 +117,6 @@ footer {
   footer div {
     margin-top: 1%;
   }
-  
 }
 .footer__info {
   margin-left: 5%;
@@ -118,12 +124,12 @@ footer {
 .footer__info a {
   color: white;
   font-family: "AnonymousPro-Bold";
-  border-bottom: 1px solid #2F549C;
+  border-bottom: 1px solid #2f549c;
   text-decoration: none;
   padding-bottom: 0.01%;
 }
 .footer__info a:hover {
-    border-bottom: 1px solid white;
+  border-bottom: 1px solid white;
 }
 ul {
   font-family: "Poppins-Regular";
@@ -133,17 +139,17 @@ ul {
 }
 
 .flex-box {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 label {
-    font-family: "Poppins-Regular";
+  font-family: "Poppins-Regular";
 }
 span {
-    font-family: "Poppins-Regular";
+  font-family: "Poppins-Regular";
 }
 .muted {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 .button-wrapper {
   margin-top: 4%;
