@@ -1,20 +1,39 @@
 import styled from "styled-components"
-import React from "react"
+import React, { useState } from "react"
 import LinkListItem from "../ui/linkListItem"
 import { Link } from "gatsby"
-import { setColor, breakpoint, setSharedHeights, setSharedSpacing } from "../../utils/styleHelpers"
+import {
+  setColor,
+  breakpoint,
+  setSharedHeights,
+  setSharedSpacing,
+} from "../../utils/styleHelpers"
 
 const Nav = ({}) => {
-  const handleMenuButtonClick = () => {
-    const navButton = document.querySelector("nav button")
-    let expanded = navButton.getAttribute("aria-expanded") === "true"
-    navButton.setAttribute("aria-expanded", !expanded)
-  }
+  const [isMenuExpanded, setIsMenuExpanded] = useState(false);
+
+  // const handleMenuButtonClick = () => {
+  //   const navButton = document.querySelector("nav button")
+   
+  //   const burgerLines = document.querySelectorAll('nav button span');
+  //   console.log(burgerLines);
+  //   for (let burgerLine of burgerLines) {
+  //     console.log(burgerLine.classList);
+  //     burgerLine.classList.add = 'open';
+  //   }
+
+  //   let expanded = navButton.getAttribute("aria-expanded") === "true"
+  //   navButton.setAttribute("aria-expanded", !expanded)
+  // }
 
   return (
     <NavWrapper>
-      <button aria-expanded="false" onClick={handleMenuButtonClick}>
-        X
+      <button aria-expanded={isMenuExpanded} onClick={() => setIsMenuExpanded(!isMenuExpanded)}>
+       
+          <span></span>
+          <span></span>
+          <span></span>
+        
       </button>
       <ul>
         <LinkListItem>
@@ -45,12 +64,6 @@ const NavWrapper = styled.nav`
   height: ${setSharedHeights.navHeight};
   top: 0;
   right: 0;
-  button[aria-expanded="false"] + ul {
-    transform: translateX(100%);
-  }
-  button[aria-expanded="true"] + ul {
-    transform: translateX(0);
-  }
   button {
     background-color: transparent;
     color: white;
@@ -63,6 +76,31 @@ const NavWrapper = styled.nav`
     height: ${setSharedHeights.navHeight};
     border: 0;
     width: 20vw;
+      span {
+      display: block;
+      position: absolute;
+      height: 6px;
+      width: 45px;
+      background: ${setColor.brandWhite};
+      border-radius: 9px;
+      opacity: 1;
+      margin-right: 0.8rem;
+      top: 0;
+      right: 0;
+      margin-top: 0.75rem;
+      transition: .25s ease-in-out;
+      :nth-child(1) {
+        top: 0px;
+      }
+      :nth-child(2) {
+        top: 12px;
+      }
+      :nth-child(3) {
+        top: 24px;
+      }
+    }
+    }
+   
   }
   ul {
     display: flex;
@@ -105,6 +143,25 @@ const NavWrapper = styled.nav`
     }
     li:nth-of-type(5) {
       background-color: ${setColor.gradientRed};
+    }
+  }
+  button[aria-expanded="false"] + ul {
+    transform: translateX(100%);
+  }
+  button[aria-expanded="true"] + ul {
+    transform: translateX(0);
+  }
+  button[aria-expanded="true"] {
+    span {
+      :nth-child(1) {
+        transform: rotate(-45deg) translateY(10px) translateX(-6px);
+      }
+      :nth-child(2) {
+        opacity: 0;
+      }
+      :nth-child(3) {
+        transform: rotate(45deg) translateY(-12px) translateX(-6px) ;
+      }
     }
   }
   a {
@@ -169,8 +226,6 @@ const NavWrapper = styled.nav`
       margin-right: ${setSharedSpacing.heroRightOffset};
       `}
 `
-   
-
 
 const NavLogo = styled.div``
 
