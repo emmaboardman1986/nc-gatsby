@@ -13,7 +13,7 @@ import {
 import BurgerButton from "./burgerButton"
 import TopLevelLinkList from "./topLevelLinkList"
 
-const Nav = ({ isMenuExpanded, setIsMenuExpanded}) => {
+const Nav = ({ isMenuExpanded, setIsMenuExpanded, isSubMenuExpanded, setIsSubMenuExpanded}) => {
   
   return (
     <NavWrapper>
@@ -22,7 +22,7 @@ const Nav = ({ isMenuExpanded, setIsMenuExpanded}) => {
         <TopLevelLinkListItem isMenuExpanded={isMenuExpanded}>
           <Link to="/about-us">About Us</Link>
         </TopLevelLinkListItem>
-        <TopLevelLinkListItem hasSubMenu="true" isMenuExpanded={isMenuExpanded}>
+        <TopLevelLinkListItem hasSubMenu="true" isSubMenuExpanded={isSubMenuExpanded} setIsSubMenuExpanded={setIsSubMenuExpanded} isMenuExpanded={isMenuExpanded} id="sub-menu">
           <Link to="#">Bootcamps</Link>
           <SubMenuLinkList >
             <SubMenuLinkListItem>

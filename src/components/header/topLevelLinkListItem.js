@@ -2,9 +2,8 @@ import styled from "styled-components"
 import React, { useState } from "react"
 import { setColor, breakpoint } from "../../utils/styleHelpers"
 
-const TopLevelLinkListItem = ({ hasSubMenu, children, isMenuExpanded }) => {
-  const [isSubMenuExpanded, setIsSubMenuExpanded] = useState(false)
-
+const TopLevelLinkListItem = ({ hasSubMenu, children, isMenuExpanded, isSubMenuExpanded, setIsSubMenuExpanded }) => {
+  
   return (
     <TopLevelLinkListItemWrapper
       isMenuExpanded={isMenuExpanded}
@@ -27,10 +26,14 @@ const TopLevelLinkListItemWrapper = styled.li`
   justify-content: center;
   align-items: center;
   padding: 2rem 4rem;
+  ul {
+    display: none;
+  }
   &[aria-expanded="true"] {
     ul {
+        display: initial;
         position: absolute;
-        top: 2rem;
+        top: calc(2rem - 2px);
         right: 0;
         text-align: right;
         height: auto;

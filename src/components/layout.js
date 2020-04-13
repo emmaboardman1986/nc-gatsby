@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
+import { useOnClickOutside } from "../utils/customHooks/useOnClickOutside";
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -11,15 +12,11 @@ import { Helmet }from "react-helmet"
 
 const Layout = ({ children }) => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
-  //   const data = useStaticQuery(graphql`
-  //     query SiteTitleQuery {
-  //       site {
-  //         siteMetadata {
-  //           title
-  //         }
-  //       }
-  //     }
-  //   `
+  const [isSubMenuExpanded, setIsSubMenuExpanded] = useState(false);
+  const nav = document.querySelector("nav");
+  useOnClickOutside(nav, () => setIsMenuExpanded(false));
+  const subMenu = document.querySelector("#sub-menu");
+  useOnClickOutside(subMenu, () => setIsSubMenuExpanded(false));
 
   if (typeof window !== `undefined`) {
     window.prismic = {
@@ -38,7 +35,7 @@ const Layout = ({ children }) => {
           crossOrigin="anonymous"
         />
       </Helmet>
-      <Header isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded}/>
+      <Header isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded} isSubMenuExpanded={isSubMenuExpanded} setIsSubMenuExpanded={setIsSubMenuExpanded}/>
 
       <main>{children}</main>
       <footer>

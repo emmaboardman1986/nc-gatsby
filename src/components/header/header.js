@@ -3,11 +3,11 @@ import React from "react"
 import { setColor, breakpoint, setSharedSpacing} from "../../utils/styleHelpers"
 import Nav from "./nav"
 
-const Header = ({ isMenuExpanded, setIsMenuExpanded, children }) => {
+const Header = ({ isMenuExpanded, setIsMenuExpanded, isSubMenuExpanded, setIsSubMenuExpanded, children }) => {
   return (
     <HeaderWrapper>
       <HeaderLogo></HeaderLogo>
-      <Nav isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded}/>
+      <Nav isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded} isSubMenuExpanded={isSubMenuExpanded} setIsSubMenuExpanded={setIsSubMenuExpanded}/>
     </HeaderWrapper>
   )
 }
