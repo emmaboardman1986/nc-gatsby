@@ -1,13 +1,13 @@
 import styled from "styled-components"
 import React from "react"
 import { setColor, breakpoint, setSharedSpacing} from "../../utils/styleHelpers"
-import Nav from "../ui/nav"
+import Nav from "./nav"
 
-const Header = ({ children }) => {
+const Header = ({ isMenuExpanded, setIsMenuExpanded, children }) => {
   return (
     <HeaderWrapper>
       <HeaderLogo></HeaderLogo>
-      <Nav />
+      <Nav isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded}/>
     </HeaderWrapper>
   )
 }

@@ -1,8 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./ui/header"
+import Header from "./header/header"
 import NCLogoSm from "../../static/assets/logoNCsm.svg"
 import "./layout.css"
 
@@ -10,6 +10,7 @@ import H1Font from "../../static/assets/fonts/poppins-bold-webfont.woff2"
 import { Helmet }from "react-helmet"
 
 const Layout = ({ children }) => {
+  const [isMenuExpanded, setIsMenuExpanded] = useState(false);
   //   const data = useStaticQuery(graphql`
   //     query SiteTitleQuery {
   //       site {
@@ -37,7 +38,7 @@ const Layout = ({ children }) => {
           crossOrigin="anonymous"
         />
       </Helmet>
-      <Header />
+      <Header isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded}/>
 
       <main>{children}</main>
       <footer>
