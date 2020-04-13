@@ -1,12 +1,14 @@
 import styled from "styled-components"
 import React from "react"
+import { Link} from "gatsby";
 import { setColor, breakpoint, setSharedSpacing} from "../../utils/styleHelpers"
 import Nav from "./nav"
+
 
 const Header = ({ isMenuExpanded, setIsMenuExpanded, isSubMenuExpanded, setIsSubMenuExpanded, children }) => {
   return (
     <HeaderWrapper>
-      <HeaderLogo></HeaderLogo>
+      <HeaderLogo><Link to="/">NS</Link></HeaderLogo>
       <Nav isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded} isSubMenuExpanded={isSubMenuExpanded} setIsSubMenuExpanded={setIsSubMenuExpanded}/>
     </HeaderWrapper>
   )
@@ -14,7 +16,7 @@ const Header = ({ isMenuExpanded, setIsMenuExpanded, isSubMenuExpanded, setIsSub
 
 const HeaderWrapper = styled.header`
   background-color: ${setColor.brandPrimary};
-  ${breakpoint.sm`
+  ${breakpoint.md`
   display: flex;
   justify-content: space-between;
   padding-right: ${setSharedSpacing.sectionPaddingDesktop};

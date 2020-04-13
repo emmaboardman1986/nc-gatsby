@@ -45,7 +45,7 @@ const NavWrapper = styled.nav`
   top: 0;
   right: 0;
  
-  ${breakpoint.sm`
+  ${breakpoint.md`
   background-color: transparent;
   width: initial;
   height: initial;

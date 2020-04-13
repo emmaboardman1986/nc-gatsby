@@ -13,7 +13,7 @@ const TopLevelLinkList = ({ isMenuExpanded, children }) => {
 const TopLevelLinkListWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  height: 92vh;
+  height: 90vh;
   position: fixed;
   z-index: 1;
   bottom: 0;
@@ -30,7 +30,7 @@ const TopLevelLinkListWrapper = styled.ul`
   ${breakpoint.xs`
         width: 60vw;
   `}
-  ${breakpoint.sm`
+  ${breakpoint.md`
     display: flex;
     transform: translateX(0);
     background-color: ${setColor.brandPrimary};

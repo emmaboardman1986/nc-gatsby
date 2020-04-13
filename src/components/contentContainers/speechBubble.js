@@ -1,11 +1,11 @@
 import styled from "styled-components"
 import React from "react"
-import redSpeechBubble from "../../static/assets/speech-bubble__tail--red.svg"
-import { setColor, setSharedBorderRadius, breakpoint } from "../utils/styleHelpers"
+import redSpeechBubble from "../../../static/assets/speech-bubble__tail--red.svg"
+import { setColor, setSharedBorderRadius, breakpoint } from "../../utils/styleHelpers"
 
-const SpeechBubble = ({ children }) => {
+const SpeechBubble = ({ children, bgColor, pageType }) => {
   return (
-    <SpeechBubbleWrapper>
+    <SpeechBubbleWrapper bgColor={bgColor}>
         <SpeechBubbleContent>{children}</SpeechBubbleContent>
     </SpeechBubbleWrapper>
   )
@@ -14,7 +14,7 @@ const SpeechBubble = ({ children }) => {
 
 
 const SpeechBubbleWrapper = styled.div`
-  background-color: ${setColor.brandSecondary};
+  background-color: ${props => props.bgColor ? props.bgColor : setColor.brandSecondary};
   border-radius: ${setSharedBorderRadius.radiusSpeechBubble};
   padding: 2rem;
   width: 80%;
@@ -33,14 +33,14 @@ const SpeechBubbleWrapper = styled.div`
     height: 6rem;
   }
   ${breakpoint.md`
-  margin-top: -7rem;
+  margin-top: ${props => props.pageType === "Home" ? "-7rem" : "-6.7rem"} ;
   &:after {
     width: 10rem;
     height: 8rem;
   }
   `}
   ${breakpoint.lg`
-  margin-top: -9rem;`}
+  margin-top: ${props => props.pageType === "Home" ? "-9rem" : "-8.5rem"}`}
  
 `
 

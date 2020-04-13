@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import React from "react"
-import { setFlex } from "../../utils/styleHelpers"
 import { setColor } from "../../utils/styleHelpers"
 import PropTypes from "prop-types"
 

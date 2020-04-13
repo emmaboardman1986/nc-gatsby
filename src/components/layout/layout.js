@@ -1,13 +1,13 @@
 import React, { useState, useRef } from "react"
-import { useOnClickOutside } from "../utils/customHooks/useOnClickOutside";
+import { useOnClickOutside } from "../../utils/customHooks/useOnClickOutside";
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header/header"
-import NCLogoSm from "../../static/assets/logoNCsm.svg"
-import "./layout.css"
+import Header from "../header/header"
+import NCLogoSm from "../../../static/assets/logoNCsm.svg"
+import "../../components/layout.css"
 
-import H1Font from "../../static/assets/fonts/poppins-bold-webfont.woff2"
+import H1Font from "../../../static/assets/fonts/poppins-bold-webfont.woff2"
 import { Helmet }from "react-helmet"
 
 const Layout = ({ children }) => {

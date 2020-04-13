@@ -28,8 +28,8 @@ const BurgerButtonWrapper = styled.button`
   font-size: 1.5rem;
   position: fixed;
   z-index: 2;
-  top: 0;
-  right: 1.5rem;
+  top: 0.5rem;
+  right: 0.5rem;
   height: ${setSharedHeights.navHeight};
   border: 0;
   width: 18vw;
@@ -69,7 +69,7 @@ const BurgerButtonWrapper = styled.button`
       }
     }
   }
-  ${breakpoint.sm`
+  ${breakpoint.md`
     display: none;`}
 `
 

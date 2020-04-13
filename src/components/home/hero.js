@@ -6,7 +6,7 @@ import {
   setSharedHeights,
   breakpoint,
   setColor,
-} from "../utils/styleHelpers"
+} from "../../utils/styleHelpers"
 
 const Hero = ({ children }) => {
   return <HeroWrapper>{children}</HeroWrapper>

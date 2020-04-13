@@ -6,10 +6,10 @@ const TopLevelLinkListItem = ({ children, isMenuExpanded }) => {
   const topLevelLinkItemEl = useRef()
   if (!isMenuExpanded) {
     setTimeout(function() {
-      topLevelLinkItemEl.current.style.display = "none"
+      topLevelLinkItemEl.current.classList.add("hidden-on-mobile")
     }, 500)
   } else {
-    topLevelLinkItemEl.current.style.display = "flex"
+    topLevelLinkItemEl.current.classList.remove("hidden-on-mobile");
   }
   return (
     <TopLevelLinkListItemWrapper
@@ -23,10 +23,16 @@ const TopLevelLinkListItem = ({ children, isMenuExpanded }) => {
 
 const TopLevelLinkListItemWrapper = styled.li`
   width: 100%;
+  display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
   padding: 2rem 4rem;
+  &.hidden-on-mobile {
+    display: none;
+    ${breakpoint.md`
+    display: flex;`}
+  }
   a {
     color: ${setColor.brandGreyDark};
     font-size: 1.2rem;
@@ -49,7 +55,7 @@ const TopLevelLinkListItemWrapper = styled.li`
     background-color: ${setColor.gradientRed};
   }
 
-  ${breakpoint.sm`
+  ${breakpoint.md`
         padding: initial;
         width: 100%;
         flex: 1;

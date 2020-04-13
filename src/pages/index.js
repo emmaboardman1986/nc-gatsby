@@ -1,19 +1,20 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import Layout from "../components/layout"
+import { graphql } from "gatsby"
+import Layout from "../components/layout/layout"
 import Section from "../components/layout/section"
-import Hero from "../components/hero"
+import Hero from "../components/home/hero"
 import Logo from "../../static/assets/logo.svg"
 import TitleJP from "../../static/assets/hero__bg--jp.svg"
-import Gradient from "../components/layout/gradient"
-import Card from "../components/ui/card"
+import Gradient from "../components/contentContainers/gradient"
+import Card from "../components/contentContainers/card"
 import Grid from "../components/layout/grid"
 import { setColor } from "../utils/styleHelpers"
 import GridCoordinates from "../components/layout/gridCoordinates"
 import FormEmphasis from "../components/ui/formEmphasis"
-import SpeechBubble from "../components/speechBubble"
+import SpeechBubble from "../components/contentContainers/speechBubble"
 import StarredListItem from "../components/ui/starredListItem"
 import Button from "../components/ui/button"
+import Margin from "../components/spacing/margin"
 import "../components/layout.css"
 
 export const query = graphql`
@@ -88,7 +89,8 @@ export default function Homepage({ data }) {
           </Hero>
         </Section>
         <Section bgColor="#f0f0f9">
-          <Grid>
+          <Margin marginTop="-6.5rem" marginTopSm="-8rem" marginTopMd="-0.5rem"></Margin>
+          <Grid pageType="Home">
             {/* Friday Study Club */}
             <GridCoordinates
               colStart="1"
@@ -161,7 +163,7 @@ export default function Homepage({ data }) {
               rowFinish="18"
               mobileOrder="2"
             >
-              <SpeechBubble>
+              <SpeechBubble pageType="Home">
                 <h2>{data.homepage.data.speech_bubble_title.text}</h2>
                 <p>Sign up for information on:</p>
 
@@ -215,27 +217,6 @@ export default function Homepage({ data }) {
                 </Card>
               </Gradient>
             </GridCoordinates>
-
-            {/* Testimonial
-            <GridCoordinates
-              colStart="1"
-              colFinish="22"
-              rowStart="24"
-              rowFinish="28"
-              mobileOrder="4"
-            >
-              <Testimonial>
-              <h2>Testimonia</h2>
-               <p>This is a wonderful group! I had the great opportunity to meet
-                and practice with many other learners and lots of native
-                speakers.</p>
-                <p>Absolutely loving the Friday meetings and the other
-                in-person events where the atmosphere is super relaxed and very
-                welcoming for learners of any level.
-                </p>
-                <p>Angelo, Community Member since 2016</p>
-              </Testimonial>
-            </GridCoordinates> */}
           </Grid>
         </Section>
       </div>
