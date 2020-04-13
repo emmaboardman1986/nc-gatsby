@@ -1,8 +1,6 @@
 import styled from "styled-components"
 import React, { useState } from "react"
 import TopLevelLinkListItem from "./topLevelLinkListItem"
-import SubMenuLinkListItem from "./subMenuLinkListItem"
-import SubMenuLinkList from "./subMenuLinkList"
 import { Link } from "gatsby"
 import {
   setColor,
@@ -13,8 +11,7 @@ import {
 import BurgerButton from "./burgerButton"
 import TopLevelLinkList from "./topLevelLinkList"
 
-const Nav = ({ isMenuExpanded, setIsMenuExpanded, isSubMenuExpanded, setIsSubMenuExpanded}) => {
-  
+const Nav = ({ isMenuExpanded, setIsMenuExpanded }) => {
   return (
     <NavWrapper>
       <BurgerButton isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded} />
@@ -22,20 +19,11 @@ const Nav = ({ isMenuExpanded, setIsMenuExpanded, isSubMenuExpanded, setIsSubMen
         <TopLevelLinkListItem isMenuExpanded={isMenuExpanded}>
           <Link to="/about-us">About Us</Link>
         </TopLevelLinkListItem>
-        <TopLevelLinkListItem hasSubMenu="true" isSubMenuExpanded={isSubMenuExpanded} setIsSubMenuExpanded={setIsSubMenuExpanded} isMenuExpanded={isMenuExpanded} id="sub-menu">
-          <Link to="#">Bootcamps</Link>
-          <SubMenuLinkList >
-            <SubMenuLinkListItem>
-              <Link to="/jlpt-bootcamp">
-                JLPT Bootcamp
-              </Link>
-            </SubMenuLinkListItem>
-            <SubMenuLinkListItem>
-              <Link to="/jlpt-bootcamp">
-                Beginner's Bootcamp
-              </Link>
-            </SubMenuLinkListItem>
-          </SubMenuLinkList>
+        <TopLevelLinkListItem isMenuExpanded={isMenuExpanded}>
+          <Link to="/jlpt-bootcamp">JLPT Bootcamp</Link>
+        </TopLevelLinkListItem>
+        <TopLevelLinkListItem isMenuExpanded={isMenuExpanded}>
+          <Link to="/beginners-bootcamp">Beginner's Bootcamp</Link>
         </TopLevelLinkListItem>
         <TopLevelLinkListItem isMenuExpanded={isMenuExpanded}>
           <Link to="/friday-study-club">Friday Study Club</Link>

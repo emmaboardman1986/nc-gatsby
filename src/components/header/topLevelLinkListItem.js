@@ -1,18 +1,20 @@
 import styled from "styled-components"
-import React, { useState } from "react"
+import React, { useRef } from "react"
 import { setColor, breakpoint } from "../../utils/styleHelpers"
 
-const TopLevelLinkListItem = ({ hasSubMenu, children, isMenuExpanded, isSubMenuExpanded, setIsSubMenuExpanded }) => {
-  
+const TopLevelLinkListItem = ({ children, isMenuExpanded }) => {
+  const topLevelLinkItemEl = useRef()
+  if (!isMenuExpanded) {
+    setTimeout(function() {
+      topLevelLinkItemEl.current.style.display = "none"
+    }, 500)
+  } else {
+    topLevelLinkItemEl.current.style.display = "flex"
+  }
   return (
     <TopLevelLinkListItemWrapper
       isMenuExpanded={isMenuExpanded}
-      hasSubMenu={hasSubMenu}
-      aria-haspopup={hasSubMenu ? "true" : "false"}
-      aria-expanded={hasSubMenu ? isSubMenuExpanded : "false"}
-      onClick={
-        hasSubMenu ? () => setIsSubMenuExpanded(!isSubMenuExpanded) : undefined
-      }
+      ref={topLevelLinkItemEl}
     >
       {children}
     </TopLevelLinkListItemWrapper>
@@ -20,47 +22,17 @@ const TopLevelLinkListItem = ({ hasSubMenu, children, isMenuExpanded, isSubMenuE
 }
 
 const TopLevelLinkListItemWrapper = styled.li`
-  display: ${props => !props.isMenuExpanded ? "none" : "flex"};
   width: 100%;
   flex: 1;
   justify-content: center;
   align-items: center;
   padding: 2rem 4rem;
-  ul {
-    display: none;
-  }
-  &[aria-expanded="true"] {
-    ul {
-        display: initial;
-        position: absolute;
-        top: calc(2rem - 2px);
-        right: 0;
-        text-align: right;
-        height: auto;
-        width: auto;
-        a {
-          color: ${setColor.brandPrimary};
-        }
-      }
-  }
   a {
     color: ${setColor.brandGreyDark};
     font-size: 1.2rem;
     text-decoration: none;
     font-family: "Poppins-Medium";
   }
-  > a:after {
-    display: ${props => (props.hasSubMenu ? "inline-block" : "none")};
-    width: 0;
-    height: 0;
-    border-left: 0.5rem solid transparent;
-    border-right: 0.5rem solid transparent;
-    border-top: 0.5rem solid ${setColor.brandWhite};
-    content: " ";
-    margin-left: 0.5rem;
-    margin-bottom: 0.11rem;
-  }
-
   &:nth-of-type(1) {
     background-color: ${setColor.gradientCyanLight};
   }

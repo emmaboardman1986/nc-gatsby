@@ -8,7 +8,6 @@ import {
 import PropTypes from "prop-types"
 
 const BurgerButton = ({isMenuExpanded, setIsMenuExpanded}) => {
- 
 
   return (
     <BurgerButtonWrapper

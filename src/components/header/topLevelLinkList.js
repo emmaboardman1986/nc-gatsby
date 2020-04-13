@@ -19,15 +19,14 @@ const TopLevelLinkListWrapper = styled.ul`
   bottom: 0;
   right: 0;
   overflow: auto;
-  transition: 0.5s;
   padding-left: 0;
   margin-bottom: 0;
   width: 85vw;
   align-items: center;
   border-top-left-radius: 20px;
+  transition: 0.5s;
   transform: ${props =>
     props.isMenuExpanded ? "translateX(0)" : "translateX(100%)"};
- 
   ${breakpoint.xs`
         width: 60vw;
   `}

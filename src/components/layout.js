@@ -12,12 +12,7 @@ import { Helmet }from "react-helmet"
 
 const Layout = ({ children }) => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
-  const [isSubMenuExpanded, setIsSubMenuExpanded] = useState(false);
-  const nav = document.querySelector("nav");
-  useOnClickOutside(nav, () => setIsMenuExpanded(false));
-  const subMenu = document.querySelector("#sub-menu");
-  useOnClickOutside(subMenu, () => setIsSubMenuExpanded(false));
-
+  
   if (typeof window !== `undefined`) {
     window.prismic = {
       endpoint: "https://nihongoscotland.cdn.prismic.io/api/v2",
@@ -35,7 +30,7 @@ const Layout = ({ children }) => {
           crossOrigin="anonymous"
         />
       </Helmet>
-      <Header isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded} isSubMenuExpanded={isSubMenuExpanded} setIsSubMenuExpanded={setIsSubMenuExpanded}/>
+      <Header isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded} />
 
       <main>{children}</main>
       <footer>
