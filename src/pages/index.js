@@ -18,8 +18,7 @@ import "../components/layout.css"
 
 export const query = graphql`
   query {
-    homepage: prismicHomepage {
-      id
+    homepage: prismicHomepage(id: {}) {
       data {
         first_card_content_line_one {
           text
@@ -27,13 +26,10 @@ export const query = graphql`
         first_card_content_line_two {
           text
         }
-        first_card_content_line_three {
+        first_card_sub_title1 {
           text
         }
         first_card_title {
-          text
-        }
-        first_card_sub_title {
           text
         }
         main_title {
@@ -45,13 +41,10 @@ export const query = graphql`
         second_card_content_line_two {
           text
         }
-        second_card_content_line_three {
+        second_card_sub_title {
           text
         }
         second_card_title {
-          text
-        }
-        second_card_subtitle {
           text
         }
         speech_bubble_content {
@@ -63,6 +56,18 @@ export const query = graphql`
         sub_title {
           text
         }
+        third_card_content_line_1 {
+          text
+        }
+        third_card_content_line_2 {
+          text
+        }
+        third_card_sub_title {
+          text
+        }
+        third_card_title {
+          text
+        }
       }
     }
   }
@@ -70,18 +75,15 @@ export const query = graphql`
 export default function Homepage({ data }) {
   return (
     <Layout>
-      {/* <SEO title="Home" /> */}
       <div>
         <Section bgColor={setColor.brandPrimary} bgImg={TitleJP}>
           <Hero>
             <div>
-              {/* <Logo /> */}
               <img src={Logo} alt="Nihongo Scotland"></img>
-              {/* <Img fixed={data.headerLogo.childImageSharp.fixed} /> */}
             </div>
             <div>
               <h1>{data.homepage.data.main_title.text}</h1>
-              <h2>{data.homepage.data.sub_title.text}</h2>
+              <p>{data.homepage.data.sub_title.text}</p>
             </div>
           </Hero>
         </Section>
@@ -97,11 +99,10 @@ export default function Homepage({ data }) {
             >
               <Gradient>
                 <Card>
-                  <h3>{data.homepage.data.first_card_title.text}</h3>
-                  <h4>{data.homepage.data.first_card_sub_title.text}</h4>
+                  <h2>{data.homepage.data.first_card_title.text}</h2>
+                  <h3>{data.homepage.data.first_card_sub_title1.text}</h3>
                   <p>{data.homepage.data.first_card_content_line_one.text}</p>
-                  {/* <p>{data.homepage.data.first_card_content_line_two.text}</p> */}
-                  <p>{data.homepage.data.first_card_content_line_three.text}</p>
+                  <p>{data.homepage.data.first_card_content_line_two.text}</p>
 
                   <Button
                     link="/friday-study-club"
@@ -123,12 +124,12 @@ export default function Homepage({ data }) {
             >
               <Gradient>
                 <Card>
-                  <h3>{data.homepage.data.second_card_title.text}</h3>
-                  <h4>{data.homepage.data.second_card_subtitle.text}</h4>
+                  <h2>{data.homepage.data.second_card_title.text}</h2>
+                  <h3>{data.homepage.data.second_card_sub_title.text}</h3>
                   <p>{data.homepage.data.second_card_content_line_one.text}</p>
-                  {/* <p>{data.homepage.data.second_card_content_line_two.text}</p> */}
+                 
                   <p>
-                    {data.homepage.data.second_card_content_line_three.text}
+                    {data.homepage.data.second_card_content_line_two.text}
                   </p>
 
                   <Button
@@ -161,7 +162,7 @@ export default function Homepage({ data }) {
               mobileOrder="2"
             >
               <SpeechBubble>
-                <h3>{data.homepage.data.speech_bubble_title.text}</h3>
+                <h2>{data.homepage.data.speech_bubble_title.text}</h2>
                 <p>Sign up for information on:</p>
 
                 <ul>
@@ -196,12 +197,12 @@ export default function Homepage({ data }) {
             >
               <Gradient>
                 <Card>
-                  <h3>Beginner's Bootcamp</h3>
-                  <h4>{data.homepage.data.second_card_subtitle.text}</h4>
-                  <p>{data.homepage.data.second_card_content_line_one.text}</p>
-                  {/* <p>{data.homepage.data.second_card_content_line_two.text}</p> */}
+                  <h2>{data.homepage.data.third_card_title.text}</h2>
+                  <h3>{data.homepage.data.third_card_sub_title.text}</h3>
+                  <p>{data.homepage.data.third_card_content_line_1.text}</p>
+          
                   <p>
-                    {data.homepage.data.second_card_content_line_three.text}
+                    {data.homepage.data.third_card_content_line_2.text}
                   </p>
 
                   <Button

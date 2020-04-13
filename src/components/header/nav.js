@@ -15,28 +15,14 @@ import TopLevelLinkList from "./topLevelLinkList"
 
 const Nav = ({ isMenuExpanded, setIsMenuExpanded}) => {
   
-  // const handleMenuButtonClick = () => {
-  //   const navButton = document.querySelector("nav button")
-
-  //   const burgerLines = document.querySelectorAll('nav button span');
-  //   console.log(burgerLines);
-  //   for (let burgerLine of burgerLines) {
-  //     console.log(burgerLine.classList);
-  //     burgerLine.classList.add = 'open';
-  //   }
-
-  //   let expanded = navButton.getAttribute("aria-expanded") === "true"
-  //   navButton.setAttribute("aria-expanded", !expanded)
-  // }
-
   return (
     <NavWrapper>
       <BurgerButton isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded} />
       <TopLevelLinkList isMenuExpanded={isMenuExpanded}>
-        <TopLevelLinkListItem>
+        <TopLevelLinkListItem isMenuExpanded={isMenuExpanded}>
           <Link to="/about-us">About Us</Link>
         </TopLevelLinkListItem>
-        <TopLevelLinkListItem hasSubMenu="true">
+        <TopLevelLinkListItem hasSubMenu="true" isMenuExpanded={isMenuExpanded}>
           <Link to="#">Bootcamps</Link>
           <SubMenuLinkList >
             <SubMenuLinkListItem>
@@ -51,10 +37,10 @@ const Nav = ({ isMenuExpanded, setIsMenuExpanded}) => {
             </SubMenuLinkListItem>
           </SubMenuLinkList>
         </TopLevelLinkListItem>
-        <TopLevelLinkListItem>
+        <TopLevelLinkListItem isMenuExpanded={isMenuExpanded}>
           <Link to="/friday-study-club">Friday Study Club</Link>
         </TopLevelLinkListItem>
-        <TopLevelLinkListItem>
+        <TopLevelLinkListItem isMenuExpanded={isMenuExpanded}>
           <Link to="/friday-study-club">日本語</Link>
         </TopLevelLinkListItem>
       </TopLevelLinkList>

@@ -21,6 +21,13 @@ const HeroWrapper = styled.div`
   justify-content: space-between;
   padding-bottom: 6rem;
   margin-top: ${setSharedHeights.navHeight};
+  p {
+  font-family: "AnonymousPro-Regular";
+  text-rendering: optimizeLegibility;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  }
   div:first-child {
     display: flex;
     justify-content: center;

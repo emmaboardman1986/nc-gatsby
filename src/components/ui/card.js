@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import React from 'react';
 import PropTypes from 'prop-types'
+import {setColor} from "../../utils/styleHelpers"
 
 
 const Card = ({children}) => {
@@ -20,11 +21,12 @@ const CardWrapper = styled.div`
   position: relative;
   background: white;
   color: black;
-  h3 {
+  h2 {
       margin-bottom: 0;
       margin-top: 0;
+      color: ${setColor.brandPrimary};
   }
-  h4 {
+  h3 {
       margin-top: 2%;
       margin-bottom: 0;
       

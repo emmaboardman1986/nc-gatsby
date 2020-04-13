@@ -2,11 +2,12 @@ import styled from "styled-components"
 import React, { useState } from "react"
 import { setColor, breakpoint } from "../../utils/styleHelpers"
 
-const TopLevelLinkListItem = ({ hasSubMenu, children }) => {
+const TopLevelLinkListItem = ({ hasSubMenu, children, isMenuExpanded }) => {
   const [isSubMenuExpanded, setIsSubMenuExpanded] = useState(false)
 
   return (
     <TopLevelLinkListItemWrapper
+      isMenuExpanded={isMenuExpanded}
       hasSubMenu={hasSubMenu}
       aria-haspopup={hasSubMenu ? "true" : "false"}
       aria-expanded={hasSubMenu ? isSubMenuExpanded : "false"}
@@ -20,11 +21,9 @@ const TopLevelLinkListItem = ({ hasSubMenu, children }) => {
 }
 
 const TopLevelLinkListItemWrapper = styled.li`
-  list-style: ${props => (props.hasSubMenu ? "none" : "decimal")};
-  display: ${props => (props.hasSubMenu ? "flex" : "initial")};
+  display: ${props => !props.isMenuExpanded ? "none" : "flex"};
   width: 100%;
   flex: 1;
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem 4rem;
