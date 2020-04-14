@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import React, { useRef } from "react"
-import { setColor, breakpoint } from "../../utils/styleHelpers"
+import { setColor, breakpoint } from "../../styles/styleHelpers"
 
 const TopLevelLinkListItem = ({ children, isMenuExpanded }) => {
   const topLevelLinkItemEl = useRef()

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React from "react"
 import { Link} from "gatsby";
-import { setColor, breakpoint, setSharedSpacing} from "../../utils/styleHelpers"
+import { setColor, breakpoint, setSharedSpacing} from "../../styles/styleHelpers"
 import Nav from "./nav"
 
 

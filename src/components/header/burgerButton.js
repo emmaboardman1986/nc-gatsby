@@ -4,7 +4,7 @@ import {
   setColor,
   setSharedHeights,
   breakpoint,
-} from "../../utils/styleHelpers"
+} from "../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
 const BurgerButton = ({isMenuExpanded, setIsMenuExpanded}) => {

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import React from "react"
-import { setColor, breakpoint } from "../../utils/styleHelpers"
+import { setColor, breakpoint } from "../../styles/styleHelpers"
 
 const TopLevelLinkList = ({ isMenuExpanded, children }) => {
   return (

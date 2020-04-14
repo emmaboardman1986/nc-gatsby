@@ -1,10 +1,20 @@
 import styled from "styled-components"
 import React from "react"
 import PropTypes from "prop-types"
-import { breakpoint } from "../../utils/styleHelpers"
+import { breakpoint } from "../../styles/styleHelpers"
 
-const Grid = ({ children, pageType }) => {
-  return <GridWrapper pageType={pageType}>{children}</GridWrapper>
+const Grid = ({
+  children,
+  gridColNumber,
+  gridColUnit,
+  gridRowNumber,
+  gridRowUnit,
+}) => {
+  return (
+    <GridWrapper gridColNumber={gridColNumber} gridRowNumber={gridRowNumber} gridColUnit={gridColUnit} gridRowUnit={gridRowUnit}>
+      {children}
+    </GridWrapper>
+  )
 }
 
 const GridWrapper = styled.div`
@@ -13,16 +23,23 @@ const GridWrapper = styled.div`
   flex-direction: column;
   ${breakpoint.md`
     display: grid;
-    grid-template-columns: repeat(24, 1fr);
-    grid-template-rows: repeat(27, 2.5rem);
-`}
-${breakpoint.lg`
-grid-template-rows: repeat(24, 2.5rem);
+    grid-template-columns: repeat(${props => props.gridColNumber}, ${props =>
+    props.gridColUnit});
+    grid-template-rows: repeat(${props => props.gridRowNumber}, ${props =>
+    props.gridRowUnit});
 `}
 `
 
 Grid.propTypes = {
-  pageTpe: PropTypes.oneOf(["Home", "Aux"]),
+  gridColNumber: PropTypes.number.isRequired,
+  gridColUnit: PropTypes.string,
+  gridRowNumber: PropTypes.number.isRequired,
+  gridRowUnit: PropTypes.string,
+}
+
+Grid.defaultProps = {
+  gridRowNumber: "1fr",
+  gridColNumber: "1fr",
 }
 
 export default Grid

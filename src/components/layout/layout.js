@@ -1,11 +1,12 @@
-import React, { useState, useRef } from "react"
-import { useOnClickOutside } from "../../utils/customHooks/useOnClickOutside";
+import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+
 
 import Header from "../header/header"
 import NCLogoSm from "../../../static/assets/logoNCsm.svg"
 import "../../components/layout.css"
+import "../../styles/main.scss";
+
 
 import H1Font from "../../../static/assets/fonts/poppins-bold-webfont.woff2"
 import { Helmet }from "react-helmet"

@@ -6,7 +6,7 @@ import {
   setSharedBorderRadius,
   setColor,
   setSharedSpacing,
-} from "../utils/styleHelpers"
+} from "../styles/styleHelpers"
 
 const Testimonial = ({ children }) => {
   return (

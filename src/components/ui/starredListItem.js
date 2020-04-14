@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React from "react"
 import PropTypes from "prop-types"
-import { setColor } from "../../utils/styleHelpers"
+import { setColor } from "../../styles/styleHelpers"
 import starSVG from "../../../static/assets/star.svg"
 
 const StarredListItem = ({ children, color }) => {

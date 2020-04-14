@@ -7,7 +7,7 @@ import {
   breakpoint,
   setSharedHeights,
   setSharedSpacing,
-} from "../../utils/styleHelpers"
+} from "../../styles/styleHelpers"
 import BurgerButton from "./burgerButton"
 import TopLevelLinkList from "./topLevelLinkList"
 

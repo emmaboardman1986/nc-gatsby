@@ -8,13 +8,13 @@ import TitleJP from "../../static/assets/hero__bg--jp.svg"
 import Gradient from "../components/contentContainers/gradient"
 import Card from "../components/contentContainers/card"
 import Grid from "../components/layout/grid"
-import { setColor } from "../utils/styleHelpers"
+import { setColor } from "../styles/styleHelpers"
 import GridCoordinates from "../components/layout/gridCoordinates"
 import FormEmphasis from "../components/ui/formEmphasis"
 import SpeechBubble from "../components/contentContainers/speechBubble"
 import StarredListItem from "../components/ui/starredListItem"
 import Button from "../components/ui/button"
-import Margin from "../components/spacing/margin"
+import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import "../components/layout.css"
 
 export const query = graphql`
@@ -89,8 +89,17 @@ export default function Homepage({ data }) {
           </Hero>
         </Section>
         <Section bgColor="#f0f0f9">
-          <Margin marginTop="-6.5rem" marginTopSm="-8rem" marginTopMd="-0.5rem"></Margin>
-          <Grid pageType="Home">
+          {/* <Margin
+             marginHeight="-6.5rem"
+             marginHeightSm="-8rem"
+             marginHeightMd="-0.5rem"
+          ></Margin> */}
+          <Grid
+            gridColNumber="24"
+            gridColUnit="1fr"
+            gridRowNumber="26"
+            gridRowUnit="2.5rem"
+          >
             {/* Friday Study Club */}
             <GridCoordinates
               colStart="1"
@@ -129,10 +138,8 @@ export default function Homepage({ data }) {
                   <h2>{data.homepage.data.second_card_title.text}</h2>
                   <h3>{data.homepage.data.second_card_sub_title.text}</h3>
                   <p>{data.homepage.data.second_card_content_line_one.text}</p>
-                 
-                  <p>
-                    {data.homepage.data.second_card_content_line_two.text}
-                  </p>
+
+                  <p>{data.homepage.data.second_card_content_line_two.text}</p>
 
                   <Button
                     link="/friday-study-club"
@@ -143,6 +150,7 @@ export default function Homepage({ data }) {
                   </Button>
                 </Card>
               </Gradient>
+              {/* <Margin marginBottom="1.5rem"></Margin> */}
             </GridCoordinates>
 
             {/* Speech Bubble decorative */}
@@ -156,6 +164,7 @@ export default function Homepage({ data }) {
               <div className="speech-bubble__background"></div>
             </GridCoordinates>
             {/* Speech Bubble w/ content*/}
+            {/* <Margin  marginHeight="1.5rem"></Margin> */}
             <GridCoordinates
               colStart="15"
               colFinish="25"
@@ -163,6 +172,7 @@ export default function Homepage({ data }) {
               rowFinish="18"
               mobileOrder="2"
             >
+
               <SpeechBubble pageType="Home">
                 <h2>{data.homepage.data.speech_bubble_title.text}</h2>
                 <p>Sign up for information on:</p>
@@ -188,6 +198,7 @@ export default function Homepage({ data }) {
                   </div>
                 </FormEmphasis>
               </SpeechBubble>
+              {/* <Margin  aHeight="6rem"></Margin> */}
             </GridCoordinates>
             {/* Beginners Bootcamp */}
             <GridCoordinates
@@ -202,10 +213,8 @@ export default function Homepage({ data }) {
                   <h2>{data.homepage.data.third_card_title.text}</h2>
                   <h3>{data.homepage.data.third_card_sub_title.text}</h3>
                   <p>{data.homepage.data.third_card_content_line_1.text}</p>
-          
-                  <p>
-                    {data.homepage.data.third_card_content_line_2.text}
-                  </p>
+
+                  <p>{data.homepage.data.third_card_content_line_2.text}</p>
 
                   <Button
                     link="/friday-study-club"
@@ -216,6 +225,7 @@ export default function Homepage({ data }) {
                   </Button>
                 </Card>
               </Gradient>
+              {/* <Margin marginBottom="1rem"></Margin> */}
             </GridCoordinates>
           </Grid>
         </Section>

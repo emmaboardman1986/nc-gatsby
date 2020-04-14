@@ -8,7 +8,10 @@ import Card from "../components/contentContainers/card"
 import Grid from "../components/layout/grid"
 import GridCoordinates from "../components/layout/gridCoordinates"
 import SpeechBubble from "../components/contentContainers/speechBubble"
-import { setColor } from "../utils/styleHelpers"
+import { setColor } from "../styles/styleHelpers"
+// import Margin from "../components/spacing/margin"
+import styled from "styled-components"
+import StarredListItem from "../components/ui/starredListItem"
 
 export default function JLPTBootcampPage({ data }) {
   return (
@@ -21,11 +24,12 @@ export default function JLPTBootcampPage({ data }) {
         </Section>
        
           <Section>
-            <Grid pageType="Aux">
+          {/* <Margin marginTop="-9.5rem" marginTopSm="-12rem" marginTopSm="-12rem"></Margin> */}
+            <Grid gridColNumber="27" gridRowNumber="40" gridColUnit="1fr" gridRowUnit="1fr">
               {/* Friday Study Club */}
               <GridCoordinates
-                colStart="4"
-                colFinish="22"
+                colStart="3"
+                colFinish="26"
                 rowStart="1"
                 rowFinish="10"
                 mobileOrder="0"
@@ -57,33 +61,35 @@ export default function JLPTBootcampPage({ data }) {
                     </ul>
                   </Card>
                 </Gradient>
+                {/* <Margin marginBottom="-1.5rem"></Margin> */}
               </GridCoordinates>
-
+             
               {/* <Gradient>
                   <Card> */}
               <GridCoordinates
-                colStart="4"
-                colFinish="22"
-                rowStart="10"
+                colStart="8"
+                colFinish="28"
+                rowStart="12"
                 rowFinish="27"
                 mobileOrder="0"
               >
+                 {/* <Margin marginRight="-2.5rem"></Margin> */}
                 <SpeechBubble bgColor={setColor.brandPrimary} pageType="Aux">
-                  <h2>If YES, here are the JLPT Bootcamp Details:</h2>
+                  <h2><MutedTitleText>If</MutedTitleText> YES,<MutedTitleText> here are the JLPT Bootcamp Details:</MutedTitleText></h2>
 
                   <ul>
-                    <li>Online</li>
-                    <li>
+                    <StarredListItem>Online</StarredListItem>
+                    <StarredListItem>
                       Experienced and qualified native teachers who have taught
                       multiple successful JLPT students.
-                    </li>
-                    <li>Small group lessons (4 people maximum).</li>
-                    <li>Marked & reviewed JLPT Mock Test.</li>
-                    <li>Basic, Plus and VIP experiences available.</li>
-                    <li>
+                      </StarredListItem>
+                    <StarredListItem>Small group lessons (4 people maximum).</StarredListItem>
+                    <StarredListItem>Marked & reviewed JLPT Mock Test.</StarredListItem>
+                    <StarredListItem>Basic, Plus and VIP experiences available.</StarredListItem>
+                    <StarredListItem>
                       5 hours minimum of formal JLPT Prep Lessons with example
                       exercises.
-                    </li>
+                      </StarredListItem>
                   </ul>
                 </SpeechBubble>
               </GridCoordinates>
@@ -96,6 +102,9 @@ export default function JLPTBootcampPage({ data }) {
     </Layout>
   )
 }
+
+const MutedTitleText = styled.span`
+font-size: 1.5rem;`
 
 {
   /* <li>

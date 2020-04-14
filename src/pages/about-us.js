@@ -8,7 +8,7 @@ import AuxHero from "../components/ui/aux-hero"
 import Grid from "../components/layout/grid"
 import GridCoordinates from "../components/layout/gridCoordinates"
 
-import { setColor } from "../utils/styleHelpers"
+import { setColor } from "../styles/styleHelpers"
 
 export const query = graphql`
   query {

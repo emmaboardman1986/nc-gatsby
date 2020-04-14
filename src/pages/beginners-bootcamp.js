@@ -4,7 +4,7 @@ import Layout from "../components/layout/layout"
 import Section from "../components/layout/section"
 import AuxHero from "../components/ui/aux-hero"
 
-import { setColor } from "../utils/styleHelpers"
+import { setColor } from "../styles/styleHelpers"
 
 export default function AboutUsPage({ data }) {
   return (

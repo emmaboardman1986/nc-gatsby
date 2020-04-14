@@ -1,12 +1,14 @@
 import styled from "styled-components"
 import React from "react"
 import PropTypes from "prop-types"
+// import "../../styles/main.scss";
+
 import {
   setSharedSpacing,
   setSharedHeights,
   breakpoint,
   setColor,
-} from "../../utils/styleHelpers"
+} from "../../styles/styleHelpers"
 
 const Hero = ({ children }) => {
   return <HeroWrapper>{children}</HeroWrapper>
@@ -19,7 +21,7 @@ const HeroWrapper = styled.div`
   color: ${setColor.brandWhiteOffset};
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 6rem;
+  padding-bottom: rem(16);
   margin-top: ${setSharedHeights.navHeight};
   p {
   font-family: "AnonymousPro-Regular";

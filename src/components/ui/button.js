@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import React from "react"
-import { setColor } from "../../utils/styleHelpers"
+import { setColor } from "../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
 
