@@ -1,0 +1,22 @@
+$g-font-size: 16px;
+/**
+ * The scale based on `$g-font-size` being 16.
+ *
+ * Decrease: 12, 8, 4
+ * Increase: 24, 32, 40, 48, 56, 72, 96
+ */
+ $g-spacing: $g-font-size !default;
+ // Decrease
+ $g-spacing--small: floor($g-spacing - 4) !default;
+ $g-spacing--x-small: floor($g-spacing / 2) !default;
+ $g-spacing--2x-small: floor($g-spacing / 4) !default;
+ // Increase
+ $g-spacing--large: ceil($g-spacing / 2 * 3) !default;
+ $g-spacing--x-large: ceil($g-spacing / 2 * 4) !default;
+ $g-spacing--2x-large: ceil($g-spacing / 2 * 5) !default;
+ $g-spacing--3x-large: ceil($g-spacing / 2 * 6) !default;
+ $g-spacing--4x-large: ceil($g-spacing / 2 * 7) !default;
+ $g-spacing--5x-large: ceil($g-spacing / 2 * 9) !default;
+ $g-spacing--6x-large: ceil($g-spacing / 2 * 12) !default;
+ $g-spacing--7x-large: ceil($g-spacing / 2 * 16) !default;
+ $g-spacing--8x-large: ceil($g-spacing / 2 * 20) !default;

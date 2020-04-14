@@ -1,0 +1,78 @@
+/**
+ * Base.
+ */
+ .h-spacing {
+    margin-top: rem($g-spacing);
+    &--negative {
+        margin-top: rem(-$g-spacing);
+    }
+}
+/**
+ * Decrease from base.
+ */
+.h-spacing--small {
+    margin-top: rem($g-spacing--small);
+}
+.h-spacing--x-small {
+    margin-top: rem($g-spacing--x-small);
+}
+.h-spacing--2x-small {
+    margin-top: rem($g-spacing--2x-small);
+}
+/**
+ * Increase from base.
+ */
+.h-spacing--large {
+    margin-top: rem($g-spacing--large);
+    &--negative {
+        margin-top: rem(-$g-spacing--large);
+    }
+}
+.h-spacing--x-large {
+    margin-top: rem($g-spacing--x-large);
+    &--negative {
+        margin-top: rem(-$g-spacing--x-large);
+    }
+}
+.h-spacing--2x-large {
+    margin-top: rem($g-spacing--2x-large);
+    &--negative {
+        margin-top: rem(-$g-spacing--2x-large);
+    }
+}
+.h-spacing--3x-large {
+    margin-top: rem($g-spacing--3x-large);
+    &--negative {
+        margin-top: rem(-$g-spacing--3x-large);
+    }
+}
+.h-spacing--4x-large {
+    margin-top: rem($g-spacing--4x-large);
+    &--negative {
+        margin-top: rem(-$g-spacing--4x-large);
+    }
+}
+.h-spacing--5x-large {
+    margin-top: rem($g-spacing--5x-large);
+    &--negative {
+        margin-top: rem(-$g-spacing--5x-large);
+    }
+}
+.h-spacing--6x-large {
+    margin-top: rem($g-spacing--6x-large);
+    &--negative {
+        margin-top: rem(-$g-spacing--6x-large);
+    }
+}
+.h-spacing--7x-large {
+    margin-top: rem($g-spacing--7x-large);
+    &--negative {
+        margin-top: rem(-$g-spacing--7x-large);
+    }
+}
+.h-spacing--8x-large {
+    margin-top: rem($g-spacing--8x-large);
+    &--negative {
+        margin-top: rem(-$g-spacing--8x-large);
+    }
+}

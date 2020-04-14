@@ -34,7 +34,14 @@ module.exports = {
         extensions: ['css', 'html', 'js', 'svg', 'woff', 'woff2']
       }
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        // data: `@import "${__dirname}/styles/main";`,
+        includePaths: [`${__dirname}/styles/main`]
+      }
+    },
   ],
 }
 
