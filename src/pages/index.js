@@ -89,145 +89,151 @@ export default function Homepage({ data }) {
           </Hero>
         </Section>
         <Section bgColor="#f0f0f9">
-          {/* <Margin
-             marginHeight="-6.5rem"
-             marginHeightSm="-8rem"
-             marginHeightMd="-0.5rem"
-          ></Margin> */}
-          <Grid
-            gridColNumber="24"
-            gridColUnit="1fr"
-            gridRowNumber="26"
-            gridRowUnit="2.5rem"
-          >
-            {/* Friday Study Club */}
-            <GridCoordinates
-              colStart="1"
-              colFinish="14"
-              rowStart="1"
-              rowFinish="10"
-              mobileOrder="0"
+          <VerticalSpacing size="7x-large--negative" sizeMd="-0.5rem">
+            <Grid
+              gridColNumber="24"
+              gridColUnit="1fr"
+              gridRowNumber="26"
+              gridRowUnit="2.5rem"
             >
-              <Gradient>
-                <Card>
-                  <h2>{data.homepage.data.first_card_title.text}</h2>
-                  <h3>{data.homepage.data.first_card_sub_title1.text}</h3>
-                  <p>{data.homepage.data.first_card_content_line_one.text}</p>
-                  <p>{data.homepage.data.first_card_content_line_two.text}</p>
+              {/* Friday Study Club */}
+              <GridCoordinates
+                colStart="1"
+                colFinish="14"
+                rowStart="1"
+                rowFinish="10"
+                mobileOrder="0"
+              >
+                <Gradient>
+                  <Card>
+                    <h2>{data.homepage.data.first_card_title.text}</h2>
+                    <h3>{data.homepage.data.first_card_sub_title1.text}</h3>
+                    <p>{data.homepage.data.first_card_content_line_one.text}</p>
+                    <p>{data.homepage.data.first_card_content_line_two.text}</p>
 
-                  <Button
-                    link="/friday-study-club"
-                    linkText="Find out more"
-                    bgColor={setColor.brandPrimary}
-                  >
-                    Find out more
-                  </Button>
-                </Card>
-              </Gradient>
-            </GridCoordinates>
-            {/* JLPT Bootcamp */}
-            <GridCoordinates
-              colStart="1"
-              colFinish="14"
-              rowStart="12"
-              rowFinish="21"
-              mobileOrder="4"
-            >
-              <Gradient>
-                <Card>
-                  <h2>{data.homepage.data.second_card_title.text}</h2>
-                  <h3>{data.homepage.data.second_card_sub_title.text}</h3>
-                  <p>{data.homepage.data.second_card_content_line_one.text}</p>
+                    <Button
+                      link="/friday-study-club"
+                      linkText="Find out more"
+                      bgColor={setColor.brandPrimary}
+                    >
+                      Find out more
+                    </Button>
+                  </Card>
+                </Gradient>
+              </GridCoordinates>
+              {/* JLPT Bootcamp */}
+              <GridCoordinates
+                colStart="1"
+                colFinish="14"
+                rowStart="12"
+                rowFinish="21"
+                mobileOrder="4"
+              >
+                <VerticalSpacing size="5x-large" sizeMd="0">
+                  <Gradient>
+                    <Card>
+                      <h2>{data.homepage.data.second_card_title.text}</h2>
+                      <h3>{data.homepage.data.second_card_sub_title.text}</h3>
+                      <p>
+                        {data.homepage.data.second_card_content_line_one.text}
+                      </p>
 
-                  <p>{data.homepage.data.second_card_content_line_two.text}</p>
+                      <p>
+                        {data.homepage.data.second_card_content_line_two.text}
+                      </p>
 
-                  <Button
-                    link="/friday-study-club"
-                    linkText="Find out more"
-                    bgColor={setColor.brandPrimary}
-                  >
-                    Find out more
-                  </Button>
-                </Card>
-              </Gradient>
-              {/* <Margin marginBottom="1.5rem"></Margin> */}
-            </GridCoordinates>
+                      <Button
+                        link="/friday-study-club"
+                        linkText="Find out more"
+                        bgColor={setColor.brandPrimary}
+                      >
+                        Find out more
+                      </Button>
+                    </Card>
+                  </Gradient>
+                </VerticalSpacing>
+              </GridCoordinates>
 
-            {/* Speech Bubble decorative */}
-            <GridCoordinates
-              colStart="15"
-              colFinish="25"
-              rowStart="3"
-              rowFinish="22"
-              mobileOrder="2"
-            >
-              <div className="speech-bubble__background"></div>
-            </GridCoordinates>
-            {/* Speech Bubble w/ content*/}
-            {/* <Margin  marginHeight="1.5rem"></Margin> */}
-            <GridCoordinates
-              colStart="15"
-              colFinish="25"
-              rowStart="1"
-              rowFinish="18"
-              mobileOrder="2"
-            >
+              {/* Speech Bubble decorative */}
+              <GridCoordinates
+                colStart="15"
+                colFinish="25"
+                rowStart="3"
+                rowFinish="22"
+                mobileOrder="2"
+              >
+                <div className="speech-bubble__background"></div>
+              </GridCoordinates>
+              {/* Speech Bubble w/ content*/}
 
-              <SpeechBubble pageType="Home">
-                <h2>{data.homepage.data.speech_bubble_title.text}</h2>
-                <p>Sign up for information on:</p>
+              <GridCoordinates
+                colStart="15"
+                colFinish="25"
+                rowStart="1"
+                rowFinish="18"
+                mobileOrder="2"
+              >
+                <VerticalSpacing size="large" sizeMd="-1rem"></VerticalSpacing>
+                <SpeechBubble pageType="Home">
+                  <h2>{data.homepage.data.speech_bubble_title.text}</h2>
+                  <p>Sign up for information on:</p>
 
-                <ul>
-                  <StarredListItem>Japanese-language outings</StarredListItem>
-                  <StarredListItem>
-                    JLPT Preparation Bootcamp Weekends
-                  </StarredListItem>
-                  <StarredListItem>Friday study-club resources</StarredListItem>
-                </ul>
+                  <ul>
+                    <StarredListItem>Japanese-language outings</StarredListItem>
+                    <StarredListItem>
+                      JLPT Preparation Bootcamp Weekends
+                    </StarredListItem>
+                    <StarredListItem>
+                      Friday study-club resources
+                    </StarredListItem>
+                  </ul>
 
-                <FormEmphasis>
-                  <div>
-                    <label>Email address</label>
-                    <input type="email"></input>
-                  </div>
-                  <div>
-                    <input type="checkbox"></input>
-                    <span className="muted">
-                      I consent to stuff. I consent to stuff. I consent to stuff
-                    </span>
-                  </div>
-                </FormEmphasis>
-              </SpeechBubble>
-              {/* <Margin  aHeight="6rem"></Margin> */}
-            </GridCoordinates>
-            {/* Beginners Bootcamp */}
-            <GridCoordinates
-              colStart="16"
-              colFinish="25"
-              rowStart="14"
-              rowFinish="24"
-              mobileOrder="4"
-            >
-              <Gradient>
-                <Card>
-                  <h2>{data.homepage.data.third_card_title.text}</h2>
-                  <h3>{data.homepage.data.third_card_sub_title.text}</h3>
-                  <p>{data.homepage.data.third_card_content_line_1.text}</p>
+                  <FormEmphasis>
+                    <div>
+                      <label>Email address</label>
+                      <input type="email"></input>
+                    </div>
+                    <div>
+                      <input type="checkbox"></input>
+                      <span className="muted">
+                        I consent to stuff. I consent to stuff. I consent to
+                        stuff
+                      </span>
+                    </div>
+                  </FormEmphasis>
+                </SpeechBubble>
+              </GridCoordinates>
+              {/* </VerticalSpacing> */}
+              {/* Beginners Bootcamp */}
+              <GridCoordinates
+                colStart="16"
+                colFinish="25"
+                rowStart="14"
+                rowFinish="24"
+                mobileOrder="4"
+              >
+                <VerticalSpacing size="large" sizeMd="0">
+                  <Gradient>
+                    <Card>
+                      <h2>{data.homepage.data.third_card_title.text}</h2>
+                      <h3>{data.homepage.data.third_card_sub_title.text}</h3>
+                      <p>{data.homepage.data.third_card_content_line_1.text}</p>
 
-                  <p>{data.homepage.data.third_card_content_line_2.text}</p>
+                      <p>{data.homepage.data.third_card_content_line_2.text}</p>
 
-                  <Button
-                    link="/friday-study-club"
-                    linkText="Find out more"
-                    bgColor={setColor.brandPrimary}
-                  >
-                    Find out more
-                  </Button>
-                </Card>
-              </Gradient>
-              {/* <Margin marginBottom="1rem"></Margin> */}
-            </GridCoordinates>
-          </Grid>
+                      <Button
+                        link="/friday-study-club"
+                        linkText="Find out more"
+                        bgColor={setColor.brandPrimary}
+                      >
+                        Find out more
+                      </Button>
+                    </Card>
+                  </Gradient>
+                </VerticalSpacing>
+              </GridCoordinates>
+            </Grid>
+          </VerticalSpacing>
         </Section>
       </div>
     </Layout>

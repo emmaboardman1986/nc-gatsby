@@ -2,6 +2,7 @@ import { css } from 'styled-components';
 
 export const setColor = {
     brandPrimary: "#2F549C",
+    brandPrimaryLight: "#f0f0f9",
     brandSecondary: "#E7131D",
 	brandWhite: "#FFF",
 	brandWhiteOffset: "#f8f8f8",
@@ -64,7 +65,16 @@ export const SIZE_SCALE = Object.freeze({
 	large4x: '4x-large',
 	large5x: '5x-large',
 	large6x: '6x-large',
+	large7x: '7x-large',
+	large8x: '8x-large',
 	largex: 'x-large',
+	large2xNegative: '2x-large--negative',
+	large3xNegative: '3x-large--negative',
+	large4xNegative: '4x-large--negative',
+	large5xNegative: '5x-large--negative',
+	large6xNegative: '6x-large--negative',
+	large7xNegative: '7x-large--negative',
+	large8xNegative: '8x-large--negative',
 	small: 'small',
 	small2x: '2x-small',
 	smallx: 'x-small'

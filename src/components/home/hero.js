@@ -21,7 +21,7 @@ const HeroWrapper = styled.div`
   color: ${setColor.brandWhiteOffset};
   align-items: center;
   justify-content: space-between;
-  padding-bottom: rem(16);
+  padding-bottom: 6rem;
   margin-top: ${setSharedHeights.navHeight};
   p {
   font-family: "AnonymousPro-Regular";

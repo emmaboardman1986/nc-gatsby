@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 
 
 import Header from "../header/header"
+import Main from "../layout/main"
 import NCLogoSm from "../../../static/assets/logoNCsm.svg"
 import "../../components/layout.css"
 import "../../styles/main.scss";
@@ -33,7 +34,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header isMenuExpanded={isMenuExpanded} setIsMenuExpanded={setIsMenuExpanded} />
 
-      <main>{children}</main>
+      <Main>{children}</Main>
       <footer>
         <div className="footer__logo">
           <img

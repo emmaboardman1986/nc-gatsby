@@ -3,7 +3,7 @@ import React from "react"
 import redSpeechBubble from "../../../static/assets/speech-bubble__tail--red.svg"
 import { setColor, setSharedBorderRadius, breakpoint } from "../../styles/styleHelpers"
 
-const SpeechBubble = ({ children, bgColor, pageType }) => {
+const SpeechBubble = ({ children, bgColor }) => {
   return (
     <SpeechBubbleWrapper bgColor={bgColor}>
         <SpeechBubbleContent>{children}</SpeechBubbleContent>
@@ -29,15 +29,15 @@ const SpeechBubbleWrapper = styled.div`
     height: 6rem;
   }
   ${breakpoint.md`
-  margin-top: ${props => props.pageType === "Home" ? "-7rem" : "-6.7rem"} ;
+  margin-top: -7rem;
   &:after {
     width: 10rem;
     height: 8rem;
   }
   `}
   ${breakpoint.lg`
-  margin-top: ${props => props.pageType === "Home" ? "-9rem" : "-8.5rem"}`}
- 
+  margin-top: -9rem;`
+}
 `
 
 
@@ -49,7 +49,7 @@ const SpeechBubbleContent = styled.div`
     font-family: "Axiforma-Medium";
     margin-bottom: 0.6rem;
   }
-  h3 {
+  h2 {
     color: ${setColor.brandWhite};
     margin-top: 0.5rem;
     margin-bottom: 0.6rem;

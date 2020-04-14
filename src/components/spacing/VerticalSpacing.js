@@ -1,11 +1,22 @@
 import styled from "styled-components"
 import React from "react"
 import PropTypes from "prop-types"
-import { SIZE_SCALE } from "../../styles/styleHelpers"
+import { SIZE_SCALE, breakpoint } from "../../styles/styleHelpers"
 
-const VerticalSpacing = ({ children, size }) => (
-  <div className={size ? `h-spacing-${size}` : `h-spacing`}>{children}</div>
+const VerticalSpacing = ({ children, size, sizeMd }) => (
+  <VerticalSpacingWrapper
+    className={size ? `h-spacing--${size}` : `h-spacing`}
+    sizeMd={sizeMd}
+  >
+    {children}
+  </VerticalSpacingWrapper>
 )
+
+const VerticalSpacingWrapper = styled.div`
+width: 100%;
+  ${breakpoint.md`
+margin-top: ${props => (props.sizeMd ? props.sizeMd : null)}`}
+`
 
 VerticalSpacing.propTypes = {
   children: PropTypes.node,
@@ -20,6 +31,15 @@ VerticalSpacing.propTypes = {
     SIZE_SCALE.large4x,
     SIZE_SCALE.large5x,
     SIZE_SCALE.large6x,
+    SIZE_SCALE.large7x,
+    SIZE_SCALE.large8x,
+    SIZE_SCALE.large2xNegative,
+    SIZE_SCALE.large3xNegative,
+    SIZE_SCALE.large4xNegative,
+    SIZE_SCALE.large5xNegative,
+    SIZE_SCALE.large6xNegative,
+    SIZE_SCALE.large7xNegative,
+    SIZE_SCALE.large8xNegative,
   ]),
 }
 
