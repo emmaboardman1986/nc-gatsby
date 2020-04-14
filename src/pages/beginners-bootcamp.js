@@ -1,8 +1,7 @@
 import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout/layout"
-import Section from "../components/layout/section"
-import AuxHero from "../components/ui/aux-hero"
+import Layout from "../components/layout/Layout"
+import Section from "../components/layout/Section"
+import AuxHero from "../components/ui/AuxHero"
 
 import { setColor } from "../styles/styleHelpers"
 

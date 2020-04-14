@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 
 
-import Header from "../header/header"
-import Main from "../layout/main"
+import Header from "../header/Header"
+import Main from "./Main"
 import NCLogoSm from "../../../static/assets/logoNCsm.svg"
 import "../../components/layout.css"
 import "../../styles/main.scss";

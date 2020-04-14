@@ -3,7 +3,9 @@ import { css } from 'styled-components';
 export const setColor = {
     brandPrimary: "#2F549C",
     brandPrimaryLight: "#f0f0f9",
+    brandPrimaryMedium: "#89a5dc",
     brandSecondary: "#E7131D",
+    brandSecondaryLight: "#FF5861",
 	brandWhite: "#FFF",
 	brandWhiteOffset: "#f8f8f8",
 	brandBlack: "#000",

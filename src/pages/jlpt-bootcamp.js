@@ -1,17 +1,21 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import Layout from "../components/layout/layout"
-import Section from "../components/layout/section"
-import AuxHero from "../components/ui/aux-hero"
-import Gradient from "../components/contentContainers/gradient"
-import Card from "../components/contentContainers/card"
-import Grid from "../components/layout/grid"
-import GridCoordinates from "../components/layout/gridCoordinates"
-import SpeechBubble from "../components/contentContainers/speechBubble"
+import Layout from "../components/layout/Layout"
+import Section from "../components/layout/Section"
+import AuxHero from "../components/ui/AuxHero"
+import Gradient from "../components/contentContainers/Gradient"
+import Outline from "../components/contentContainers/outline"
+import Card from "../components/contentContainers/Card"
+import Grid from "../components/layout/Grid"
+import GridCoordinates from "../components/layout/GridCoordinates"
+import SpeechBubble from "../components/contentContainers/SpeechBubble"
 import { setColor } from "../styles/styleHelpers"
-// import Margin from "../components/spacing/margin"
+import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import styled from "styled-components"
-import StarredListItem from "../components/ui/starredListItem"
+import StarredListItem from "../components/ui/StarredListItem"
+import NumberedList from "../components/ui/NumberedList"
+import Emphasis from "../components/contentContainers/Emphasis"
+import Testimonial from "../components/Testimonial"
+import Accordion from "../components/accordion/Accordion"
 
 export default function JLPTBootcampPage({ data }) {
   return (
@@ -22,11 +26,15 @@ export default function JLPTBootcampPage({ data }) {
             <h1>JLPT Bootcamp</h1>
           </AuxHero>
         </Section>
-       
-          <Section>
-          {/* <Margin marginTop="-9.5rem" marginTopSm="-12rem" marginTopSm="-12rem"></Margin> */}
-            <Grid gridColNumber="27" gridRowNumber="40" gridColUnit="1fr" gridRowUnit="1fr">
-              {/* Friday Study Club */}
+
+        <Section>
+          <VerticalSpacing size="8x-large--negative" sizeMd="-12rem">
+            <Grid
+              gridColNumber="27"
+              gridRowNumber="32"
+              gridColUnit="1fr"
+              gridRowUnit="2.5rem"
+            >
               <GridCoordinates
                 colStart="3"
                 colFinish="26"
@@ -61,71 +69,188 @@ export default function JLPTBootcampPage({ data }) {
                     </ul>
                   </Card>
                 </Gradient>
-                {/* <Margin marginBottom="-1.5rem"></Margin> */}
               </GridCoordinates>
-             
-              {/* <Gradient>
-                  <Card> */}
+
               <GridCoordinates
-                colStart="8"
+                colStart="11"
                 colFinish="28"
                 rowStart="12"
-                rowFinish="27"
+                rowFinish="38"
                 mobileOrder="0"
               >
-                 {/* <Margin marginRight="-2.5rem"></Margin> */}
-                <SpeechBubble bgColor={setColor.brandPrimary} pageType="Aux">
-                  <h2><MutedTitleText>If</MutedTitleText> YES,<MutedTitleText> here are the JLPT Bootcamp Details:</MutedTitleText></h2>
+                <VerticalSpacing size="large" sizeMd="-2rem">
+                  <SpeechBubble bgColor={setColor.brandPrimary} pageType="Aux">
+                    <h2>
+                      <MutedTitleText>If</MutedTitleText> YES,
+                      <MutedTitleText>
+                        {" "}
+                        here are the JLPT Bootcamp Details:
+                      </MutedTitleText>
+                    </h2>
 
-                  <ul>
-                    <StarredListItem>Online</StarredListItem>
-                    <StarredListItem>
-                      Experienced and qualified native teachers who have taught
-                      multiple successful JLPT students.
+                    <ul>
+                      <StarredListItem>Online</StarredListItem>
+                      <StarredListItem>
+                        Experienced and qualified native teachers who have
+                        taught multiple successful JLPT students.
                       </StarredListItem>
-                    <StarredListItem>Small group lessons (4 people maximum).</StarredListItem>
-                    <StarredListItem>Marked & reviewed JLPT Mock Test.</StarredListItem>
-                    <StarredListItem>Basic, Plus and VIP experiences available.</StarredListItem>
-                    <StarredListItem>
-                      5 hours minimum of formal JLPT Prep Lessons with example
-                      exercises.
+                      <StarredListItem>
+                        Small group lessons (4 people maximum).
                       </StarredListItem>
-                  </ul>
-                </SpeechBubble>
+                      <StarredListItem>
+                        Marked & reviewed JLPT Mock Test.
+                      </StarredListItem>
+                      <StarredListItem>
+                        Basic, Plus and VIP experiences available.
+                      </StarredListItem>
+                      <StarredListItem>
+                        5 hours minimum of formal JLPT Prep Lessons with example
+                        exercises.
+                      </StarredListItem>
+                    </ul>
+                    <Emphasis color={setColor.brandPrimaryMedium}>
+                      <p>Bonus Content!</p>
+                      <ul>
+                        <StarredListItem>
+                          JLPT Textbook sent to you.
+                        </StarredListItem>
+                        <StarredListItem>
+                          Facebook group to share your JLPT questions with
+                          teachers in our community.
+                        </StarredListItem>
+                        <StarredListItem>
+                          Invitation to join our{" "}
+                          <a
+                            href="https://nihongoconnection.vipmembervault.com/products/courses/view/3"
+                            target="_blank"
+                          >
+                            online Japanese Conversation Club
+                          </a>{" "}
+                          at a discount rate.
+                        </StarredListItem>
+                        <StarredListItem>
+                          Special goodybag if you sign up 45 days or more before
+                          your chosen bootcamp.
+                        </StarredListItem>
+                      </ul>
+                    </Emphasis>
+                  </SpeechBubble>
+                </VerticalSpacing>
               </GridCoordinates>
-              {/* </Card>
-                </Gradient> */}
+              {/* <GridCoordinates
+                colStart="3"
+                colFinish="10"
+                rowStart="13"
+                rowFinish="16"
+                mobileOrder="0"
+              >
+              <VerticalSpacing size="6x-large" sizeMd="0">
+                <Outline>
+                  <Card>
+                    <h2>Upcoming dates:</h2>
+                    <ul>
+                      <li>
+                        <strong>N3: </strong> 23-24 May
+                      </li>
+                    </ul>
+                  </Card>
+                </Outline>
+                </VerticalSpacing>
+              </GridCoordinates> */}
             </Grid>
+          </VerticalSpacing>
+        </Section>
+        <Section flexDirection="row">
+          <Gradient widthMd="68%">
+            <Card>
+              <h2 style={{ color: setColor.brandPrimary }}>How to book</h2>
+              <NumberedList>
+                <li>Check your JLPT Level</li>
+                <li>Decide your preferred date</li>
+                <li>Decide your preferred status: Basic, Plus or VIP</li>
+                <li>Choose your payment option: Paypal or card</li>
+                <li>Make your payment</li>
+                <li>
+                  Follow the instructions to provide us with your chosen date
+                  and status information
+                </li>
+                <li>
+                  Await your confirmation email (24-48 hours after registration
+                  (M-F))
+                </li>
+              </NumberedList>
+            </Card>
+          </Gradient>
+
+          <Outline widthMd="28%">
+            <Card>
+              <h2
+                style={{
+                  color: setColor.brandBlack,
+                }}
+              >
+                Upcoming dates:
+              </h2>
+              <ul>
+                <li>
+                  <strong>N3: </strong> 23-24 May
+                </li>
+              </ul>
+            </Card>
+          </Outline>
+        </Section>
+        <VerticalSpacing size="2x-large--negative" sizeMd="0">
+          <Section flexDirection="row">
+            <h2
+              style={{
+                color: setColor.brandPrimary,
+                marginTop: "0",
+                paddingRight: "2rem",
+              }}
+            >
+              What do past participants think?
+            </h2>
+            <Testimonial>
+              <p>
+                I cannot express enough how much I enjoyed the event and there
+                are no words to express how helpful it was for me.
+              </p>
+              <p>Thank you very much to all those who organised it!</p>
+              <p>
+                You not only helped improve my Japanese and chance of passing
+                the JLPT, but you have also reignited my passion for it. I am
+                already looking forward to next year.
+              </p>
+              <p>11/21/2017</p>
+            </Testimonial>
           </Section>
-     
+        </VerticalSpacing>
+        <VerticalSpacing size="2x-large--negative" sizeMd="0">
+          <Section>
+            <h2
+              style={{
+                color: setColor.brandPrimary,
+                marginTop: "0",
+                paddingRight: "2rem",
+              }}
+            >
+              FAQs
+            </h2>
+          </Section>
+        </VerticalSpacing>
+        <Section>
+          <Accordion>
+            <div title="Signalling functionality for keyboard users #1">
+              <h4>Feature:</h4>
+              <p>Rely on built-in behaviours where possible</p>
+            </div>
+          </Accordion>
+        </Section>
       </div>
     </Layout>
   )
 }
 
 const MutedTitleText = styled.span`
-font-size: 1.5rem;`
-
-{
-  /* <li>
-<strong>Bonus</strong> JLPT Textbook sent to you.
-</li>
-<li>
-<strong>Bonus</strong> Facebook group to share your JLPT
-questions with teachers in our community.
-</li>
-<li>
-<strong>Bonus</strong> Invitation to join our{" "}
-<a
-  href="https://nihongoconnection.vipmembervault.com/products/courses/view/3"
-  target="_blank"
->
-  online Japanese Conversation Club
-</a>{" "}
-at a discount rate.
-</li>
-<li>
-<strong>Bonus</strong> special goodybag if you sign up
-45 days or more before your chosen bootcamp.
-</li> */
-}
+  font-size: 1.5rem;
+`

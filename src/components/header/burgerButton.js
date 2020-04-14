@@ -5,7 +5,7 @@ import {
   setSharedHeights,
   breakpoint,
 } from "../../styles/styleHelpers"
-import PropTypes from "prop-types"
+
 
 const BurgerButton = ({isMenuExpanded, setIsMenuExpanded}) => {
 

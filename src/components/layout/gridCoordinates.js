@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import React from 'react';
-import PropTypes from 'prop-types'
 
 
 const GridCoordinates = ({colStart, colFinish, rowStart, rowFinish, mobileOrder, children}) => {

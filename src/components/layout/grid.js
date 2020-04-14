@@ -21,7 +21,9 @@ const GridWrapper = styled.div`
   /* grid acts as flexcontainer on smaller screens */
   display: flex;
   flex-direction: column;
+  align-items: center;
   ${breakpoint.md`
+    align-items: initial;
     display: grid;
     grid-template-columns: repeat(${props => props.gridColNumber}, ${props =>
     props.gridColUnit});

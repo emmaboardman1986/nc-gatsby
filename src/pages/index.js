@@ -1,19 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout/layout"
-import Section from "../components/layout/section"
-import Hero from "../components/home/hero"
+import Layout from "../components/layout/Layout"
+import Section from "../components/layout/Section"
+import Hero from "../components/home/Hero"
 import Logo from "../../static/assets/logo.svg"
 import TitleJP from "../../static/assets/hero__bg--jp.svg"
-import Gradient from "../components/contentContainers/gradient"
-import Card from "../components/contentContainers/card"
-import Grid from "../components/layout/grid"
+import Gradient from "../components/contentContainers/Gradient"
+import Card from "../components/contentContainers/Card"
+import Grid from "../components/layout/Grid"
 import { setColor } from "../styles/styleHelpers"
-import GridCoordinates from "../components/layout/gridCoordinates"
-import FormEmphasis from "../components/ui/formEmphasis"
-import SpeechBubble from "../components/contentContainers/speechBubble"
-import StarredListItem from "../components/ui/starredListItem"
-import Button from "../components/ui/button"
+import GridCoordinates from "../components/layout/GridCoordinates"
+import Emphasis from "../components/contentContainers/Emphasis"
+import SpeechBubble from "../components/contentContainers/SpeechBubble"
+import StarredListItem from "../components/ui/StarredListItem"
+import Button from "../components/ui/Button"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import "../components/layout.css"
 
@@ -88,7 +88,7 @@ export default function Homepage({ data }) {
             </div>
           </Hero>
         </Section>
-        <Section bgColor="#f0f0f9">
+        <Section>
           <VerticalSpacing size="7x-large--negative" sizeMd="-0.5rem">
             <Grid
               gridColNumber="24"
@@ -162,6 +162,7 @@ export default function Homepage({ data }) {
                 rowFinish="22"
                 mobileOrder="2"
               >
+                <VerticalSpacing size="large"></VerticalSpacing>
                 <div className="speech-bubble__background"></div>
               </GridCoordinates>
               {/* Speech Bubble w/ content*/}
@@ -173,7 +174,11 @@ export default function Homepage({ data }) {
                 rowFinish="18"
                 mobileOrder="2"
               >
-                <VerticalSpacing size="large" sizeMd="-1rem"></VerticalSpacing>
+                <VerticalSpacing
+                  size="large"
+                  sizeMd="-7rem"
+                  sizeLg="-10rem"
+                ></VerticalSpacing>
                 <SpeechBubble pageType="Home">
                   <h2>{data.homepage.data.speech_bubble_title.text}</h2>
                   <p>Sign up for information on:</p>
@@ -188,19 +193,25 @@ export default function Homepage({ data }) {
                     </StarredListItem>
                   </ul>
 
-                  <FormEmphasis>
+                  <Emphasis color={setColor.brandSecondaryLight}>
                     <div>
-                      <label>Email address</label>
-                      <input type="email"></input>
+                      <label for="mailing-list-sign-up">Email address</label>
+                      <input
+                        type="email"
+                        id="mailing-list-sign-up"
+                        name="mailing-list-sign-up"
+                      ></input>
                     </div>
                     <div>
-                      <input type="checkbox"></input>
-                      <span className="muted">
-                        I consent to stuff. I consent to stuff. I consent to
-                        stuff
-                      </span>
+                      <label for="mailing-list-opt-in-consent">
+                        <input type="checkbox" name="mailing-list-opt-in-consent"></input>
+                        <span className="muted">
+                          I consent to stuff. I consent to stuff. I consent to
+                          stuff
+                        </span>
+                      </label>
                     </div>
-                  </FormEmphasis>
+                  </Emphasis>
                 </SpeechBubble>
               </GridCoordinates>
               {/* </VerticalSpacing> */}

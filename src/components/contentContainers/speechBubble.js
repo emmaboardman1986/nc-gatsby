@@ -1,27 +1,42 @@
 import styled from "styled-components"
 import React from "react"
 import redSpeechBubble from "../../../static/assets/speech-bubble__tail--red.svg"
-import { setColor, setSharedBorderRadius, breakpoint } from "../../styles/styleHelpers"
+import blueSpeechBubble from "../../../static/assets/speech-bubble__tail--blue.svg"
+import {
+  setColor,
+  setSharedBorderRadius,
+  breakpoint,
+} from "../../styles/styleHelpers"
 
 const SpeechBubble = ({ children, bgColor }) => {
   return (
     <SpeechBubbleWrapper bgColor={bgColor}>
-        <SpeechBubbleContent>{children}</SpeechBubbleContent>
+      <SpeechBubbleContent>{children}</SpeechBubbleContent>
     </SpeechBubbleWrapper>
   )
 }
 
 const SpeechBubbleWrapper = styled.div`
-  background-color: ${props => props.bgColor ? props.bgColor : setColor.brandSecondary};
+  background-color: ${props =>
+    props.bgColor ? props.bgColor : setColor.brandSecondary};
   border-radius: ${setSharedBorderRadius.radiusSpeechBubble};
   padding: 2rem;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
+  p {
+    margin: 0;
+  }
+  a {
+    color: ${setColor.brandPrimaryLight};
+    &:hover,
+    &:focus {
+      background-color: ${setColor.brandPrimaryLight};
+      color: ${setColor.brandPrimary};
+    }
+  }
   &:after {
     content: "";
     background: url(${redSpeechBubble});
+    background: ${props =>
+      props.bgColor ? `url(${blueSpeechBubble})` : `url(${redSpeechBubble})`};
     background-size: 100% auto;
     background-repeat: no-repeat;
     position: absolute;
@@ -29,17 +44,15 @@ const SpeechBubbleWrapper = styled.div`
     height: 6rem;
   }
   ${breakpoint.md`
-  margin-top: -7rem;
+  /* width: 80%; */
   &:after {
     width: 10rem;
     height: 8rem;
   }
   `}
   ${breakpoint.lg`
-  margin-top: -9rem;`
-}
+  `}
 `
-
 
 const SpeechBubbleContent = styled.div`
   color: ${setColor.brandWhite};

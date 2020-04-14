@@ -1,12 +1,14 @@
 import styled from "styled-components"
 import React from "react"
+import { setColor } from "../../styles/styleHelpers"
 
-const Gradient = ({ children, widthMd }) => {
-  return <GradientWrapper widthMd={widthMd}>{children}</GradientWrapper>
+const Outline = ({ children, widthMd }) => {
+  return <OutlineWrapper widthMd={widthMd}>{children}</OutlineWrapper>
 }
 
-const GradientWrapper = styled.div`
+const OutlineWrapper = styled.div`
   box-sizing: border-box;
+  margin: 1.5rem 0;
   li {
     padding: 0.5rem 0;
     &:last-of-type {
@@ -14,20 +16,13 @@ const GradientWrapper = styled.div`
     }
   }
   @media (min-width: 992px) {
+    margin: 0;
     width: ${props => props.widthMd ? props.widthMd : '100%'};
   }
-  padding: 1rem;
+  padding: 0.5rem;
   position: relative;
-  background: linear-gradient(
-    to right,
-    #434599,
-    cyan,
-    green,
-    yellow,
-    orange,
-    #ed2530
-  );
+  background: ${setColor.brandBlack};
   border-radius: 20px;
 `
 
-export default Gradient
+export default Outline

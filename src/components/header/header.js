@@ -2,7 +2,7 @@ import styled from "styled-components"
 import React from "react"
 import { Link} from "gatsby";
 import { setColor, breakpoint, setSharedSpacing} from "../../styles/styleHelpers"
-import Nav from "./nav"
+import Nav from "./Nav"
 
 
 const Header = ({ isMenuExpanded, setIsMenuExpanded, isSubMenuExpanded, setIsSubMenuExpanded, children }) => {

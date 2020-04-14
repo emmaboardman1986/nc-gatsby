@@ -1,17 +1,15 @@
 import styled from "styled-components"
 import React from "react"
 import QuotationImg from "../../static/assets/testimonial.png"
-import PropTypes from "prop-types"
 import {
   setSharedBorderRadius,
   setColor,
-  setSharedSpacing,
 } from "../styles/styleHelpers"
 
 const Testimonial = ({ children }) => {
   return (
     <TestimonialWrapper>
-      <img src={QuotationImg}></img>
+      <img src={QuotationImg} alt=""></img>
       {children}
     </TestimonialWrapper>
   )
@@ -20,7 +18,6 @@ const Testimonial = ({ children }) => {
 const TestimonialWrapper = styled.div`
   position: relative;
   background-color: ${setColor.brandWhite};
-  width: 100%;
   padding: 3rem;
   margin-left: 2rem;
   margin-top: 2rem;

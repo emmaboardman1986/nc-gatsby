@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import React, { useState } from "react"
-import TopLevelLinkListItem from "./topLevelLinkListItem"
+import React from "react"
+import TopLevelLinkListItem from "./TopLevelLinkListItem"
 import { Link } from "gatsby"
 import {
   setColor,
@@ -8,8 +8,8 @@ import {
   setSharedHeights,
   setSharedSpacing,
 } from "../../styles/styleHelpers"
-import BurgerButton from "./burgerButton"
-import TopLevelLinkList from "./topLevelLinkList"
+import BurgerButton from "./BurgerButton"
+import TopLevelLinkList from "./TopLevelLinkList"
 
 const Nav = ({ isMenuExpanded, setIsMenuExpanded }) => {
   return (

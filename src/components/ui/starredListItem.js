@@ -17,7 +17,7 @@ const StarredListItemWrapper = styled.li`
   margin-bottom: 1%;
   list-style: none;
   margin-left: 2%;
-  font-size: 15px;
+  font-size: 1rem;
   color: ${props => props.color};
   &:before {
     content: "";
