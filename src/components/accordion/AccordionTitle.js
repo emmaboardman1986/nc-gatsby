@@ -31,6 +31,7 @@ const AccordionTitleWrapper = styled.div`
 `
 
 const AccordionTitleContent = styled.h3`
+  text-transform: none;
   display: flex;
   font-size: 1.2rem;
   padding: 0.25rem 0;

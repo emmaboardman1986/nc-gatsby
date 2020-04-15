@@ -52,7 +52,7 @@ const HeroWrapper = styled.div`
   }
 
   ${breakpoint.sm`
-    margin-top: 0;
+    /* margin-top: 0; */
     flex-direction: row;
     div:first-child {
       width: 100%;
@@ -67,7 +67,7 @@ const HeroWrapper = styled.div`
     }
     `}
   ${breakpoint.md`
-  
+    margin-top: 0;
     padding-bottom: 1.5rem;
     div:first-child {
       width: 55%;

@@ -8,11 +8,7 @@ import {
 } from "../../styles/styleHelpers"
 import Nav from "./Nav"
 
-const Header = ({
-  isMenuExpanded,
-  setIsMenuExpanded,
-  children,
-}) => {
+const Header = ({ isMenuExpanded, setIsMenuExpanded, children }) => {
   const headerLogoEl = useRef()
 
   useEffect(() => {
@@ -52,7 +48,9 @@ const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-   ${breakpoint.md`
+  ${breakpoint.sm`
+  height: 7vh;`}
+  ${breakpoint.md`
   position: relative;
   width: auto;
   padding-right: ${setSharedSpacing.sectionPaddingDesktop};
@@ -61,13 +59,12 @@ const HeaderWrapper = styled.header`
 `
 
 const HeaderLogo = styled.div`
-&.hidden-on-home {
-  ${breakpoint.md`
+  &.hidden-on-home {
+    ${breakpoint.md`
   visibility: hidden;
   `}
- 
-}
-${breakpoint.md`
+  }
+  ${breakpoint.md`
 margin-top: 1rem;`}
   flex: 1;
   img {
@@ -78,7 +75,7 @@ margin-top: 1rem;`}
     padding: 0.5rem 1.5rem;
     color: ${setColor.brandWhite};
     text-decoration: none;
-    font-family: 'Poppins-SemiBold', sans-serif;
+    font-family: "Poppins-SemiBold", sans-serif;
   }
 `
 
