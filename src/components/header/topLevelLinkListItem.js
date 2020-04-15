@@ -1,16 +1,21 @@
 import styled from "styled-components"
-import React, { useRef } from "react"
+import React, { useRef, useEffect } from "react"
 import { setColor, breakpoint } from "../../styles/styleHelpers"
 
 const TopLevelLinkListItem = ({ children, isMenuExpanded }) => {
   const topLevelLinkItemEl = useRef()
-  if (!isMenuExpanded) {
-    setTimeout(function() {
-      topLevelLinkItemEl.current.classList.add("hidden-on-mobile")
-    }, 500)
-  } else {
-    topLevelLinkItemEl.current.classList.remove("hidden-on-mobile");
-  }
+  useEffect(() => {
+    if (topLevelLinkItemEl) {
+      if (!isMenuExpanded) {
+        setTimeout(function() {
+          topLevelLinkItemEl.current.classList.add("hidden-on-mobile")
+        }, 500)
+      } else {
+        topLevelLinkItemEl.current.classList.remove("hidden-on-mobile")
+      }
+    }
+  }, [isMenuExpanded])
+
   return (
     <TopLevelLinkListItemWrapper
       isMenuExpanded={isMenuExpanded}
