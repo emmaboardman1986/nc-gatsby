@@ -1,10 +1,16 @@
 import styled from "styled-components"
-import { setColor, setSharedSpacing } from "../../styles/styleHelpers"
+import {
+  setColor,
+  setSharedSpacing,
+  breakpoint,
+} from "../../styles/styleHelpers"
 
 const AuxHero = styled.div`
   padding: ${setSharedSpacing.sectionPadding};
-  padding-top: 4rem;
+  padding-top: 8rem;
   padding-bottom: 8rem;
+  ${breakpoint.md`
+  padding-top: 4rem;`}
   h1 {
     color: ${setColor.brandWhite};
     font-size: 4rem;

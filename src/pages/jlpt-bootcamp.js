@@ -8,7 +8,7 @@ import Card from "../components/contentContainers/Card"
 import Grid from "../components/layout/Grid"
 import GridCoordinates from "../components/layout/GridCoordinates"
 import SpeechBubble from "../components/contentContainers/SpeechBubble"
-import { setColor } from "../styles/styleHelpers"
+import { setColor, breakpoint } from "../styles/styleHelpers"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import styled from "styled-components"
 import StarredListItem from "../components/ui/StarredListItem"
@@ -173,14 +173,7 @@ export default function JLPTBootcampPage({ data }) {
           </Gradient>
 
           <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
-          <div
-            style={{
-              width: "35%",
-              display: "flex",
-              flexDirection: "column",
-              marginLeft: "3rem",
-            }}
-          >
+          <ColumnWrapper>
             <Outline>
               <Card>
                 <h2
@@ -241,7 +234,7 @@ export default function JLPTBootcampPage({ data }) {
                 </ul>
               </Card>
             </Outline>
-          </div>
+          </ColumnWrapper>
         </Section>
         <VerticalSpacing sizeMd="0">
           <Section flexDirection="row">
@@ -414,6 +407,14 @@ export default function JLPTBootcampPage({ data }) {
     </Layout>
   )
 }
+
+const ColumnWrapper = styled.div`
+  ${breakpoint.md`
+width: 35%;
+display: flex;
+flex-direction: column;
+margin-left: 3rem;`}
+`
 
 const MutedTitleText = styled.span`
   font-size: 1.5rem;
