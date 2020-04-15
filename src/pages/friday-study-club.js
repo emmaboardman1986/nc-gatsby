@@ -7,6 +7,7 @@ import Card from "../components/contentContainers/Card"
 import AuxHero from "../components/ui/AuxHero"
 import Grid from "../components/layout/Grid"
 import GridCoordinates from "../components/layout/GridCoordinates"
+import VerticalSpacing from "../components/spacing/VerticalSpacing"
 
 import { setColor } from "../styles/styleHelpers"
 
@@ -40,6 +41,7 @@ export default function FridayStudyClubPage({ data }) {
         </Section>
        
           <Section>
+          <VerticalSpacing size="8x-large--negative" sizeMd="-12rem">
             <Grid pageType="Aux">
               {/* Friday Study Club */}
               <GridCoordinates
@@ -60,7 +62,9 @@ export default function FridayStudyClubPage({ data }) {
                 </Gradient>
               </GridCoordinates>
             </Grid>
+            </VerticalSpacing>
           </Section>
+
        
       </div>
     </Layout>
