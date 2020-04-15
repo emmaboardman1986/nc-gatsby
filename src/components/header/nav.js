@@ -29,7 +29,7 @@ const Nav = ({ isMenuExpanded, setIsMenuExpanded }) => {
           <Link to="/friday-study-club">Friday Study Club</Link>
         </TopLevelLinkListItem>
         <TopLevelLinkListItem isMenuExpanded={isMenuExpanded}>
-          <Link to="/friday-study-club">日本語</Link>
+          <Link to="/nihongo">日本語</Link>
         </TopLevelLinkListItem>
       </TopLevelLinkList>
     </NavWrapper>
@@ -37,13 +37,7 @@ const Nav = ({ isMenuExpanded, setIsMenuExpanded }) => {
 }
 
 const NavWrapper = styled.nav`
-  background-color: ${setColor.brandPrimary};
-  position: fixed;
-  z-index: 1;
-  width: 100vw;
-  height: ${setSharedHeights.navHeight};
-  top: 0;
-  right: 0;
+  
  
   ${breakpoint.md`
   background-color: transparent;
