@@ -14,7 +14,6 @@ const VerticalSpacing = ({ children, size, sizeMd, sizeLg }) => (
 )
 
 const VerticalSpacingWrapper = styled.div`
-  width: 100%;
   ${breakpoint.md`
 margin-top: ${props => (props.sizeMd ? props.sizeMd : null)}`}
 ${breakpoint.lg`

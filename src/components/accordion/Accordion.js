@@ -6,63 +6,61 @@ import AccordionSection from "./AccordionSection"
 const Accordion = ({ children }) => {
   const [expandedSections, setExpandedSections] = useState({})
   const [expandAll, setExpandAll] = useState(false)
-  console.log(children)
-  return <p>Hi</p>
-  // useEffect(() => {
-  //   let availableSections = {}
-  //   let reducer = (returnedObject, sectionIndex) => {
-  //     if (!returnedObject[sectionIndex.props.title]) {
-  //       returnedObject[sectionIndex.props.title] = false
-  //     }
-  //     return returnedObject
-  //   }
-  //   children.reduce(reducer, availableSections)
-  //   setExpandedSections(availableSections)
-  // }, [])
 
-  // const handleClick = index => {
-  //   setExpandedSections({
-  //     ...expandedSections,
-  //     [index]: !expandedSections[index],
-  //   })
-  // }
+  useEffect(() => {
+    let availableSections = {}
+    let reducer = (returnedObject, sectionIndex) => {
+      if (!returnedObject[sectionIndex.props.title]) {
+        returnedObject[sectionIndex.props.title] = false
+      }
+      return returnedObject
+    }
+    children.reduce(reducer, availableSections)
+    setExpandedSections(availableSections)
+  }, [])
 
-  // const toggleAll = () => {
-  //   let updatedSections = {}
-  //   let reducer = (returnedObject, sectionIndex) => {
-  //     returnedObject[sectionIndex.props.title] = !expandAll
-  //     return returnedObject
-  //   }
-  //   children.reduce(reducer, updatedSections)
-  //   setExpandedSections(updatedSections)
-  //   setExpandAll(!expandAll)
-  // }
+  const handleClick = index => {
+    setExpandedSections({
+      ...expandedSections,
+      [index]: !expandedSections[index],
+    })
+  }
 
-  // return (
-  //   <AccordionWrapper>
-  //   <AccordionToggle
-  //   role="switch"
-  //   aria-pressed={expandAll}
-  //   onClick={toggleAll}
-  //   className={expandAll ? "pressed-in" : "popped-out"}
-  // >
-  //   {expandAll === true ? "Collapse All" : "Expand All"}
-  // </AccordionToggle>
-  //     <AccordionMain>
-  //     console.log(children);
-  //       {/* {children.map((child, index) => (
-  //         <AccordionSection
-  //           key={index}
-  //           title={child.props.title}
-  //           onClick={() => handleClick(child.props.title)}
-  //           expanded={expandedSections[child.props.title]}
-  //         >
-  //           {child.props.children}
-  //         </AccordionSection>
-  //       ))} */}
-  //     </AccordionMain>
-  //     </AccordionWrapper>
-  // )
+  const toggleAll = () => {
+    let updatedSections = {}
+    let reducer = (returnedObject, sectionIndex) => {
+      returnedObject[sectionIndex.props.title] = !expandAll
+      return returnedObject
+    }
+    children.reduce(reducer, updatedSections)
+    setExpandedSections(updatedSections)
+    setExpandAll(!expandAll)
+  }
+
+  return (
+    <AccordionWrapper>
+      <AccordionToggle
+        role="switch"
+        aria-pressed={expandAll}
+        onClick={toggleAll}
+        className={expandAll ? "pressed-in" : "popped-out"}
+      >
+        {expandAll === true ? "Collapse All" : "Expand All"}
+      </AccordionToggle>
+      <AccordionMain>
+        {children.map((child, index) => (
+          <AccordionSection
+            key={index}
+            title={child.props.title}
+            onClick={() => handleClick(child.props.title)}
+            expanded={expandedSections[child.props.title]}
+          >
+            {child.props.children}
+          </AccordionSection>
+        ))}
+      </AccordionMain>
+    </AccordionWrapper>
+  )
 }
 
 const AccordionWrapper = styled.div`
@@ -75,10 +73,8 @@ const AccordionWrapper = styled.div`
   `}
 `
 const AccordionMain = styled.div`
-  border-radius: 3px;
-  border: 2px solid ${setColor.brandSecondary};
-  box-shadow: 7px 6px 0 0 ${setColor.brandSecondary};
-  box-shadow: ${props => (props.expandAll ? "inset 0 0 0 0.15rem #000" : "")};
+  border-radius: 6px;
+  border: 2px solid ${setColor.brandPrimary};
   margin: 0.75rem 0;
 `
 
@@ -89,18 +85,18 @@ export const setPressed = () => {
 
 const AccordionToggle = styled.button`
   border-radius: 3px;
-  border: 2px solid ${setColor.brandSecondary};
-  box-shadow: 2px 2px 0 0 ${setColor.brandSecondary};
+  border: 2px solid ${setColor.brandPrimary};
+  box-shadow: 2px 2px 0 0 ${setColor.brandBlack};
   margin-bottom: 0.15rem;
   margin-right: 0.5rem;
   padding: 0.25rem 0.5rem;
   font-size: 1rem;
-  background-color: ${setColor.brandPrimary};
+  background-color: ${setColor.brandWhiteOffset};
   min-width: fit-content;
   &.pressed-in {
-    box-shadow: -2px -2px 0 0 ${setColor.brandSecondary},
+    box-shadow: -2px -2px 0 0 ${setColor.brandPrimary},
       inset 0 0 0.15rem ${setColor.brandSecondaryDark},
-      inset 0.25em 0.25em 0 #fff;
+      inset 0.25em 0.25em 0 ${setColor.brandWhite};
   }
 `
 

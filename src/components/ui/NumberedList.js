@@ -25,7 +25,7 @@ const NumberedListWrapper = styled.ol`
     font-family: "Poppins-Regular";
     align-items: end;
     display: flex;
-    padding: 1rem 0;
+    padding: 1rem 0.5rem;
     &:before {
       padding-right: 1rem;
       font-family: "Poppins-SemiBold";

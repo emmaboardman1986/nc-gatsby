@@ -5,9 +5,9 @@ import PropTypes from "prop-types"
 
 
 
-const Button = ({bgColor, link, linkText}) => {
+const Button = ({bgColor, link, linkText, isCentered }) => {
   return(
-      <ButtonWrapper bgColor={bgColor} link={link} linkText={linkText}>
+      <ButtonWrapper bgColor={bgColor} link={link} linkText={linkText} isCentered={isCentered}>
           <a href={link}><span>{linkText}</span></a>
       </ButtonWrapper>
   )
@@ -19,8 +19,7 @@ const ButtonWrapper = styled.div`
   border-radius: 16px;
   color: white;
   width: 150px;
-  text-align: center;
-  align-self: flex-end;
+  align-self: ${props => props.isCentered ? "center" : "flex-end"};
   margin-right: 4%;
   margin-top: 5%;
   @media (max-width: 500px){
@@ -34,6 +33,7 @@ const ButtonWrapper = styled.div`
   a {
     color: white;
     text-decoration: none;
+    padding-top: 5px;
     &:hover {
       color: ${props => props.bgColor};
     }

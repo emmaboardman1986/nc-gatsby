@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {setColor} from "../../styles/styleHelpers"
+import { setColor } from "../../styles/styleHelpers"
 
 const AccordionTitle = ({ expanded, onClick, title }) => {
   return (
@@ -25,11 +25,8 @@ const AccordionTitle = ({ expanded, onClick, title }) => {
 }
 
 const AccordionTitleWrapper = styled.div`
-  border-bottom: 2px solid ${setColor.brandSecondary};
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-  background-color: ${props =>
-    props.expanded ? setColor.brandSecondaryDark : setColor.brandPrimary};
+  background-color: transparent;
+  border-bottom: 2px solid ${setColor.brandPrimary};
   padding: 0.5rem;
 `
 
@@ -40,7 +37,7 @@ const AccordionTitleContent = styled.h3`
   justify-content: space-between;
   align-items: center;
   color: ${props =>
-    props.expanded ? setColor.brandWhite : setColor.brandSecondaryDark};
+    props.expanded ? setColor.brandWhite : setColor.brandPrimary};
   margin: 0;
   button {
     width: auto;

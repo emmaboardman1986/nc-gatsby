@@ -7,10 +7,12 @@ import {
   setSharedBorderRadius,
   breakpoint,
 } from "../../styles/styleHelpers"
+import PropTypes from "prop-types"
 
-const SpeechBubble = ({ children, bgColor }) => {
+const SpeechBubble = ({ children, bgColor, constrainWidth }) => {
+  console.log(constrainWidth);
   return (
-    <SpeechBubbleWrapper bgColor={bgColor}>
+    <SpeechBubbleWrapper bgColor={bgColor} constrainWidth={constrainWidth}>
       <SpeechBubbleContent>{children}</SpeechBubbleContent>
     </SpeechBubbleWrapper>
   )
@@ -43,15 +45,18 @@ const SpeechBubbleWrapper = styled.div`
     width: 10rem;
     height: 6rem;
   }
+  ${breakpoint.xs`
+  width: ${props => props.constrainWidth ? "70%" : null};
+  margin-left: auto;
+  margin-right: auto;
+  `}
   ${breakpoint.md`
-  /* width: 80%; */
   &:after {
     width: 10rem;
     height: 8rem;
   }
   `}
-  ${breakpoint.lg`
-  `}
+ 
 `
 
 const SpeechBubbleContent = styled.div`
@@ -84,5 +89,10 @@ const SpeechBubbleContent = styled.div`
     margin-bottom: 1rem;
   }
 `
+
+SpeechBubble.propTypes = {
+  constrainWidth: PropTypes.bool,
+  bgColor: PropTypes.string
+}
 
 export default SpeechBubble

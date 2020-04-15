@@ -7,6 +7,9 @@ const Outline = ({ children, widthMd }) => {
 }
 
 const OutlineWrapper = styled.div`
+  p {
+    font-family: 'Poppins-Regular';
+  }
   box-sizing: border-box;
   margin: 1.5rem 0;
   li {

@@ -10,7 +10,7 @@ export const AccordionContentWrapper = styled.div`
   padding: 0.5rem;
   padding-bottom: 1.25rem;
   background-color: ${setColor.brandPrimaryLight};
-  border-bottom: 2px solid ${setColor.brandSecondary};
+  border-bottom: 2px solid ${setColor.brandPrimary};
   h4 {
     margin: 0;
     padding-top: 0.75rem;
