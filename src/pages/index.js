@@ -143,7 +143,7 @@ export default function Homepage({ data }) {
                       </p>
 
                       <Button
-                        link="/friday-study-club"
+                        link="/jlpt-bootcamp"
                         linkText="Find out more"
                         bgColor={setColor.brandPrimary}
                       >
@@ -233,7 +233,7 @@ export default function Homepage({ data }) {
                       <p>{data.homepage.data.third_card_content_line_2.text}</p>
 
                       <Button
-                        link="/friday-study-club"
+                        link="/beginners-bootcamp"
                         linkText="Find out more"
                         bgColor={setColor.brandPrimary}
                       >

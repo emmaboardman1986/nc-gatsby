@@ -13,16 +13,16 @@ import { setColor } from "../styles/styleHelpers"
 
 export const query = graphql`
   query {
-    aboutUs: prismicAboutUs {
-        data {
-          about_us_content {
-            html
-          }
-          about_us_title {
-            text
-          }
+    nihongo: prismicNihongo {
+      data {
+        japanese_page_content {
+          html
+        }
+        japanese_page_title {
+          text
         }
       }
+    }
   }
 `
 
@@ -36,11 +36,11 @@ export default function JapanesePage({ data }) {
       <div>
         <Section bgColor={setColor.brandPrimary}>
           <AuxHero>
-            <h1>エディンバラ日本語学習クラブへようこそ！</h1>
+            <h1>{data.nihongo.data.japanese_page_title.text}</h1>
           </AuxHero>
         </Section>
-      
-          <Section>
+
+        <Section>
           <VerticalSpacing size="8x-large--negative" sizeMd="-12rem">
             <Grid>
               {/* Friday Study Club */}
@@ -55,16 +55,15 @@ export default function JapanesePage({ data }) {
                   <Card>
                     <div
                       dangerouslySetInnerHTML={createMarkup(
-                        data.aboutUs.data.about_us_content.html
+                        data.nihongo.data.japanese_page_content.html
                       )}
                     ></div>
                   </Card>
                 </Gradient>
               </GridCoordinates>
             </Grid>
-            </VerticalSpacing>
-          </Section>
-       
+          </VerticalSpacing>
+        </Section>
       </div>
     </Layout>
   )

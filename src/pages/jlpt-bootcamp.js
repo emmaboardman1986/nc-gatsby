@@ -150,11 +150,16 @@ export default function JLPTBootcampPage({ data }) {
             <Card>
               <h2 style={{ color: setColor.brandPrimary }}>How to book</h2>
               <NumberedList>
-                <li>Check your JLPT Level</li>
-                <li>Decide your preferred date</li>
-                <li>Decide your preferred status: Basic, Plus or VIP</li>
-                <li>Choose your payment option: Paypal or card</li>
-                <li>Make your payment</li>
+                <li>
+                  Check your JLPT Level, decide your preferred date, and decide
+                  your preferred status (Basic, Plus, or VIP)
+                </li>
+
+                <li>
+                  Choose your payment option: Paypal or card, and make your
+                  payment{" "}
+                </li>
+
                 <li>
                   Follow the instructions to provide us with your chosen date
                   and status information
@@ -167,6 +172,7 @@ export default function JLPTBootcampPage({ data }) {
               <Button
                 link="https://nihongoconnection.vipmembervault.com/products/courses/view/6"
                 linkText="Book Now"
+                isCentered={true}
                 bgColor={setColor.brandSecondary}
               ></Button>
             </Card>

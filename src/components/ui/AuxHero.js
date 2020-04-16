@@ -13,7 +13,7 @@ const AuxHero = styled.div`
   padding-top: 4rem;`}
   h1 {
     color: ${setColor.brandWhite};
-    font-size: 4rem;
+    font-size: 3.5rem;
     line-height: 4.2rem;
     margin-top: 0.5rem;
   }

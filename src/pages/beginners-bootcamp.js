@@ -8,7 +8,7 @@ import Card from "../components/contentContainers/Card"
 import Grid from "../components/layout/Grid"
 import GridCoordinates from "../components/layout/GridCoordinates"
 import SpeechBubble from "../components/contentContainers/SpeechBubble"
-import { setColor } from "../styles/styleHelpers"
+import { setColor, breakpoint } from "../styles/styleHelpers"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import styled from "styled-components"
 import StarredListItem from "../components/ui/StarredListItem"
@@ -47,25 +47,19 @@ export default function BeginnersBootcampPage({ data }) {
                   <Card>
                     <h2>Would you like to discover...</h2>
                     <ul>
+                      <li>Strategies to save you time learning?</li>
+                      <li>How to speak Japanese without causing offence?</li>
                       <li>
-                        Strategies to save you time during the Japanese Language
-                        Proficiency Test?
+                        How to quickly start speaking even if you think you
+                        don’t know enough vocabulary?
                       </li>
+                      <li>How to to enjoy making mistakes?</li>
+                      <li>What to expect during your trip to Japan?</li>
+
                       <li>
-                        How to choose the correct answers in the kanji section?
-                      </li>
-                      <li>
-                        How to quickly find the answers in the reading section?
-                      </li>
-                      <li>
-                        How to avoid easy mistakes that might cost you precious
-                        points?
-                      </li>
-                      <li>What to expect on the day of the test?</li>
-                      <li>How ready for the JLPT you really are?</li>
-                      <li>
-                        Your strengths and weaknesses from an experienced JLPT
-                        teacher?
+                        Your strengths and weaknesses and suggestions to help
+                        you improve more quickly from an experienced teacher and
+                        long-term learner of Japanese?
                       </li>
                     </ul>
                   </Card>
@@ -96,13 +90,10 @@ export default function BeginnersBootcampPage({ data }) {
                       <StarredListItem>Online</StarredListItem>
                       <StarredListItem>
                         Experienced and qualified native teachers who have
-                        taught multiple successful JLPT students.
+                        taught multiple successful students.
                       </StarredListItem>
                       <StarredListItem>
                         Small group lessons (4 people maximum).
-                      </StarredListItem>
-                      <StarredListItem>
-                        Marked & reviewed JLPT Mock Test.
                       </StarredListItem>
                       <StarredListItem>
                         Basic, Plus and VIP experiences available.
@@ -111,30 +102,24 @@ export default function BeginnersBootcampPage({ data }) {
                         5 hours minimum of formal JLPT Prep Lessons with example
                         exercises.
                       </StarredListItem>
+                      <StarredListItem>
+                        Culture focus, including lessons on ordering food and
+                        Japanese table-manners.
+                      </StarredListItem>
                     </ul>
                     <Emphasis color={setColor.brandPrimaryMedium}>
                       <p>Bonus Content!</p>
                       <ul>
                         <StarredListItem>
-                          JLPT Textbook sent to you.
+                          Online course of supporting resources to use after
+                          your bootcamp.
                         </StarredListItem>
                         <StarredListItem>
-                          Facebook group to share your JLPT questions with
-                          teachers in our community.
+                          Facebook group to share your questions in our
+                          community.
                         </StarredListItem>
                         <StarredListItem>
-                          Invitation to join our{" "}
-                          <a
-                            href="https://nihongoconnection.vipmembervault.com/products/courses/view/3"
-                            target="_blank"
-                          >
-                            online Japanese Conversation Club
-                          </a>{" "}
-                          at a discount rate.
-                        </StarredListItem>
-                        <StarredListItem>
-                          Special goodybag if you sign up 45 days or more before
-                          your chosen bootcamp.
+                          Invitation to join our Beginner's Japanese Membership.
                         </StarredListItem>
                       </ul>
                     </Emphasis>
@@ -150,11 +135,14 @@ export default function BeginnersBootcampPage({ data }) {
             <Card>
               <h2 style={{ color: setColor.brandPrimary }}>How to book</h2>
               <NumberedList>
-                <li>Check your JLPT Level</li>
-                <li>Decide your preferred date</li>
-                <li>Decide your preferred status: Basic, Plus or VIP</li>
-                <li>Choose your payment option: Paypal or card</li>
-                <li>Make your payment</li>
+                <li>
+                  Check the available dates, and decide your preferred status
+                  (Basic, Plus, or VIP)
+                </li>
+                <li>
+                  Choose your payment option: Paypal or card, and make your
+                  payment
+                </li>
                 <li>
                   Follow the instructions to provide us with your chosen date
                   and status information
@@ -173,14 +161,7 @@ export default function BeginnersBootcampPage({ data }) {
           </Gradient>
 
           <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
-          <div
-            style={{
-              width: "35%",
-              display: "flex",
-              flexDirection: "column",
-              marginLeft: "3rem",
-            }}
-          >
+          <ColumnWrapper>
             <Outline>
               <Card>
                 <h2
@@ -191,9 +172,9 @@ export default function BeginnersBootcampPage({ data }) {
                   Upcoming dates:
                 </h2>
                 <ul>
-                  <li>
-                    <strong>N3: </strong> 23-24 May
-                  </li>
+                  <li>Sat 4 - Sun 5 April</li>
+                  <li>Sat 11 - Sun 12 April</li>
+                  <li>Sat 18 - Sun 19 April</li>
                 </ul>
               </Card>
             </Outline>
@@ -209,10 +190,10 @@ export default function BeginnersBootcampPage({ data }) {
                 </h2>
                 <ul>
                   <li>
-                    <strong>Basic: </strong> £175.00
+                    <strong>Basic: </strong> £97.00
                   </li>
                   <li>
-                    <strong>Plus: </strong> £225.00
+                    <strong>Plus: </strong> £147.00
                     <ul
                       style={{
                         fontSize: "0.75rem",
@@ -220,12 +201,12 @@ export default function BeginnersBootcampPage({ data }) {
                         lineHeight: "1rem",
                       }}
                     >
-                      <li>Two extra hours of lessons</li>
+                      <li>One extra hour of lessons</li>
                       <li>Lunchtime Conversation Classes</li>
                     </ul>
                   </li>
                   <li>
-                    <strong>VIP: </strong> £325.00
+                    <strong>VIP: </strong> £247.00
                     <ul
                       style={{
                         fontSize: "0.75rem",
@@ -233,15 +214,14 @@ export default function BeginnersBootcampPage({ data }) {
                         lineHeight: "1rem",
                       }}
                     >
-                      <li>Two extra hours of lessons</li>
-                      <li>Lunchtime Conversation Classes</li>
-                      <li>Three 1:1 lessons</li>
+                      <li>One extra hour of lessons</li>
+                      <li>One 1:1 lesson</li>
                     </ul>
                   </li>
                 </ul>
               </Card>
             </Outline>
-          </div>
+          </ColumnWrapper>
         </Section>
         <VerticalSpacing sizeMd="0">
           <Section flexDirection="row">
@@ -257,16 +237,9 @@ export default function BeginnersBootcampPage({ data }) {
             </h2>
             <Testimonial>
               <p>
-                I cannot express enough how much I enjoyed the event and there
-                are no words to express how helpful it was for me.
+                Jess is a fantastic teacher with a lot of patience and skills,
+                big recommendation!
               </p>
-              <p>Thank you very much to all those who organised it!</p>
-              <p>
-                You not only helped improve my Japanese and chance of passing
-                the JLPT, but you have also reignited my passion for it. I am
-                already looking forward to next year.
-              </p>
-              <p>11/21/2017</p>
             </Testimonial>
             <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
           </Section>
@@ -305,43 +278,31 @@ export default function BeginnersBootcampPage({ data }) {
                 participants one week before their bootcamp)
               </p>
               <p>
-                <strong>Day One</strong> 08:45-17:30
+                <strong>Day One</strong> 09:00-13:45 for Basic and Plus /
+                09:00-15:15 for VIPs. Online homework will be set and students
+                are expected to complete it during their free time in the
+                afternoon/evening.
               </p>
               <p>
-                <strong>Day Two</strong> 09:00-11:00 for Basic / 09:00-16:00 for
-                Plus and VIPs.
+                <strong>Day Two</strong> 09:00-11:00 for Basic / 09:00-13:45 for
+                Plus / 09:00-15:15 for VIPs.
               </p>
               <p>
-                {" "}
-                The basic Bootcamp consists of 5 hours of JLPT preparation
-                classes.
+                The Basic Bootcamp consists of 5 hours of official classes.
+                Three hours in the morning and then a lunch time lesson on Day
+                1. In the morning of Day 2 there will be two more hours of
+                lessons.
               </p>
               <p>
-                Three hours in the morning of Day 1 and the mock test is given
-                in the afternoon.
+                If you choose the Plus option you get an extra hour with the
+                teacher, plus lunch lesson on Day 2.
               </p>{" "}
               <p>
-                In the morning of Day 2 mock test results are given and reviewed
-                for two hours.
-              </p>{" "}
-              <p>
-                If you choose the Plus option you get two extra hours to review
-                your results with the teacher, plus lunchtime conversation on
-                each of the two days.
-              </p>
-              <p>
-                {" "}
                 If you choose the VIP option you also get the “Plus” benefits
-                and three online 1-1 lessons with your teacher which can be
-                taken during the bootcamp weekend* or taken 30 days before or 30
-                days after your chosen bootcamp.
-              </p>
-              <p>
-                {" "}
-                *limited 1-1 time available during the bootcamp - first come
-                first served. Other 1-1s will be available to be taken before
-                and after the bootcamp.
-              </p>
+                and a 1-1 lesson package with your teacher. (Three 50 minute 1-1
+                lessons in total which can be taken before, during or after the
+                bootcamp).
+              </p>{" "}
             </div>
             <div title="How old are participants?">
               <p>Past participants have been from 18 to 55 years of age.</p>
@@ -414,6 +375,14 @@ export default function BeginnersBootcampPage({ data }) {
     </Layout>
   )
 }
+
+const ColumnWrapper = styled.div`
+  ${breakpoint.md`
+width: 35%;
+display: flex;
+flex-direction: column;
+margin-left: 3rem;`}
+`
 
 const MutedTitleText = styled.span`
   font-size: 1.5rem;

@@ -33,9 +33,9 @@ const GridWrapper = styled.div`
 `
 
 Grid.propTypes = {
-  gridColNumber: PropTypes.number.isRequired,
+  gridColNumber: PropTypes.string.isRequired,
   gridColUnit: PropTypes.string,
-  gridRowNumber: PropTypes.number.isRequired,
+  gridRowNumber: PropTypes.string.isRequired,
   gridRowUnit: PropTypes.string,
 }
 
