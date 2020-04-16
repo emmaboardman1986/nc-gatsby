@@ -60,9 +60,7 @@ const HeaderWrapper = styled.header`
 
 const HeaderLogo = styled.div`
   &.hidden-on-home {
-    ${breakpoint.xs`
-  visibility: hidden;
-  `}
+    visibility: hidden;
   }
   ${breakpoint.md`
 margin-top: 1rem;`}
