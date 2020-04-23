@@ -69,11 +69,6 @@ export function variantName(name, value) {
   return `${name}-${value}`
 }
 
-// <VerticalSpacing marginTop={{default: "large", sm: "x-large", md: "2x-large"}} />
-
-// which will then generate m-t-spacing-${breakpoint}--${large}
-// output will be a string of classnames: "m-t-spacer-default--large m-t-spacer-default--x-large"
-// input will be namespacer, breakpoint, variant
 
 export function responsiveVariantName(name, value, breakpoint = "_") {
   breakpoint !== "_" ? (breakpoint = `--${breakpoint}`) : (breakpoint = "")

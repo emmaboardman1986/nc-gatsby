@@ -5,9 +5,15 @@
     &-flex-end {
         @include justify-content-flex-end;
         &--sm {
-            @media (min-width: $breakpoint-sm) {
+            @include breakpoint(sm) {
                 @include justify-content-flex-end;
             }
         }
+    }
+}
+
+.flex-direction {
+    &-column {
+        @include flex-direction-column;
     }
 }

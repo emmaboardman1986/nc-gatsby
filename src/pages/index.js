@@ -89,6 +89,7 @@ export default function Homepage({ data }) {
             <FlexContainer
               justifyContent={{ _: "center", sm: "flex-end" }}
               flex={1}
+              flexDirection={{ _: "column" }}
             >
               <h1>{data.homepage.data.main_title.text}</h1>
               <p>{data.homepage.data.sub_title.text}</p>
