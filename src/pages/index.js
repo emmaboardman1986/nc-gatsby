@@ -16,6 +16,7 @@ import StarredListItem from "../components/ui/StarredListItem"
 import Button from "../components/ui/Button"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import "../components/layout.css"
+import { FlexContainer } from "../components/layout/FlexContainer/FlexContainer"
 
 export const query = graphql`
   query {
@@ -79,13 +80,19 @@ export default function Homepage({ data }) {
       <div>
         <Section bgColor={setColor.brandPrimary} bgImg={TitleJP}>
           <Hero>
-            <div>
+            <FlexContainer
+              justifyContent={{ _: "center" }}
+              alignItems={{ _: "flex-start" }}
+            >
               <img src={Logo} alt="Nihongo Scotland"></img>
-            </div>
-            <div>
+            </FlexContainer>
+            <FlexContainer
+              justifyContent={{ _: "center", sm: "flex-end" }}
+              flex={1}
+            >
               <h1>{data.homepage.data.main_title.text}</h1>
               <p>{data.homepage.data.sub_title.text}</p>
-            </div>
+            </FlexContainer>
           </Hero>
         </Section>
         <Section>
@@ -204,7 +211,10 @@ export default function Homepage({ data }) {
                     </div>
                     <div>
                       <label for="mailing-list-opt-in-consent">
-                        <input type="checkbox" name="mailing-list-opt-in-consent"></input>
+                        <input
+                          type="checkbox"
+                          name="mailing-list-opt-in-consent"
+                        ></input>
                         <span className="muted">
                           I consent to stuff. I consent to stuff. I consent to
                           stuff

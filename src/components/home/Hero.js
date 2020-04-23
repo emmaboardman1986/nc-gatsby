@@ -29,11 +29,8 @@ const HeroWrapper = styled.div`
   letter-spacing: 0.01em;
   }
   div:first-child {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: auto;
     width: 70%;
+        height: auto;
     img {
       width: 100%;
       height: auto;
@@ -44,18 +41,15 @@ const HeroWrapper = styled.div`
   }
   div:last-child {
     text-align: center;
-    flex-direction: column;
-    justify-content: center;
+   
     h1 {
       margin-bottom: 0;
     }
   }
 
   ${breakpoint.sm`
-    /* margin-top: 0; */
     flex-direction: row;
     div:first-child {
-      width: 100%;
       margin-left: -9rem;
       padding-right: 4rem;
       img {
