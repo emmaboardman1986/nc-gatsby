@@ -73,11 +73,21 @@ const HeroWrapper = styled.div`
     ${breakpoint.lg`
     div:first-child {
       width: 35%;
+      img {
+        width: 50%;
+      }
     }
     div:last-child {
       margin-right: ${setSharedSpacing.heroRightOffset};
     }
     `}
+    ${breakpoint.xl`
+    div:first-child{
+      width: 25%;
+      img {
+        /* width: 35%; */
+      }
+    }`}
     
 `
 

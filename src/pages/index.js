@@ -16,7 +16,7 @@ import StarredListItem from "../components/ui/StarredListItem"
 import Button from "../components/ui/Button"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import "../components/layout.css"
-import { FlexContainer } from "../components/layout/FlexContainer/FlexContainer"
+import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 
 export const query = graphql`
   query {

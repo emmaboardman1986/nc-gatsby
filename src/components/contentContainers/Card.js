@@ -33,10 +33,10 @@ const CardWrapper = styled.div`
   p {
       margin-bottom: 1%;
       font-size: 1.1rem;
-      :last-child {
+      /* :last-child {
           margin-bottom: 5%;
           padding-bottom: 5%;
-      }
+      } */
   }
 `
 

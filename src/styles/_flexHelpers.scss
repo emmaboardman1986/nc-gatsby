@@ -1,19 +1,30 @@
 .justify-content {
-    &-center {
-        justify-content: center;
-    }
-    &-flex-end {
+  &-center {
+    justify-content: center;
+  }
+  &-flex-end {
+    @include justify-content-flex-end;
+    &--sm {
+      @include breakpoint(sm) {
         @include justify-content-flex-end;
-        &--sm {
-            @include breakpoint(sm) {
-                @include justify-content-flex-end;
-            }
-        }
+      }
     }
+  }
 }
 
 .flex-direction {
-    &-column {
-        @include flex-direction-column;
+  &-column {
+    @include flex-direction-column;
+  }
+}
+
+.flex-direction {
+  &-row {
+    @include flex-direction-row;
+    &--sm {
+      @include breakpoint(sm) {
+        @include flex-direction-row;
+      }
     }
+  }
 }

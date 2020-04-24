@@ -7,9 +7,9 @@ import {
   createResponsiveClassNames,
 } from "../../../styles/styleHelpers"
 
-export const FlexContainer = ({
+const FlexContainer = ({
   children,
-  direction,
+  flexDirection,
   alignItems,
   justifyContent,
   flex,
@@ -19,17 +19,16 @@ export const FlexContainer = ({
   `
 
   const className = classNames(
-    direction && createResponsiveClassNames("flex-direction", direction),
+    flexDirection && createResponsiveClassNames("flex-direction", flexDirection),
     justifyContent &&
       createResponsiveClassNames("justify-content", justifyContent)
   )
 
+  // instead of applying a class, I should be returning a media query containing the css. 
+
   return (
     <FlexContainerWrapper
       className={className}
-      alignItems={alignItems}
-      justifyContent={justifyContent}
-      flex={flex}
     >
       {children}
     </FlexContainerWrapper>
@@ -54,3 +53,5 @@ FlexContainer.propTypes = {
     lg: PropTypes.oneOf(["space-between", "center", "flex-start", "flex-end"]),
   }),
 }
+
+export default FlexContainer
