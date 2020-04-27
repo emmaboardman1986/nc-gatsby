@@ -43,7 +43,7 @@ export const breakpoints = {
   sm: "768px",
   md: "992px",
   lg: "1200px",
-  xl: "1600px"
+  xl: "1600px",
 }
 
 export const setSharedHeights = {
@@ -70,22 +70,35 @@ export function variantName(name, value) {
   return `${name}-${value}`
 }
 
-
 export function responsiveVariantName(name, value, breakpoint = "_") {
   breakpoint !== "_" ? (breakpoint = `--${breakpoint}`) : (breakpoint = "")
   return `${name}-${value}${breakpoint}`
 }
 
-  // loop through each key and assign key name to variable breakpoint
-  export function createResponsiveClassNames(namespace, prop) {
-    let newArray = [];
-    Object.keys(prop).forEach(key => {
-      let generatedClassName = responsiveVariantName(namespace, prop[key], key);
-      newArray.push(generatedClassName)
-    })
-    return newArray.join(" ");
-  }
+export function createResponsiveClassNames(namespace, prop) {
+  let newArray = []
+  Object.keys(prop).forEach(key => {
+    let generatedClassName = responsiveVariantName(namespace, prop[key], key)
+    newArray.push(generatedClassName)
+  })
+  return newArray.join(" ")
+}
 
+export const createMediaQueries = (propertyName, propObject) => {
+  let mediaQueries = []
+  Object.keys(propObject).forEach(key => {
+    if (key !== "_") {
+      mediaQueries.push(`
+        @media (min-width: ${breakpoints[key]}) {
+          ${propertyName}: ${propObject[key]};
+        }
+      `)
+    }
+  })
+  return css`
+    ${mediaQueries}
+  `
+}
 
 export const SIZE_SCALE = Object.freeze({
   large: "large",

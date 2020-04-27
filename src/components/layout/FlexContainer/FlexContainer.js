@@ -1,39 +1,38 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { FlexContainerStyles } from "./flexContainerStyle"
-import styled from "styled-components"
 import {
-  classNames,
-  createResponsiveClassNames,
-} from "../../../styles/styleHelpers"
+  FlexContainerStyles,
+  justifyContentStyle,
+  alignItemsStyle,
+  directionStyle
+} from "./flexContainerStyle"
+import styled from "styled-components"
 
 const FlexContainer = ({
   children,
   flexDirection,
   alignItems,
   justifyContent,
-  flex,
+  flex
 }) => {
-  const FlexContainerWrapper = styled.div`
-    ${FlexContainerStyles}
-  `
-
-  const className = classNames(
-    flexDirection && createResponsiveClassNames("flex-direction", flexDirection),
-    justifyContent &&
-      createResponsiveClassNames("justify-content", justifyContent)
-  )
-
-  // instead of applying a class, I should be returning a media query containing the css. 
-
   return (
     <FlexContainerWrapper
-      className={className}
+      justifyContent={justifyContent}
+      alignItems={alignItems}
+      flex={flex}
+      flexDirection={flexDirection}
     >
       {children}
     </FlexContainerWrapper>
   )
 }
+
+const FlexContainerWrapper = styled.div`
+  ${FlexContainerStyles}
+  ${props => props.justifyContent && justifyContentStyle(props.justifyContent)};
+  ${props => props.alignItems && alignItemsStyle(props.alignItems)};
+  ${props => props.flexDirection && directionStyle(props.flexDirection)};
+`
 
 FlexContainer.propTypes = {
   children: PropTypes.node,
