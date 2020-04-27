@@ -30,7 +30,7 @@ const HeroWrapper = styled.div`
   }
   div:first-child {
     width: 70%;
-        height: auto;
+    height: auto;
     img {
       width: 100%;
       height: auto;
@@ -53,7 +53,7 @@ const HeroWrapper = styled.div`
       margin-left: -9rem;
       padding-right: 4rem;
       img {
-        width: 80%;
+        width: 90%;
       }
     }
     div:last-child {
@@ -63,18 +63,15 @@ const HeroWrapper = styled.div`
   ${breakpoint.md`
     margin-top: 0;
     padding-bottom: 1.5rem;
-    div:first-child {
-      width: 55%;
-    }
     div:last-child {
       white-space: nowrap;
     }
     `}
     ${breakpoint.lg`
     div:first-child {
-      width: 35%;
+      margin-left: -15rem;
       img {
-        width: 50%;
+        width: 55%;
       }
     }
     div:last-child {
@@ -83,10 +80,8 @@ const HeroWrapper = styled.div`
     `}
     ${breakpoint.xl`
     div:first-child{
-      width: 25%;
-      img {
-        /* width: 35%; */
-      }
+      margin-left: -20rem;
+      width: 45%;
     }`}
     
 `
