@@ -27,6 +27,7 @@ const HeroWrapper = styled.div`
   font-size: 1.5rem;
   line-height: 1.6;
   letter-spacing: 0.01em;
+  margin: 1rem 0;
   }
   div:first-child {
     width: 70%;
@@ -43,7 +44,8 @@ const HeroWrapper = styled.div`
     text-align: center;
    
     h1 {
-      margin-bottom: 0;
+      margin-top: 1.5rem;
+      
     }
   }
 
@@ -69,9 +71,9 @@ const HeroWrapper = styled.div`
     `}
     ${breakpoint.lg`
     div:first-child {
-      margin-left: -15rem;
+      margin-left: -20rem;
       img {
-        width: 55%;
+        width: 45%;
       }
     }
     div:last-child {

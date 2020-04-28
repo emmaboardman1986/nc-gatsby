@@ -18,6 +18,7 @@ import Testimonial from "../components/Testimonial"
 import Accordion from "../components/accordion/Accordion"
 import Button from "../components/ui/Button"
 import List from "../components/ui/List"
+import MailChimp from "../components/vendor/MailChimp"
 
 export default function JLPTBootcampPage({ data }) {
   return (
@@ -398,6 +399,7 @@ export default function JLPTBootcampPage({ data }) {
               Interested but unsure?
             </h2>
             <p>Join our mailing list to keep in touch!</p>
+            <MailChimp/>
             <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
           </Section>
         </VerticalSpacing>

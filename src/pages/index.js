@@ -18,6 +18,8 @@ import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import "../components/layout.css"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import MailChimp from "../components/vendor/MailChimp"
+import Testimonial from "../components/Testimonial"
+import Outline from "../components/contentContainers/Outline"
 
 export const query = graphql`
   query {
@@ -102,7 +104,7 @@ export default function Homepage({ data }) {
             <Grid
               gridColNumber="24"
               gridColUnit="1fr"
-              gridRowNumber="26"
+              gridRowNumber="30"
               gridRowUnit="2.5rem"
             >
               {/* Friday Study Club */}
@@ -134,8 +136,8 @@ export default function Homepage({ data }) {
               <GridCoordinates
                 colStart="1"
                 colFinish="14"
-                rowStart="12"
-                rowFinish="21"
+                rowStart="11"
+                rowFinish="20"
                 mobileOrder="4"
               >
                 <VerticalSpacing size="5x-large" sizeMd="0">
@@ -165,10 +167,10 @@ export default function Homepage({ data }) {
 
               {/* Speech Bubble decorative */}
               <GridCoordinates
-                colStart="15"
+                colStart="17"
                 colFinish="25"
-                rowStart="3"
-                rowFinish="22"
+                rowStart="12"
+                rowFinish="27"
                 mobileOrder="2"
               >
                 <VerticalSpacing size="large"></VerticalSpacing>
@@ -192,9 +194,6 @@ export default function Homepage({ data }) {
                   <h2>{data.homepage.data.speech_bubble_title.text}</h2>
                   <p>Subscribe to get invited to our events</p>
                   <MailChimp />
-                
-
-                 
                 </SpeechBubble>
               </GridCoordinates>
               {/* </VerticalSpacing> */}
@@ -202,12 +201,11 @@ export default function Homepage({ data }) {
               <GridCoordinates
                 colStart="1"
                 colFinish="14"
-                rowStart="24"
+                rowStart="21"
                 rowFinish="25"
                 mobileOrder="4"
               >
-
-                <VerticalSpacing size="large" sizeMd="0">
+                <VerticalSpacing size="large" sizeMd="2x-large--negative">
                   <Gradient>
                     <Card>
                       <h2>{data.homepage.data.third_card_title.text}</h2>
@@ -227,6 +225,30 @@ export default function Homepage({ data }) {
                   </Gradient>
                 </VerticalSpacing>
               </GridCoordinates>
+              {/* <GridCoordinates
+                colStart="15"
+                colFinish="25"
+                rowStart="22"
+                rowFinish="25"
+                mobileOrder="4"
+            
+              >
+               <h2>Testimonials</h2>
+                <Testimonial>
+               
+                  <p style={{textAlign: "left"}}>
+                    I was a wee bit nervous to go along for the first time, but everyone was lovely and supportive.</p><br/><p style={{textAlign: "left"}}> I was surprised by how many people went, which to me just shows how great it is. I'll definitely be making it a regular thing.</p><br/><p style={{textAlign: "left"}}> Thanks, team!</p>
+                   
+                  
+                </Testimonial>
+                
+                <Outline>
+                  <Card>
+                    STUFf
+                  </Card>
+                </Outline>
+                
+              </GridCoordinates> */}
             </Grid>
           </VerticalSpacing>
         </Section>

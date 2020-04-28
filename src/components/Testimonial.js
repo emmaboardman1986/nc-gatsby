@@ -18,13 +18,13 @@ const Testimonial = ({ children }) => {
 const TestimonialWrapper = styled.div`
   position: relative;
   background-color: ${setColor.brandWhite};
-  padding: 3rem;
+  padding: 2.5rem;
   margin-left: 2rem;
   margin-top: 2rem;
   img {
-      width: 6rem;
+      width: 4rem;
       position: absolute;
-      top: -2rem;
+      top: -1rem;
       left: -2rem;
   }
   p {
