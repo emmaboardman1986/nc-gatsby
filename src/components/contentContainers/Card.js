@@ -1,14 +1,9 @@
 import styled from "styled-components"
-import React from 'react';
-import {setColor} from "../../styles/styleHelpers"
+import React from "react"
+import { setColor } from "../../styles/styleHelpers"
 
-
-const Card = ({children, bgColor}) => {
-    return(
-        <CardWrapper bgColor={bgColor}>
-            {children}
-        </CardWrapper>
-    )
+const Card = ({ children, bgColor }) => {
+  return <CardWrapper bgColor={bgColor}>{children}</CardWrapper>
 }
 
 const CardWrapper = styled.div`
@@ -18,25 +13,20 @@ const CardWrapper = styled.div`
   padding-left: 1.5rem;
   border-radius: 10px;
   position: relative;
-  background: ${props => props.bgColor ? props.bgColor : setColor.brandWhite};
-  color: black;
+  background: ${props => (props.bgColor ? props.bgColor : setColor.brandWhite)};
+  color: ${setColor.brandBlack};
   h2 {
-      margin-bottom: 0;
-      margin-top: 0;
-      color: ${setColor.brandPrimary};
+    color: ${setColor.brandPrimary};
   }
   h3 {
-      margin-top: 2%;
-      margin-bottom: 0;
-      
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
   }
   p {
-      margin-bottom: 1%;
-      font-size: 1.1rem;
-      /* :last-child {
-          margin-bottom: 5%;
-          padding-bottom: 5%;
-      } */
+    font-size: 1.1rem;
+    &:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
   }
 `
 

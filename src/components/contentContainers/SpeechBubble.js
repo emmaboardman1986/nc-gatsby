@@ -62,45 +62,14 @@ const SpeechBubbleContent = styled.div`
   color: ${setColor.brandWhite};
   position: relative;
   p {
-    font-size: 1.1rem;
-    font-family: "Axiforma-Medium";
+    font-size: 1rem;
+    font-family: "Poppins-Regular";
     margin-bottom: 0.75rem;
   }
   h2 {
     color: ${setColor.brandWhite};
     margin-top: 0.5rem;
     margin-bottom: 0.6rem;
-  }
-  input {
-    /* margin-top: 0.6rem; */
-    margin-bottom: 0.6rem;
-    padding: 0.5rem;
-    border: 2px solid ${setColor.brandWhite};
-  }
-  ul {
-    margin: 0;
-    list-style: none;
-    padding: 0;
-    li,
-    li label {
-      display: inline-block;
-    }
-  }
-  input[type="email"],
-  input[type="text"] {
-    width: 93%;
-    border-radius: ${setSharedBorderRadius.radiusInput};
-    /* margin-top: 1rem; */
-    /* margin-bottom: 1rem; */
-  }
-  label {
-    display: block;
-    font-size: 0.8rem;
-  }
-  .content__gdpr {
-    p {
-      font-size: 0.5rem;
-    }
   }
 `
 

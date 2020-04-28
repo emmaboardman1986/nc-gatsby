@@ -17,6 +17,7 @@ import Emphasis from "../components/contentContainers/Emphasis"
 import Testimonial from "../components/Testimonial"
 import Accordion from "../components/accordion/Accordion"
 import Button from "../components/ui/Button"
+import List from "../components/ui/List"
 
 export default function JLPTBootcampPage({ data }) {
   return (
@@ -46,7 +47,7 @@ export default function JLPTBootcampPage({ data }) {
                 <Gradient>
                   <Card>
                     <h2>Would you like to discover...</h2>
-                    <ul>
+                    <List>
                       <li>
                         Strategies to save you time during the Japanese Language
                         Proficiency Test?
@@ -67,7 +68,7 @@ export default function JLPTBootcampPage({ data }) {
                         Your strengths and weaknesses from an experienced JLPT
                         teacher?
                       </li>
-                    </ul>
+                    </List>
                   </Card>
                 </Gradient>
               </GridCoordinates>
@@ -92,7 +93,7 @@ export default function JLPTBootcampPage({ data }) {
                       </MutedTitleText>
                     </h2>
 
-                    <ul>
+                    <List>
                       <StarredListItem>Online</StarredListItem>
                       <StarredListItem>
                         Experienced and qualified native teachers who have
@@ -111,10 +112,10 @@ export default function JLPTBootcampPage({ data }) {
                         5 hours minimum of formal JLPT Prep Lessons with example
                         exercises.
                       </StarredListItem>
-                    </ul>
+                    </List>
                     <Emphasis color={setColor.brandPrimaryMedium}>
                       <p>Bonus Content!</p>
-                      <ul>
+                      <List>
                         <StarredListItem>
                           JLPT Textbook sent to you.
                         </StarredListItem>
@@ -136,7 +137,7 @@ export default function JLPTBootcampPage({ data }) {
                           Special goodybag if you sign up 45 days or more before
                           your chosen bootcamp.
                         </StarredListItem>
-                      </ul>
+                      </List>
                     </Emphasis>
                   </SpeechBubble>
                 </VerticalSpacing>
@@ -189,11 +190,11 @@ export default function JLPTBootcampPage({ data }) {
                 >
                   Upcoming dates:
                 </h2>
-                <ul>
+                <List>
                   <li>
                     <strong>N3: </strong> 23-24 May
                   </li>
-                </ul>
+                </List>
               </Card>
             </Outline>
             <VerticalSpacing size="large"></VerticalSpacing>
@@ -206,38 +207,29 @@ export default function JLPTBootcampPage({ data }) {
                 >
                   Prices:
                 </h2>
-                <ul>
+                <List>
                   <li>
                     <strong>Basic: </strong> £175.00
                   </li>
                   <li>
                     <strong>Plus: </strong> £225.00
-                    <ul
-                      style={{
-                        fontSize: "0.75rem",
-                        marginTop: "0.15rem",
-                        lineHeight: "1rem",
-                      }}
+                    <List subList={true}
                     >
                       <li>Two extra hours of lessons</li>
                       <li>Lunchtime Conversation Classes</li>
-                    </ul>
+                    </List>
                   </li>
                   <li>
                     <strong>VIP: </strong> £325.00
-                    <ul
-                      style={{
-                        fontSize: "0.75rem",
-                        marginTop: "0.15rem",
-                        lineHeight: "1rem",
-                      }}
+                    <List subList={true}
+                      
                     >
                       <li>Two extra hours of lessons</li>
                       <li>Lunchtime Conversation Classes</li>
                       <li>Three 1:1 lessons</li>
-                    </ul>
+                    </List>
                   </li>
-                </ul>
+                </List>
               </Card>
             </Outline>
           </ColumnWrapper>

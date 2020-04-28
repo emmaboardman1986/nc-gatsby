@@ -192,38 +192,9 @@ export default function Homepage({ data }) {
                   <h2>{data.homepage.data.speech_bubble_title.text}</h2>
                   <p>Subscribe to get invited to our events</p>
                   <MailChimp />
-                  {/* <ul>
-                    <StarredListItem>Japanese-language outings</StarredListItem>
-                    <StarredListItem>
-                      JLPT Preparation Bootcamp Weekends
-                    </StarredListItem>
-                    <StarredListItem>
-                      Friday study-club resources
-                    </StarredListItem>
-                  </ul> */}
+                
 
-                  <Emphasis color={setColor.brandSecondaryLight}>
-                    {/* <div>
-                      <label for="mailing-list-sign-up">Email address</label>
-                      <input
-                        type="email"
-                        id="mailing-list-sign-up"
-                        name="mailing-list-sign-up"
-                      ></input>
-                    </div>
-                    <div>
-                      <label for="mailing-list-opt-in-consent">
-                        <input
-                          type="checkbox"
-                          name="mailing-list-opt-in-consent"
-                        ></input>
-                        <span className="muted">
-                          I consent to stuff. I consent to stuff. I consent to
-                          stuff
-                        </span>
-                      </label>
-                    </div> */}
-                  </Emphasis>
+                 
                 </SpeechBubble>
               </GridCoordinates>
               {/* </VerticalSpacing> */}

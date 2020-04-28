@@ -2,9 +2,9 @@ import styled from "styled-components"
 import React from 'react';
 
 
-const FormEmphasis= ({children, color}) => {
+const FormEmphasis= ({children, color, padding}) => {
     return(
-        <FormEmphasisWrapper color={color}>
+        <FormEmphasisWrapper color={color} padding={padding}>
             {children}
         </FormEmphasisWrapper>
     )
@@ -13,7 +13,7 @@ const FormEmphasis= ({children, color}) => {
 const FormEmphasisWrapper = styled.div`
 border-radius: 6px;
 border: 1px dashed ${props => props.color};
-padding: 5%;
+padding: ${props => props.padding ? props.padding : "5%"};
 `
 
 export default FormEmphasis
