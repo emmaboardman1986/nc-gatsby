@@ -69,7 +69,7 @@ export default function AboutUsPage({ data }) {
       </Section>
       <VerticalSpacing size="large--negative" sizeMd="6x-large--negative"></VerticalSpacing>
       <Section bgColor={setColor.brandPrimaryLight} style={{paddingTop: 0}}>
-        <Heading variant="h2" text="Our Story" style={{marginBottom: '0.25rem'}}></Heading>
+        <Heading variant="h2" text="Our Story" style={{margin: '0.25rem'}}></Heading>
         <TimeLine></TimeLine>
       </Section>
     </Layout>

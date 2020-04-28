@@ -17,6 +17,7 @@ import Button from "../components/ui/Button"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import "../components/layout.css"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
+import MailChimp from "../components/vendor/MailChimp"
 
 export const query = graphql`
   query {
@@ -189,9 +190,9 @@ export default function Homepage({ data }) {
                 ></VerticalSpacing>
                 <SpeechBubble pageType="Home">
                   <h2>{data.homepage.data.speech_bubble_title.text}</h2>
-                  <p>Sign up for information on:</p>
-
-                  <ul>
+                  <p>Subscribe to get invited to our events</p>
+                  <MailChimp />
+                  {/* <ul>
                     <StarredListItem>Japanese-language outings</StarredListItem>
                     <StarredListItem>
                       JLPT Preparation Bootcamp Weekends
@@ -199,10 +200,10 @@ export default function Homepage({ data }) {
                     <StarredListItem>
                       Friday study-club resources
                     </StarredListItem>
-                  </ul>
+                  </ul> */}
 
                   <Emphasis color={setColor.brandSecondaryLight}>
-                    <div>
+                    {/* <div>
                       <label for="mailing-list-sign-up">Email address</label>
                       <input
                         type="email"
@@ -221,19 +222,20 @@ export default function Homepage({ data }) {
                           stuff
                         </span>
                       </label>
-                    </div>
+                    </div> */}
                   </Emphasis>
                 </SpeechBubble>
               </GridCoordinates>
               {/* </VerticalSpacing> */}
               {/* Beginners Bootcamp */}
               <GridCoordinates
-                colStart="16"
-                colFinish="25"
-                rowStart="14"
-                rowFinish="24"
+                colStart="1"
+                colFinish="14"
+                rowStart="24"
+                rowFinish="25"
                 mobileOrder="4"
               >
+
                 <VerticalSpacing size="large" sizeMd="0">
                   <Gradient>
                     <Card>

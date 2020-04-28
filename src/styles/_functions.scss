@@ -1,4 +1,18 @@
 @function rem($size) {
-    $remSize: $size / 16px;
-    @return #{$remSize}rem;
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
 }
+
+// $dimensions: (
+//   "m": "margin",
+//   "p": "padding",
+// );
+
+// @each $direction in $directions {
+//   @for $i from 1 through 5 {
+//     $size: $i * 5;
+//     .#{nth($dimension, 1)}-top-#{$size} {
+//       #{nth($dimension, 2)}-top: #{$size}px;
+//     }
+//   }
+// }
