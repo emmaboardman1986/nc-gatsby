@@ -2,46 +2,35 @@ import React from "react"
 import styled, { css } from "styled-components"
 import TimelineContent from "./TimelineContent"
 import TimelineImage from "./TimelineImage"
-import FlexContainer from "../layout/FlexContainer/FlexContainer"
-import { setColor, breakpoint } from "../../styles/styleHelpers"
-import Gradient from "../contentContainers/Gradient"
-import Card from "../contentContainers/Card"
+import VerticalSpacing from "../spacing/VerticalSpacing"
+import {
+  setColor,
+  breakpoint,
+  setSharedSpacing,
+} from "../../styles/styleHelpers"
 
-const TimelineBlock = () => {
+const TimelineBlock = ({year, content}) => {
   return (
-    <TimelineWrapper>
+    <TimelineBlockWrapper>
       <TimelineImage icon="star"></TimelineImage>
-      <TimelineContent></TimelineContent>
-    </TimelineWrapper>
+      <TimelineContent year={year} content={content}></TimelineContent>
+    </TimelineBlockWrapper>
   )
 }
 
-const TimelineWrapper = styled.div`
+const TimelineBlockWrapper = styled.div`
   display: flex;
-  align-items: baseline;
-  margin-bottom: 1.5rem;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0.15rem;
-    left: 0.5rem;
-    height: 100%;
-    width: 0.5rem;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-    background: ${setColor.brandBlack};
-  }
-  ${breakpoint.xs`
-  padding-left: 1rem;
-  &:before {
-    left: 1.5rem;
-  }`}
-  ${breakpoint.sm`
-  &:before {
-    left: 50%;
-  }
+  padding: 1rem 0;
+  &:nth-child(even) {
+    ${breakpoint.sm`
+  flex-direction: row-reverse;
   `}
-
+  }
+  &:nth-child(even) .timeline__img {
+    ${breakpoint.sm`
+    margin-right: calc(5% - 23px);
+  `}
+  }
 `
 
 export default TimelineBlock

@@ -49,7 +49,7 @@ const HeaderWrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   ${breakpoint.sm`
-  height: 7vh;`}
+  height: 12vh;`}
   ${breakpoint.md`
   position: relative;
   width: auto;

@@ -41,7 +41,7 @@ export default function AboutUsPage({ data }) {
         </AuxHero>
       </Section>
 
-      <Section>
+      <Section bgColor={setColor.brandPrimaryLight}>
         <VerticalSpacing size="8x-large--negative" sizeMd="-12rem">
           <Grid>
             {/* Friday Study Club */}
@@ -67,8 +67,9 @@ export default function AboutUsPage({ data }) {
           </Grid>
         </VerticalSpacing>
       </Section>
-      <Section bgColor={setColor.brandPrimaryLight}>
-        <Heading variant="h2" text="Our Story"></Heading>
+      <VerticalSpacing size="large--negative" sizeMd="6x-large--negative"></VerticalSpacing>
+      <Section bgColor={setColor.brandPrimaryLight} style={{paddingTop: 0}}>
+        <Heading variant="h2" text="Our Story" style={{marginBottom: '0.25rem'}}></Heading>
         <TimeLine></TimeLine>
       </Section>
     </Layout>
