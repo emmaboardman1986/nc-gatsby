@@ -36,6 +36,15 @@ const OutlineWrapper = styled.div`
       padding-bottom: 0;
     }
   }
+  p {
+    a {
+    color: ${setColor.brandPrimary};
+    &:hover {
+      background-color: ${setColor.brandPrimary};
+      color: ${setColor.brandWhite};
+    }
+  }
+  }
   
   ${breakpoint.md`
   order: ${props => (props.orderDesktop ? props.orderDesktop : null)};

@@ -19,6 +19,8 @@ import Accordion from "../components/accordion/Accordion"
 import Button from "../components/ui/Button"
 import List from "../components/ui/List"
 import MailChimp from "../components/vendor/MailChimp"
+import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
+import Heading from "../components/ui/Heading"
 
 export default function JLPTBootcampPage({ data }) {
   return (
@@ -31,119 +33,104 @@ export default function JLPTBootcampPage({ data }) {
         </Section>
 
         <Section bgColor={setColor.brandPrimaryLight}>
-          <VerticalSpacing size="8x-large--negative" sizeMd="-12rem">
-            <Grid
-              gridColNumber="27"
-              gridRowNumber="32"
-              gridColUnit="1fr"
-              gridRowUnit="2.5rem"
+          <VerticalSpacing size="7x-large--negative" sizeMd="-10rem">
+            <FlexContainer justifyContent={{ _: "center" }}>
+              <Gradient widthMd="80%">
+                <Card>
+                  <h2>Would you like to discover...</h2>
+                  <List>
+                    <li>
+                      Strategies to save you time during the Japanese Language
+                      Proficiency Test?
+                    </li>
+                    <li>
+                      How to choose the correct answers in the kanji section?
+                    </li>
+                    <li>
+                      How to quickly find the answers in the reading section?
+                    </li>
+                    <li>
+                      How to avoid easy mistakes that might cost you precious
+                      points?
+                    </li>
+                    <li>What to expect on the day of the test?</li>
+                    <li>How ready for the JLPT you really are?</li>
+                    <li>
+                      Your strengths and weaknesses from an experienced JLPT
+                      teacher?
+                    </li>
+                  </List>
+                </Card>
+              </Gradient>
+            </FlexContainer>
+            <VerticalSpacing size="x-large" sizeMd="-2rem">
+              {" "}
+            </VerticalSpacing>
+            <FlexContainer
+              justifyContent={{ _: "center", md: "flex-end" }}
+              style={{ zIndex: "1" }}
             >
-              <GridCoordinates
-                colStart="3"
-                colFinish="26"
-                rowStart="1"
-                rowFinish="10"
-                mobileOrder="0"
+              <SpeechBubble
+                bgColor={setColor.brandPrimary}
+                constrainWidth={true}
               >
-                <Gradient>
-                  <Card>
-                    <h2>Would you like to discover...</h2>
-                    <List>
-                      <li>
-                        Strategies to save you time during the Japanese Language
-                        Proficiency Test?
-                      </li>
-                      <li>
-                        How to choose the correct answers in the kanji section?
-                      </li>
-                      <li>
-                        How to quickly find the answers in the reading section?
-                      </li>
-                      <li>
-                        How to avoid easy mistakes that might cost you precious
-                        points?
-                      </li>
-                      <li>What to expect on the day of the test?</li>
-                      <li>How ready for the JLPT you really are?</li>
-                      <li>
-                        Your strengths and weaknesses from an experienced JLPT
-                        teacher?
-                      </li>
-                    </List>
-                  </Card>
-                </Gradient>
-              </GridCoordinates>
+                <h2>
+                  <MutedTitleText>If</MutedTitleText> YES,
+                  <MutedTitleText>
+                    {" "}
+                    here are the JLPT Bootcamp Details:
+                  </MutedTitleText>
+                </h2>
 
-              <GridCoordinates
-                colStart="11"
-                colFinish="28"
-                rowStart="12"
-                rowFinish="38"
-                mobileOrder="0"
-              >
-                <VerticalSpacing size="large" sizeMd="-2rem">
-                  <SpeechBubble
-                    bgColor={setColor.brandPrimary}
-                    constrainWidth={true}
-                  >
-                    <h2>
-                      <MutedTitleText>If</MutedTitleText> YES,
-                      <MutedTitleText>
-                        {" "}
-                        here are the JLPT Bootcamp Details:
-                      </MutedTitleText>
-                    </h2>
-
-                    <List>
-                      <StarredListItem>Online</StarredListItem>
-                      <StarredListItem>
-                        Experienced and qualified native teachers who have
-                        taught multiple successful JLPT students.
-                      </StarredListItem>
-                      <StarredListItem>
-                        Small group lessons (4 people maximum).
-                      </StarredListItem>
-                      <StarredListItem>
-                        Marked & reviewed JLPT Mock Test.
-                      </StarredListItem>
-                      <StarredListItem>
-                        Basic, Plus and VIP experiences available.
-                      </StarredListItem>
-                      <StarredListItem>
-                        5 hours minimum of formal JLPT Prep Lessons with example
-                        exercises.
-                      </StarredListItem>
-                    </List>
-                    <Emphasis color={setColor.brandPrimaryMedium}>
-                      <p>Bonus Content!</p>
-                      <List>
-                        <StarredListItem>
-                          JLPT Textbook sent to you.
-                        </StarredListItem>
-                        <StarredListItem>
-                          Facebook group to share your JLPT questions with
-                          teachers in our community.
-                        </StarredListItem>
-                        <StarredListItem>
-                          Invitation to join our{" "}
-                          <a
-                            href="https://nihongoconnection.vipmembervault.com/products/courses/view/3"
-                            target="_blank"
-                          >
-                            online Japanese Conversation Club
-                          </a>{" "}
-                          at a discount rate.
-                        </StarredListItem>
-                        <StarredListItem>
-                          Special goodybag if you sign up 45 days or more before
-                          your chosen bootcamp.
-                        </StarredListItem>
-                      </List>
-                    </Emphasis>
-                  </SpeechBubble>
-                </VerticalSpacing>
-              </GridCoordinates>
-            </Grid>
+                <List>
+                  <StarredListItem>Online</StarredListItem>
+                  <StarredListItem>
+                    Experienced and qualified native teachers who have taught
+                    multiple successful JLPT students.
+                  </StarredListItem>
+                  <StarredListItem>
+                    Small group lessons (4 people maximum).
+                  </StarredListItem>
+                  <StarredListItem>
+                    Marked & reviewed JLPT Mock Test.
+                  </StarredListItem>
+                  <StarredListItem>
+                    Basic, Plus and VIP experiences available.
+                  </StarredListItem>
+                  <StarredListItem>
+                    5 hours minimum of formal JLPT Prep Lessons with example
+                    exercises.
+                  </StarredListItem>
+                </List>
+                <VerticalSpacing size="large"> </VerticalSpacing>
+                <Emphasis color={setColor.brandPrimaryMedium}>
+                  <p>Bonus Content!</p>
+                  <List>
+                    <StarredListItem>
+                      JLPT Textbook sent to you.
+                    </StarredListItem>
+                    <StarredListItem>
+                      Facebook group to share your JLPT questions with teachers
+                      in our community.
+                    </StarredListItem>
+                    <StarredListItem>
+                      Invitation to join our{" "}
+                      <a
+                        href="https://nihongoconnection.vipmembervault.com/products/courses/view/3"
+                        target="_blank"
+                      >
+                        online Japanese Conversation Club
+                      </a>{" "}
+                      at a discount rate.
+                    </StarredListItem>
+                    <StarredListItem>
+                      Special goodybag if you sign up 45 days or more before
+                      your chosen bootcamp.
+                    </StarredListItem>
+                  </List>
+                </Emphasis>
+              </SpeechBubble>
+            </FlexContainer>
           </VerticalSpacing>
         </Section>
         <Section flexDirection="row" bgColor={setColor.brandPrimaryLight}>
@@ -182,7 +169,7 @@ export default function JLPTBootcampPage({ data }) {
 
           <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
           <ColumnWrapper>
-            <Outline>
+            <Outline outlineSize="0.5rem">
               <Card>
                 <h2
                   style={{
@@ -193,13 +180,17 @@ export default function JLPTBootcampPage({ data }) {
                 </h2>
                 <List>
                   <li>
-                    <strong>N3: </strong> 23-24 May
+                    <strong>
+                      All bootcamps postponed due to covid-19. Join the{" "}
+                      <a href="#mailing-list">mailing list below</a> to keep
+                      informed.
+                    </strong>
                   </li>
                 </List>
               </Card>
             </Outline>
             <VerticalSpacing size="large"></VerticalSpacing>
-            <Outline>
+            <Outline outlineSize="0.5rem">
               <Card>
                 <h2
                   style={{
@@ -214,17 +205,14 @@ export default function JLPTBootcampPage({ data }) {
                   </li>
                   <li>
                     <strong>Plus: </strong> £225.00
-                    <List subList={true}
-                    >
+                    <List subList={true}>
                       <li>Two extra hours of lessons</li>
                       <li>Lunchtime Conversation Classes</li>
                     </List>
                   </li>
                   <li>
                     <strong>VIP: </strong> £325.00
-                    <List subList={true}
-                      
-                    >
+                    <List subList={true}>
                       <li>Two extra hours of lessons</li>
                       <li>Lunchtime Conversation Classes</li>
                       <li>Three 1:1 lessons</li>
@@ -388,18 +376,30 @@ export default function JLPTBootcampPage({ data }) {
         </Section>
         <VerticalSpacing sizeMd="0">
           <Section flexDirection="row">
-            <h2
-              style={{
-                color: setColor.brandPrimary,
-                marginTop: "0",
-                paddingRight: "2rem",
-                paddingTop: "1.5rem",
-              }}
+            <FlexContainer
+              containerWidth={{ _: "100%", md: "60%" }}
+              flexDirection={{ _: "column" }}
             >
-              Interested but unsure?
-            </h2>
-            <p>Join our mailing list to keep in touch!</p>
-            <MailChimp/>
+              <h2
+                style={{
+                  color: setColor.brandPrimary,
+                  marginTop: "0",
+                  paddingRight: "2rem",
+                  paddingTop: "1.5rem",
+                  paddingBottom: "0.5rem"
+                }}
+              >
+                Interested but unsure?
+              </h2>
+
+              <p>Join our mailing list to keep in touch!</p>
+              <VerticalSpacing size="x-large" sizeMd="0"></VerticalSpacing>
+            </FlexContainer>
+            <span id="mailing-list"></span>
+            <Card bgColor={setColor.brandPrimary} color={setColor.brandWhite}>
+              <MailChimp emphasisColor={setColor.brandPrimaryMedium} />
+            </Card>
+
             <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
           </Section>
         </VerticalSpacing>

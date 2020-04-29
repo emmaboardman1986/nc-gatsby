@@ -8,7 +8,7 @@ const List = ({ children, subList }) => {
 const ListWrapper = styled.ul`
   font-family: "Poppins-Regular";
   font-size: 1rem;
-  padding-left: 9%;
+  padding-left: 2rem;
   position: relative;
   ${props => props.subList && subListStyles};
 `

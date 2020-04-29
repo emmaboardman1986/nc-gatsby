@@ -75,23 +75,23 @@ const AccordionWrapper = styled.div`
 const AccordionMain = styled.div`
   border-radius: 6px;
   border: 2px solid ${setColor.brandPrimary};
-  margin: 0.75rem 0;
+  margin: 1rem 0;
 `
 
 const AccordionToggle = styled.button`
   border-radius: 3px;
   border: 2px solid ${setColor.brandPrimary};
-  box-shadow: 2px 2px 0 0 ${setColor.brandBlack};
+  box-shadow: 4px 4px 0 0px #172a4e;
+  transition: box-shadow .1s ease-in;
   margin-bottom: 0.15rem;
   margin-right: 0.5rem;
   padding: 0.25rem 0.5rem;
   font-size: 1rem;
-  background-color: ${setColor.brandWhiteOffset};
-  min-width: fit-content;
+  background-color: ${setColor.brandWhite};
+  min-width: 120px;
   &.pressed-in {
-    box-shadow: -2px -2px 0 0 ${setColor.brandPrimary},
-      inset 0 0 0.15rem ${setColor.brandSecondaryDark},
-      inset 0.25em 0.25em 0 ${setColor.brandWhite};
+    box-shadow: 3px 3px 0 0px #172a4e;
+    transform: translate(2px, 10%);
   }
 `
 

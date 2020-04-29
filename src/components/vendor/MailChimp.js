@@ -9,8 +9,9 @@ import ListItem from "../ui/ListItem"
 import CheckBox from "../form/CheckBox"
 import Emphasis from "../contentContainers/Emphasis"
 import { setColor } from "../../styles/styleHelpers"
+import Button from "../../components/ui/Button"
 
-const MailChimp = () => {
+const MailChimp = ({ emphasisColor }) => {
   const [email, setEmail] = useState("")
 
   const handleSubmit = () => {
@@ -18,7 +19,7 @@ const MailChimp = () => {
   }
 
   return (
-    <>
+    <MailChimpWrapper>
       <div id="mc_embed_signup">
         <Form
           //   action="https://nihongoscotland.us16.list-manage.com/subscribe/post?u=17e930ef2f11232d3ac0dca1e&amp;id=200df291c9"
@@ -57,7 +58,7 @@ const MailChimp = () => {
             <Emphasis
               className="mc-field-group input-group"
               padding="1rem"
-              color={setColor.brandSecondaryLight}
+              color={emphasisColor}
             >
               <MailChimpLegend>
                 What would you like to hear about?
@@ -136,7 +137,9 @@ const MailChimp = () => {
             >
               <div className="content__gdpr">
                 <Label>
-                  <p style={{marginBottom: "0.25rem"}}>How would you like to hear from us?</p>
+                  <p style={{ marginBottom: "0.25rem" }}>
+                    How would you like to hear from us?
+                  </p>
                 </Label>
                 <fieldset
                   className="mc_fieldset gdprRequired mc-field-group"
@@ -200,20 +203,23 @@ const MailChimp = () => {
                 value=""
               />
             </div>
-            <div className="clear">
-              <InputBox
-                type="submit"
-                value="Subscribe"
-                name="subscribe"
-                id="mc-embedded-subscribe"
-                className="button"
-              />
-            </div>
+            {/* <div className="clear"> */}
+            <Button
+              name="subscribe"
+              id="mc-embedded-subscribe"
+              linkText="Subscribe"
+              variant="mailchimp"
+            />
+            {/* </div> */}
             <p style={{ fontSize: "0.6rem" }}>
               You can unsubscribe at any time by clicking the link in the footer
               of our emails. For information about our privacy practices, please
               visit the{" "}
-              <a href="https://www.nihongoconnection.com" target="_blank" style={{ fontSize: "0.6rem" }}>
+              <a
+                href="https://www.nihongoconnection.com"
+                target="_blank"
+                style={{ fontSize: "0.6rem" }}
+              >
                 {" "}
                 Nihongo Connection website
               </a>
@@ -221,14 +227,38 @@ const MailChimp = () => {
           </div>
         </Form>
       </div>
-    </>
+    </MailChimpWrapper>
   )
 }
+
+const MailChimpWrapper = styled.div`
+  p {
+    a {
+      color: ${setColor.brandWhite};
+      &:hover {
+        background: ${setColor.brandWhite};
+        color: ${setColor.brandGreyDark};
+      }
+    }
+  }
+`
 
 const MailChimpLegend = styled.legend`
   font-size: 0.8rem;
   font-family: "Poppins-Regular";
   margin-bottom: 0.5rem;
+`
+
+const InputSubmit = styled.input`
+  width: 60%;
+  padding: 4rem;
+  background-color: ${setColor.brandWhite};
+  color: ${setColor.brandBlack};
+  text-transform: uppercase;
+  font: 600 4rem "AnonymousPro-Regular";
+  span {
+    font-family: "AnonymousPro-Regular";
+  }
 `
 
 export default MailChimp

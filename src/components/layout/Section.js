@@ -7,7 +7,7 @@ import {
 } from "../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
-const Section = ({ children, flexDirection, bgColor, noPaddingBottom }) => {
+const Section = ({ children, flexDirection, bgColor, noPaddingBottom}) => {
   return (
     <SectionWrapper flexDirection={flexDirection} bgColor={bgColor} noPaddingBottom={noPaddingBottom}>
       {children}

@@ -4,6 +4,7 @@ import {createMediaQueries} from "../../../styles/styleHelpers"
 export const FlexContainerStyles = css`
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 `
 
 export const justifyContentStyle = justifyContent => {

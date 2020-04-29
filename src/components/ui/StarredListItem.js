@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React from "react"
 import PropTypes from "prop-types"
-import { setColor } from "../../styles/styleHelpers"
+import { setColor, breakpoint } from "../../styles/styleHelpers"
 import starSVG from "../../../static/assets/star.svg"
 
 const StarredListItem = ({ children, color }) => {
@@ -28,8 +28,20 @@ const StarredListItemWrapper = styled.li`
     fill:  white;
     stroke: white;
     position: absolute;
-    margin-left: -11%;
+    margin-left: -2rem;
   }
+  ${breakpoint.xs`
+  &:before {
+    margin-left: -2.5rem;
+  }`}
+  ${breakpoint.sm`
+  &:before {
+    margin-left: -3rem;
+  }`}
+  ${breakpoint.md`
+  &:before {
+    margin-left: -4rem;
+  }`}
 `
 
 StarredListItem.propTypes = {

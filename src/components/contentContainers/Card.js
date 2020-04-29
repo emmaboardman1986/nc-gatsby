@@ -2,8 +2,8 @@ import styled from "styled-components"
 import React from "react"
 import { setColor } from "../../styles/styleHelpers"
 
-const Card = ({ children, bgColor }) => {
-  return <CardWrapper bgColor={bgColor}>{children}</CardWrapper>
+const Card = ({ children, bgColor, color }) => {
+  return <CardWrapper bgColor={bgColor} color={color}>{children}</CardWrapper>
 }
 
 const CardWrapper = styled.div`
@@ -14,7 +14,8 @@ const CardWrapper = styled.div`
   border-radius: 10px;
   position: relative;
   background: ${props => (props.bgColor ? props.bgColor : setColor.brandWhite)};
-  color: ${setColor.brandBlack};
+  color: ${props => (props.color ? props.color : setColor.brandBlack)};
+
   h2 {
     color: ${setColor.brandPrimary};
   }

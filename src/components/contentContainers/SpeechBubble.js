@@ -28,15 +28,16 @@ const SpeechBubbleWrapper = styled.div`
   padding: 2rem;
   p {
     margin: 0;
-  }
-  a {
-    color: ${setColor.brandPrimaryLight};
-    &:hover,
-    &:focus {
-      background-color: ${setColor.brandPrimaryLight};
-      color: ${setColor.brandPrimary};
+    a {
+      color: ${setColor.brandPrimaryLight};
+      &:hover,
+      &:focus {
+        background-color: ${setColor.brandPrimaryLight};
+        color: ${setColor.brandPrimary};
+      }
     }
   }
+
   &:after {
     content: "";
     background: url(${redSpeechBubble});
@@ -50,10 +51,8 @@ const SpeechBubbleWrapper = styled.div`
   }
   ${breakpoint.xs`
   width: ${props => (props.constrainWidth ? "70%" : null)};
-  margin-left: auto;
-  margin-right: auto;
-  `}
 
+  `}
 
   ${breakpoint.md`
   order: ${props => (props.orderDesktop ? props.orderDesktop : null)};

@@ -34,6 +34,7 @@ const Footer = () => {
         <FlexContainer
           flexDirection={{ _: "column", xs: "row" }}
           justifyContent={{ _: "center", xs: "space-between" }}
+          alignItems={{_: "flex-end"}}
         >
           <FooterCopyright>
             © {new Date().getFullYear()} Nihongo Connection

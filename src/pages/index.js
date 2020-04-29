@@ -198,7 +198,7 @@ export default function Homepage({ data }) {
                   </p>
 
                   <Button
-                    link="/friday-study-club"
+                    link="/about-us"
                     linkText="Find out more"
                     bgColor={setColor.brandPrimary}
                   >
@@ -214,7 +214,7 @@ export default function Homepage({ data }) {
               <SpeechBubble orderDesktop={2}>
                 <h2>{data.homepage.data.speech_bubble_title.text}</h2>
                 <p>Subscribe to get invited to our events</p>
-                <MailChimp />
+                <MailChimp emphasisColor={setColor.brandSecondaryLight}/>
               </SpeechBubble>
               <VerticalSpacing size="4x-large" sizeMd="0"></VerticalSpacing>
             </FlexContainer>
