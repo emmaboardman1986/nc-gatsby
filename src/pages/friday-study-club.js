@@ -11,6 +11,7 @@ import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import Emphasis from "../components/contentContainers/Emphasis"
 import styled from "styled-components"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
+import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 
 import { setColor } from "../styles/styleHelpers"
 
@@ -43,18 +44,13 @@ export default function FridayStudyClubPage({ data }) {
           </AuxHero>
         </Section>
        
-          <Section bgColor={setColor.brandPrimaryLight}>
-          <VerticalSpacing size="8x-large--negative" sizeMd="-12rem">
-            <Grid pageType="Aux">
-              {/* Friday Study Club */}
-              <GridCoordinates
-                colStart="1"
-                colFinish="14"
-                rowStart="1"
-                rowFinish="10"
-                mobileOrder="0"
-              >
-                <Gradient>
+     
+          
+          <Section bgColor={setColor.brandPrimaryLight} noPaddingBottom>
+      <VerticalSpacing size="7x-large--negative" sizeMd="-10rem">
+            <FlexContainer justifyContent={{ _: "center" }}>
+              <Gradient widthMd="80%">
+             
                   <Card>
                   <Emphasis>
                   <Card >
@@ -75,8 +71,8 @@ export default function FridayStudyClubPage({ data }) {
                     ></div>
                   </Card>
                 </Gradient>
-              </GridCoordinates>
-            </Grid>
+              </FlexContainer>
+           
             </VerticalSpacing>
           </Section>
           <MailChimpFooter></MailChimpFooter>
