@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import React from "react"
-import { setColor } from "../../styles/styleHelpers"
+import { setColor, breakpoint } from "../../styles/styleHelpers"
 
-const Card = ({ children, bgColor, color }) => {
-  return <CardWrapper bgColor={bgColor} color={color}>{children}</CardWrapper>
+const Card = ({ children, bgColor, color, doublePaddingBottom }) => {
+  return <CardWrapper bgColor={bgColor} color={color} doublePaddingBottom={doublePaddingBottom}>{children}</CardWrapper>
 }
 
 const CardWrapper = styled.div`
@@ -29,6 +29,8 @@ const CardWrapper = styled.div`
       margin-bottom: 1rem;
     }
   }
+  ${breakpoint.md`
+  padding-bottom: ${props => props.doublePaddingBottom ? "3rem" : null}`}
 `
 
 export default Card

@@ -6,12 +6,18 @@ import Outline from "../contentContainers/Outline"
 import { breakpoint } from "../../styles/styleHelpers"
 
 const TimelineContent = ({ year, content }) => {
+
+
+  function createMarkup(content) {
+    return { __html: content }
+  }
+
   return (
     <TimelineContentWrapper>
       {/* <Outline> */}
         <Card>
           <TimelineDate>{year}</TimelineDate>
-          <p>{content}</p>
+          <p dangerouslySetInnerHTML={createMarkup(content)}></p>
         </Card>
       {/* </Outline> */}
     </TimelineContentWrapper>

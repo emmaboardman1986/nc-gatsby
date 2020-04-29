@@ -34,7 +34,11 @@ const SectionWrapper = styled.section`
   flex-direction: ${props =>
     props.flexDirection ? props.flexDirection : "column"};
   align-items: ${props => (props.flexDirection ? "flex-start" : null)};
-  justify-content: ${props => (props.flexDirection ? "space-between" : null)};`}
+  justify-content: ${props => (props.flexDirection ? "space-between" : null)};
+  padding-bottom: ${setSharedSpacing.sectionPaddingDesktop};
+  `}
+ 
+  
 `
 
 Section.propTypes = {

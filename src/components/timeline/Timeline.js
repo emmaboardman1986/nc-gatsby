@@ -11,7 +11,7 @@ const Timeline = () => {
     {
       year: "2020",
       yearContent:
-        "Friday Night Study Club moves online! Join us on Zoom for Japanese Conversation",
+        "Friday Night Study Club moves online! <a href='https://zoom.us/j/169628752' target='_blank'>Join us on Zoom</a> for Japanese Conversation, every Friday between 6pm and 8pm GMT.",
     },
     {
       year: "2019",
@@ -54,6 +54,13 @@ const TimelineWrapper = styled.div`
 `
 
 const TimelineContainer = styled.div`
+  a {
+    color: ${setColor.brandPrimary};
+    &:hover {
+      background-color: ${setColor.brandPrimary};
+      color: ${setColor.brandWhite};
+    }
+  }
   position: relative;
   padding: ${setSharedSpacing.sectionPadding};
   &:before {

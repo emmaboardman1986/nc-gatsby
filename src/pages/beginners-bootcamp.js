@@ -33,7 +33,7 @@ export default function BeginnersBootcampPage({ data }) {
           <VerticalSpacing size="7x-large--negative" sizeMd="-10rem">
             <FlexContainer justifyContent={{ _: "center" }}>
               <Gradient widthMd="80%">
-                <Card>
+                <Card doublePaddingBottom>
                   <h2>Would you like to discover...</h2>
                   <List>
                     <li>Strategies to save you time learning?</li>
@@ -54,7 +54,7 @@ export default function BeginnersBootcampPage({ data }) {
                 </Card>
               </Gradient>
             </FlexContainer>
-            <VerticalSpacing size="x-large" sizeMd="-2rem">
+            <VerticalSpacing size="x-large" sizeMd="-3rem">
               {" "}
             </VerticalSpacing>
             <FlexContainer
