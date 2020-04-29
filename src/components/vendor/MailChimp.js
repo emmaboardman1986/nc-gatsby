@@ -15,7 +15,15 @@ const MailChimp = ({ emphasisColor }) => {
   const [email, setEmail] = useState("")
 
   const handleSubmit = () => {
-    console.log("submit")
+    console.log("?")
+    alert("not hooked up yet :) please try back week of May 3rd");
+    // addToMailchimp(email, {
+    //   PATHNAME: '/blog-post-1',
+    //   FNAME: 'Ben',
+    //   LNAME: 'Coder'
+    //  
+    // })
+    
   }
 
   return (
@@ -29,7 +37,6 @@ const MailChimp = ({ emphasisColor }) => {
           className="validate"
           target="_blank"
           novalidate
-          onSubmit={handleSubmit}
         >
           <div id="mc_embed_signup_scroll">
             <div className="mc-field-group">
@@ -209,6 +216,7 @@ const MailChimp = ({ emphasisColor }) => {
               id="mc-embedded-subscribe"
               linkText="Subscribe"
               variant="mailchimp"
+              onClick={handleSubmit}
             />
             {/* </div> */}
             <p style={{ fontSize: "0.6rem" }}>

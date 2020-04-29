@@ -19,7 +19,7 @@ const Timeline = () => {
         "Club founder Jess wins the Scottish Samurai Award for her long-standing services to Japan and Scotland",
     },
     {
-      year: "2017",
+      year: "2018",
       yearContent:
         "Club founder Jess leaves her job at the Consulate General of Japan to dedicate herself full-time to Japanese language education, and the Japanese-language community in Edinburgh and beyond.",
     },

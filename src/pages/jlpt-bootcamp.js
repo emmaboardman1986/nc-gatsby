@@ -5,8 +5,6 @@ import AuxHero from "../components/ui/AuxHero"
 import Gradient from "../components/contentContainers/Gradient"
 import Outline from "../components/contentContainers/Outline"
 import Card from "../components/contentContainers/Card"
-import Grid from "../components/layout/Grid"
-import GridCoordinates from "../components/layout/GridCoordinates"
 import SpeechBubble from "../components/contentContainers/SpeechBubble"
 import { setColor, breakpoint } from "../styles/styleHelpers"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
@@ -21,6 +19,7 @@ import List from "../components/ui/List"
 import MailChimp from "../components/vendor/MailChimp"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import Heading from "../components/ui/Heading"
+import MailChimpFooter from "../components/footer/MailChimpFooter"
 
 export default function JLPTBootcampPage({ data }) {
   return (
@@ -374,35 +373,7 @@ export default function JLPTBootcampPage({ data }) {
             </div>
           </Accordion>
         </Section>
-        <VerticalSpacing sizeMd="0">
-          <Section flexDirection="row">
-            <FlexContainer
-              containerWidth={{ _: "100%", md: "60%" }}
-              flexDirection={{ _: "column" }}
-            >
-              <h2
-                style={{
-                  color: setColor.brandPrimary,
-                  marginTop: "0",
-                  paddingRight: "2rem",
-                  paddingTop: "1.5rem",
-                  paddingBottom: "0.5rem"
-                }}
-              >
-                Interested but unsure?
-              </h2>
-
-              <p>Join our mailing list to keep in touch!</p>
-              <VerticalSpacing size="x-large" sizeMd="0"></VerticalSpacing>
-            </FlexContainer>
-            <span id="mailing-list"></span>
-            <Card bgColor={setColor.brandPrimary} color={setColor.brandWhite}>
-              <MailChimp emphasisColor={setColor.brandPrimaryMedium} />
-            </Card>
-
-            <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
-          </Section>
-        </VerticalSpacing>
+    <MailChimpFooter></MailChimpFooter>
       </div>
     </Layout>
   )

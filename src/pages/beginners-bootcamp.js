@@ -18,6 +18,7 @@ import Button from "../components/ui/Button"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import List from "../components/ui/List"
 import MailChimp from "../components/vendor/MailChimp"
+import MailChimpFooter from "../components/footer/MailChimpFooter"
 
 export default function BeginnersBootcampPage({ data }) {
   return (
@@ -332,35 +333,7 @@ export default function BeginnersBootcampPage({ data }) {
             </div>
           </Accordion>
         </Section>
-        <VerticalSpacing sizeMd="0">
-          <Section flexDirection="row">
-            <FlexContainer
-              containerWidth={{ _: "100%", md: "60%" }}
-              flexDirection={{ _: "column" }}
-            >
-              <h2
-                style={{
-                  color: setColor.brandPrimary,
-                  marginTop: "0",
-                  paddingRight: "2rem",
-                  paddingTop: "1.5rem",
-                  paddingBottom: "0.5rem",
-                }}
-              >
-                Interested but unsure?
-              </h2>
-
-              <p>Join our mailing list to keep in touch!</p>
-              <VerticalSpacing size="x-large" sizeMd="0"></VerticalSpacing>
-            </FlexContainer>
-            <span id="mailing-list"></span>
-            <Card bgColor={setColor.brandPrimary} color={setColor.brandWhite}>
-              <MailChimp emphasisColor={setColor.brandPrimaryMedium} />
-            </Card>
-
-            <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
-          </Section>
-        </VerticalSpacing>
+     <MailChimpFooter></MailChimpFooter>
       </div>
     </Layout>
   )

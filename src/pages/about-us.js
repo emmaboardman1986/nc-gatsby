@@ -9,6 +9,7 @@ import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import TimeLine from "../components/timeline/Timeline"
 import Heading from "../components/ui/Heading"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
+import MailChimpFooter from "../components/footer/MailChimpFooter"
 
 import { setColor } from "../styles/styleHelpers"
 
@@ -64,6 +65,7 @@ export default function AboutUsPage({ data }) {
         <Heading variant="h2" text="Our Story" style={{margin: '0.25rem'}}></Heading>
         <TimeLine></TimeLine>
       </Section>
+      <MailChimpFooter></MailChimpFooter>
     </Layout>
   )
 }

@@ -10,6 +10,7 @@ import GridCoordinates from "../components/layout/GridCoordinates"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import Emphasis from "../components/contentContainers/Emphasis"
 import styled from "styled-components"
+import MailChimpFooter from "../components/footer/MailChimpFooter"
 
 import { setColor } from "../styles/styleHelpers"
 
@@ -78,6 +79,7 @@ export default function JapanesePage({ data }) {
             </Grid>
           </VerticalSpacing>
         </Section>
+        <MailChimpFooter></MailChimpFooter>
       </div>
     </Layout>
   )
