@@ -36,7 +36,7 @@ const OutlineWrapper = styled.div`
       padding-bottom: 0;
     }
   }
-  p {
+  p, li {
     a {
     color: ${setColor.brandPrimary};
     &:hover {

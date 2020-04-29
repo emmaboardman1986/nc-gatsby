@@ -5,8 +5,6 @@ import AuxHero from "../components/ui/AuxHero"
 import Gradient from "../components/contentContainers/Gradient"
 import Outline from "../components/contentContainers/Outline"
 import Card from "../components/contentContainers/Card"
-import Grid from "../components/layout/Grid"
-import GridCoordinates from "../components/layout/GridCoordinates"
 import SpeechBubble from "../components/contentContainers/SpeechBubble"
 import { setColor, breakpoint } from "../styles/styleHelpers"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
@@ -17,6 +15,9 @@ import Emphasis from "../components/contentContainers/Emphasis"
 import Testimonial from "../components/Testimonial"
 import Accordion from "../components/accordion/Accordion"
 import Button from "../components/ui/Button"
+import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
+import List from "../components/ui/List"
+import MailChimp from "../components/vendor/MailChimp"
 
 export default function BeginnersBootcampPage({ data }) {
   return (
@@ -29,104 +30,87 @@ export default function BeginnersBootcampPage({ data }) {
         </Section>
 
         <Section bgColor={setColor.brandPrimaryLight}>
-          <VerticalSpacing size="8x-large--negative" sizeMd="-12rem">
-            <Grid
-              gridColNumber="27"
-              gridRowNumber="32"
-              gridColUnit="1fr"
-              gridRowUnit="2.5rem"
+          <VerticalSpacing size="7x-large--negative" sizeMd="-10rem">
+            <FlexContainer justifyContent={{ _: "center" }}>
+              <Gradient widthMd="80%">
+                <Card>
+                  <h2>Would you like to discover...</h2>
+                  <List>
+                    <li>Strategies to save you time learning?</li>
+                    <li>How to speak Japanese without causing offence?</li>
+                    <li>
+                      How to quickly start speaking even if you think you don’t
+                      know enough vocabulary?
+                    </li>
+                    <li>How to to enjoy making mistakes?</li>
+                    <li>What to expect during your trip to Japan?</li>
+
+                    <li>
+                      Your strengths and weaknesses and suggestions to help you
+                      improve more quickly from an experienced teacher and
+                      long-term learner of Japanese?
+                    </li>
+                  </List>
+                </Card>
+              </Gradient>
+            </FlexContainer>
+            <VerticalSpacing size="x-large" sizeMd="-2rem">
+              {" "}
+            </VerticalSpacing>
+            <FlexContainer
+              justifyContent={{ _: "center", md: "flex-end" }}
+              style={{ zIndex: "1" }}
             >
-              <GridCoordinates
-                colStart="3"
-                colFinish="26"
-                rowStart="1"
-                rowFinish="10"
-                mobileOrder="0"
+              <SpeechBubble
+                bgColor={setColor.brandPrimary}
+                constrainWidth={true}
               >
-                <Gradient>
-                  <Card>
-                    <h2>Would you like to discover...</h2>
-                    <ul>
-                      <li>Strategies to save you time learning?</li>
-                      <li>How to speak Japanese without causing offence?</li>
-                      <li>
-                        How to quickly start speaking even if you think you
-                        don’t know enough vocabulary?
-                      </li>
-                      <li>How to to enjoy making mistakes?</li>
-                      <li>What to expect during your trip to Japan?</li>
+                <h2>
+                  <MutedTitleText>If</MutedTitleText> YES,
+                  <MutedTitleText>
+                    {" "}
+                    here are the JLPT Bootcamp Details:
+                  </MutedTitleText>
+                </h2>
 
-                      <li>
-                        Your strengths and weaknesses and suggestions to help
-                        you improve more quickly from an experienced teacher and
-                        long-term learner of Japanese?
-                      </li>
-                    </ul>
-                  </Card>
-                </Gradient>
-              </GridCoordinates>
-
-              <GridCoordinates
-                colStart="11"
-                colFinish="28"
-                rowStart="12"
-                rowFinish="38"
-                mobileOrder="0"
-              >
-                <VerticalSpacing size="large" sizeMd="-2rem">
-                  <SpeechBubble
-                    bgColor={setColor.brandPrimary}
-                    constrainWidth={true}
-                  >
-                    <h2>
-                      <MutedTitleText>If</MutedTitleText> YES,
-                      <MutedTitleText>
-                        {" "}
-                        here are the JLPT Bootcamp Details:
-                      </MutedTitleText>
-                    </h2>
-
-                    <ul>
-                      <StarredListItem>Online</StarredListItem>
-                      <StarredListItem>
-                        Experienced and qualified native teachers who have
-                        taught multiple successful students.
-                      </StarredListItem>
-                      <StarredListItem>
-                        Small group lessons (4 people maximum).
-                      </StarredListItem>
-                      <StarredListItem>
-                        Basic, Plus and VIP experiences available.
-                      </StarredListItem>
-                      <StarredListItem>
-                        5 hours minimum of formal JLPT Prep Lessons with example
-                        exercises.
-                      </StarredListItem>
-                      <StarredListItem>
-                        Culture focus, including lessons on ordering food and
-                        Japanese table-manners.
-                      </StarredListItem>
-                    </ul>
-                    <Emphasis color={setColor.brandPrimaryMedium}>
-                      <p>Bonus Content!</p>
-                      <ul>
-                        <StarredListItem>
-                          Online course of supporting resources to use after
-                          your bootcamp.
-                        </StarredListItem>
-                        <StarredListItem>
-                          Facebook group to share your questions in our
-                          community.
-                        </StarredListItem>
-                        <StarredListItem>
-                          Invitation to join our Beginner's Japanese Membership.
-                        </StarredListItem>
-                      </ul>
-                    </Emphasis>
-                  </SpeechBubble>
-                </VerticalSpacing>
-              </GridCoordinates>
-            </Grid>
+                <List>
+                  <StarredListItem>
+                    Experienced and qualified native teachers who have taught
+                    multiple successful students.
+                  </StarredListItem>
+                  <StarredListItem>
+                    Small group lessons (4 people maximum).
+                  </StarredListItem>
+                  <StarredListItem>
+                    Basic, Plus and VIP experiences available.
+                  </StarredListItem>
+                  <StarredListItem>
+                    5 hours minimum of formal JLPT Prep Lessons with example
+                    exercises.
+                  </StarredListItem>
+                  <StarredListItem>
+                    Culture focus, including lessons on ordering food and
+                    Japanese table-manners.
+                  </StarredListItem>
+                </List>
+                <VerticalSpacing size="large"> </VerticalSpacing>
+                <Emphasis color={setColor.brandPrimaryMedium}>
+                  <p>Bonus Content!</p>
+                  <List>
+                    <StarredListItem>
+                      Online course of supporting resources to use after your
+                      bootcamp.
+                    </StarredListItem>
+                    <StarredListItem>
+                      Facebook group to share your questions in our community.
+                    </StarredListItem>
+                    <StarredListItem>
+                      Invitation to join our Beginner's Japanese Membership.
+                    </StarredListItem>
+                  </List>
+                </Emphasis>
+              </SpeechBubble>
+            </FlexContainer>
           </VerticalSpacing>
         </Section>
         <Section flexDirection="row" bgColor={setColor.brandPrimaryLight}>
@@ -155,6 +139,7 @@ export default function BeginnersBootcampPage({ data }) {
               <Button
                 link="https://nihongoconnection.vipmembervault.com/products/courses/view/6"
                 linkText="Book Now"
+                isCentered={true}
                 bgColor={setColor.brandSecondary}
               ></Button>
             </Card>
@@ -162,7 +147,7 @@ export default function BeginnersBootcampPage({ data }) {
 
           <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
           <ColumnWrapper>
-            <Outline>
+            <Outline outlineSize="0.5rem">
               <Card>
                 <h2
                   style={{
@@ -171,15 +156,19 @@ export default function BeginnersBootcampPage({ data }) {
                 >
                   Upcoming dates:
                 </h2>
-                <ul>
-                  <li>Sat 4 - Sun 5 April</li>
-                  <li>Sat 11 - Sun 12 April</li>
-                  <li>Sat 18 - Sun 19 April</li>
-                </ul>
+                <List>
+                  <li>
+                    <strong>
+                      All bootcamps postponed due to covid-19. Join the{" "}
+                      <a href="#mailing-list">mailing list below</a> to keep
+                      informed.
+                    </strong>
+                  </li>
+                </List>
               </Card>
             </Outline>
             <VerticalSpacing size="large"></VerticalSpacing>
-            <Outline>
+            <Outline outlineSize="0.5rem">
               <Card>
                 <h2
                   style={{
@@ -188,37 +177,25 @@ export default function BeginnersBootcampPage({ data }) {
                 >
                   Prices:
                 </h2>
-                <ul>
+                <List>
                   <li>
                     <strong>Basic: </strong> £97.00
                   </li>
                   <li>
                     <strong>Plus: </strong> £147.00
-                    <ul
-                      style={{
-                        fontSize: "0.75rem",
-                        marginTop: "0.15rem",
-                        lineHeight: "1rem",
-                      }}
-                    >
+                    <List subList={true}>
                       <li>One extra hour of lessons</li>
                       <li>Lunchtime Conversation Classes</li>
-                    </ul>
+                    </List>
                   </li>
                   <li>
-                    <strong>VIP: </strong> £247.00
-                    <ul
-                      style={{
-                        fontSize: "0.75rem",
-                        marginTop: "0.15rem",
-                        lineHeight: "1rem",
-                      }}
-                    >
+                    <strong>VIP: </strong> £325.00
+                    <List subList={true}>
                       <li>One extra hour of lessons</li>
                       <li>One 1:1 lesson</li>
-                    </ul>
+                    </List>
                   </li>
-                </ul>
+                </List>
               </Card>
             </Outline>
           </ColumnWrapper>
@@ -357,17 +334,30 @@ export default function BeginnersBootcampPage({ data }) {
         </Section>
         <VerticalSpacing sizeMd="0">
           <Section flexDirection="row">
-            <h2
-              style={{
-                color: setColor.brandPrimary,
-                marginTop: "0",
-                paddingRight: "2rem",
-                paddingTop: "1.5rem",
-              }}
+            <FlexContainer
+              containerWidth={{ _: "100%", md: "60%" }}
+              flexDirection={{ _: "column" }}
             >
-              Interested but unsure?
-            </h2>
-            <p>Join our mailing list to keep in touch!</p>
+              <h2
+                style={{
+                  color: setColor.brandPrimary,
+                  marginTop: "0",
+                  paddingRight: "2rem",
+                  paddingTop: "1.5rem",
+                  paddingBottom: "0.5rem",
+                }}
+              >
+                Interested but unsure?
+              </h2>
+
+              <p>Join our mailing list to keep in touch!</p>
+              <VerticalSpacing size="x-large" sizeMd="0"></VerticalSpacing>
+            </FlexContainer>
+            <span id="mailing-list"></span>
+            <Card bgColor={setColor.brandPrimary} color={setColor.brandWhite}>
+              <MailChimp emphasisColor={setColor.brandPrimaryMedium} />
+            </Card>
+
             <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
           </Section>
         </VerticalSpacing>

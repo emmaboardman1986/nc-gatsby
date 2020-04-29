@@ -27,11 +27,8 @@ const MailChimpStyles = css`
   margin-top: 1rem;
   margin-bottom: 1rem;
   &:hover {
-    background-color: ${setColor.brandPrimaryLight};
-    border: 2px solid ${setColor.brandWhite};
-    a {
-      color: ${setColor.brandWhite};
-    }
+    background-color: ${setColor.brandWhiteOffset};
+    border: 2px solid ${setColor.brandPrimary};
   }
   a {
     color: ${setColor.brandBlack};
