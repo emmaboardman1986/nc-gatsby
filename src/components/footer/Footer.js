@@ -34,15 +34,15 @@ const Footer = () => {
         <FlexContainer
           flexDirection={{ _: "column", xs: "row" }}
           justifyContent={{ _: "center", xs: "space-between" }}
-          alignItems={{_: "flex-end"}}
+          alignItems={{_: "center", xs: "flex-end"}}
         >
-          <FooterCopyright>
+          <FooterCopyright style={{marginTop: "1rem"}}>
             © {new Date().getFullYear()} Nihongo Connection
           </FooterCopyright>
-          <FooterSocialIcons>
-            <Icon icon="instagram" fill="white" stroke="none" />
-            <Icon icon="facebook" fill="white" stroke="none" />
-            <Icon icon="twitter" fill="white" stroke="none" />
+          <FooterSocialIcons style={{marginTop: "0.75rem"}}>
+            <a href="https://www.instagram.com/nihongo_connection/" target="_blank" style={{marginRight: "0.5rem"}}><Icon icon="instagram" fill="white" stroke="none"/></a>
+            <a href="https://www.facebook.com/groups/984083104951153/" target="_blank" style={{marginRight: "0.5rem"}}><Icon icon="facebook" fill="white" stroke="none" /></a>
+            <a href="https://twitter.com/nihongoconnect" target="_blank"><Icon icon="twitter" fill="white" stroke="none" /></a>
           </FooterSocialIcons>
         </FlexContainer>
       </FooterContent>

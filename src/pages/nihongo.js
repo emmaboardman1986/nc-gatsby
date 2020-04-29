@@ -8,6 +8,8 @@ import AuxHero from "../components/ui/AuxHero"
 import Grid from "../components/layout/Grid"
 import GridCoordinates from "../components/layout/GridCoordinates"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
+import Emphasis from "../components/contentContainers/Emphasis"
+import styled from "styled-components"
 
 import { setColor } from "../styles/styleHelpers"
 
@@ -53,6 +55,18 @@ export default function JapanesePage({ data }) {
               >
                 <Gradient>
                   <Card>
+                  <Emphasis>
+                  <Card >
+                  <Note>
+                    <p>PLEASE NOTE, due to the ongoing covid-19 pandemic, <a href="https://zoom.us/j/169628752" target="_blank">Nihongo Scotland are now meeting online.</a></p>
+                    <p>You are kindly invited to join us on <a href="https://zoom.us/j/169628752" target="_blank">Zoom</a> every Friday night between 6pm and 8pm</p>
+                    <p>
+                      <span>You will need a Zoom account to join the meeting.</span>
+                    </p>
+                    </Note>
+                    </Card>
+                  </Emphasis>
+                  <VerticalSpacing size="x-large"></VerticalSpacing>
                     <div
                       dangerouslySetInnerHTML={createMarkup(
                         data.nihongo.data.japanese_page_content.html
@@ -68,3 +82,29 @@ export default function JapanesePage({ data }) {
     </Layout>
   )
 }
+
+const Note = styled.div`
+p {
+  font-family: "Poppins-Regular";
+line-height: 1.5rem;
+text-align: center;
+}
+span {
+  font-family: "Poppins-SemiBold";
+}
+
+a {
+  all: inherit;
+  text-decoration: underline;
+  font-family: "Poppins-SemiBold";
+  color: ${setColor.brandPrimary};
+  font-size: 1.1rem;
+  display: inline-block;
+  &:hover {
+      background-color: ${setColor.brandPrimary};
+      color: ${setColor.brandWhite};
+    }
+}
+
+
+`
