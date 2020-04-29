@@ -43,7 +43,7 @@ export default function JapanesePage({ data }) {
           </AuxHero>
         </Section>
 
-        <Section>
+        <Section bgColor={setColor.brandPrimaryLight}>
           <VerticalSpacing size="8x-large--negative" sizeMd="-12rem">
             <Grid>
               {/* Friday Study Club */}

@@ -62,8 +62,7 @@ const HeaderLogo = styled.div`
   &.hidden-on-home {
     visibility: hidden;
   }
-  ${breakpoint.md`
-margin-top: 1rem;`}
+
   flex: 1;
   img {
     padding-top: 1rem;

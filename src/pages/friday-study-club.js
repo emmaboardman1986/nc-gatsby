@@ -10,6 +10,7 @@ import GridCoordinates from "../components/layout/GridCoordinates"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import Emphasis from "../components/contentContainers/Emphasis"
 import styled from "styled-components"
+import MailChimpFooter from "../components/footer/MailChimpFooter"
 
 import { setColor } from "../styles/styleHelpers"
 
@@ -42,7 +43,7 @@ export default function FridayStudyClubPage({ data }) {
           </AuxHero>
         </Section>
        
-          <Section>
+          <Section bgColor={setColor.brandPrimaryLight}>
           <VerticalSpacing size="8x-large--negative" sizeMd="-12rem">
             <Grid pageType="Aux">
               {/* Friday Study Club */}
@@ -78,6 +79,7 @@ export default function FridayStudyClubPage({ data }) {
             </Grid>
             </VerticalSpacing>
           </Section>
+          <MailChimpFooter></MailChimpFooter>
 
        
       </div>

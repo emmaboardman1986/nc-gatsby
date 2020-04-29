@@ -3,7 +3,7 @@ import React from "react"
 import { setColor } from "../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
-const Button = ({ bgColor, link, linkText, isCentered, variant }) => {
+const Button = ({ bgColor, link, linkText, isCentered, variant, onClick, targetBlank }) => {
   return (
     <ButtonWrapper
       bgColor={bgColor}
@@ -11,8 +11,9 @@ const Button = ({ bgColor, link, linkText, isCentered, variant }) => {
       linkText={linkText}
       isCentered={isCentered}
       variant={variant}
+      onClick={onClick} 
     >
-      <a href={link}>
+      <a href={link} target={targetBlank ? "_blank" : null}>
         <span>{linkText}</span>
       </a>
     </ButtonWrapper>

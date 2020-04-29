@@ -162,6 +162,7 @@ export default function JLPTBootcampPage({ data }) {
                 linkText="Book Now"
                 isCentered={true}
                 bgColor={setColor.brandSecondary}
+                targetBlank
               ></Button>
             </Card>
           </Gradient>

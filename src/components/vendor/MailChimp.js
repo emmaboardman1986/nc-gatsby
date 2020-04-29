@@ -15,7 +15,6 @@ const MailChimp = ({ emphasisColor }) => {
   const [email, setEmail] = useState("")
 
   const handleSubmit = () => {
-    console.log("?")
     alert("not hooked up yet :) please try back week of May 3rd");
     // addToMailchimp(email, {
     //   PATHNAME: '/blog-post-1',
