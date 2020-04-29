@@ -5,11 +5,10 @@ import Section from "../components/layout/Section"
 import Gradient from "../components/contentContainers/Gradient"
 import Card from "../components/contentContainers/Card"
 import AuxHero from "../components/ui/AuxHero"
-import Grid from "../components/layout/Grid"
-import GridCoordinates from "../components/layout/GridCoordinates"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import TimeLine from "../components/timeline/Timeline"
 import Heading from "../components/ui/Heading"
+import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 
 import { setColor } from "../styles/styleHelpers"
 
@@ -41,18 +40,11 @@ export default function AboutUsPage({ data }) {
         </AuxHero>
       </Section>
 
-      <Section bgColor={setColor.brandPrimaryLight}>
-        <VerticalSpacing size="8x-large--negative" sizeMd="-12rem">
-          <Grid>
-            {/* Friday Study Club */}
-            <GridCoordinates
-              colStart="1"
-              colFinish="14"
-              rowStart="1"
-              rowFinish="10"
-              mobileOrder="0"
-            >
-              <Gradient>
+      <Section bgColor={setColor.brandPrimaryLight} noPaddingBottom>
+      <VerticalSpacing size="7x-large--negative" sizeMd="-10rem">
+            <FlexContainer justifyContent={{ _: "center" }}>
+              <Gradient widthMd="80%">
+             
                 <Card>
                   <div>
                     {" "}
@@ -63,8 +55,8 @@ export default function AboutUsPage({ data }) {
                   </div>
                 </Card>
               </Gradient>
-            </GridCoordinates>
-          </Grid>
+            </FlexContainer>
+        
         </VerticalSpacing>
       </Section>
       <VerticalSpacing size="large--negative" sizeMd="6x-large--negative"></VerticalSpacing>

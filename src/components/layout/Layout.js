@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
 
 import Header from "../header/Header"
 import Main from "./Main"
-
-import Icon from "../../components/icon/Icon"
 import Footer from "../../components/footer/Footer"
 import "../../components/layout.css"
 import "../../styles/main.scss"
+import { breakpoints } from "../../styles/styleHelpers"
 
 import H1Font from "../../../static/assets/fonts/poppins-bold-webfont.woff2"
 import { Helmet } from "react-helmet"
@@ -32,6 +32,7 @@ const Layout = ({ children }) => {
           crossOrigin="anonymous"
         />
       </Helmet>
+      <Container>
       <Header
         isMenuExpanded={isMenuExpanded}
         setIsMenuExpanded={setIsMenuExpanded}
@@ -39,10 +40,17 @@ const Layout = ({ children }) => {
 
       <Main>{children}</Main>
     <Footer></Footer>
+    </Container>
     </>
   )
 }
 
+
+const Container = styled.div`
+max-width: ${breakpoints.xl};
+margin-left: auto;
+margin-right: auto;
+`
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }

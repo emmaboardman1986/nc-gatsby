@@ -42,18 +42,12 @@ const HeroWrapper = styled.div`
   }
   div:last-child {
     text-align: center;
-   
-    h1 {
-      margin-top: 1.5rem;
-      
-    }
   }
 
   ${breakpoint.sm`
     flex-direction: row;
     div:first-child {
-      margin-left: -9rem;
-      padding-right: 4rem;
+     margin-left: -6rem;
       img {
         width: 90%;
       }
@@ -65,25 +59,37 @@ const HeroWrapper = styled.div`
   ${breakpoint.md`
     margin-top: 0;
     padding-bottom: 1.5rem;
+    div:first-child {
+      img {
+        width: 75%;
+      }
+    }
     div:last-child {
       white-space: nowrap;
     }
     `}
     ${breakpoint.lg`
     div:first-child {
-      margin-left: -20rem;
       img {
-        width: 45%;
+        width: 60%;
       }
     }
     div:last-child {
       margin-right: ${setSharedSpacing.heroRightOffset};
     }
     `}
+    @media (min-width: 1400px){
+      div:first-child {
+      img {
+        width: 50%;
+      }
+    }
+    }
     ${breakpoint.xl`
     div:first-child{
-      margin-left: -20rem;
+     
       width: 45%;
+     
     }`}
     
 `

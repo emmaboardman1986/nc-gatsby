@@ -7,6 +7,11 @@ const Main = styled.main`
   background-color: ${setColor.brandPrimaryLight};
   ${breakpoint.md`
 padding: 0;`}
+   ${breakpoint.xl`
+   border-left: 10px solid ${setColor.brandPrimary};
+   border-right: 10px solid ${setColor.brandPrimary};
+   
+   `}
 `
 
 export default Main

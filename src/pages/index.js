@@ -84,7 +84,7 @@ export default function Homepage({ data }) {
         <Section bgColor={setColor.brandPrimary} bgImg={TitleJP}>
           <Hero>
             <FlexContainer
-              justifyContent={{ _: "center" }}
+              justifyContent={{ _: "center", sm: "flex-start" }}
               alignItems={{ _: "flex-start" }}
             >
               <img src={Logo} alt="Nihongo Scotland"></img>
@@ -94,7 +94,9 @@ export default function Homepage({ data }) {
               flexDirection={{ _: "column" }}
               flex={1}
             >
-              <Heading
+            <VerticalSpacing size="x-large" sizeMd="2rem"></VerticalSpacing>
+
+             <Heading
                 variant="h1"
                 text={data.homepage.data.main_title.text}
               ></Heading>

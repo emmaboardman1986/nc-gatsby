@@ -7,9 +7,9 @@ import {
 } from "../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
-const Section = ({ children, flexDirection, bgColor, noPaddingBottom}) => {
+const Section = ({ children, flexDirection, bgColor, bgImg, noPaddingBottom}) => {
   return (
-    <SectionWrapper flexDirection={flexDirection} bgColor={bgColor} noPaddingBottom={noPaddingBottom}>
+    <SectionWrapper flexDirection={flexDirection} bgColor={bgColor} noPaddingBottom={noPaddingBottom} bgImg={bgImg}>
       {children}
     </SectionWrapper>
   )
@@ -25,10 +25,12 @@ const SectionWrapper = styled.section`
   background-image: url(${props => (props.bgImg ? props.bgImg : "none")});
   background-repeat: no-repeat;
   background-size: 150% auto;
-  background-position: 15vw 8vh;
+  background-position: 10vw 12vh;
   padding: ${setSharedSpacing.sectionPaddingDesktop};
+  padding-bottom: ${props => props.noPaddingBottom ? "0" : null };
   `}
   ${breakpoint.md`
+  background-position: 15vw 8vh;
   flex-direction: ${props =>
     props.flexDirection ? props.flexDirection : "column"};
   align-items: ${props => (props.flexDirection ? "flex-start" : null)};
