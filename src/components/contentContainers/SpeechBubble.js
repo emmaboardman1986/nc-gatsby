@@ -9,10 +9,13 @@ import {
 } from "../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
-const SpeechBubble = ({ children, bgColor, constrainWidth }) => {
-  console.log(constrainWidth)
+const SpeechBubble = ({ children, bgColor, constrainWidth, orderDesktop }) => {
   return (
-    <SpeechBubbleWrapper bgColor={bgColor} constrainWidth={constrainWidth}>
+    <SpeechBubbleWrapper
+      bgColor={bgColor}
+      constrainWidth={constrainWidth}
+      orderDesktop={orderDesktop}
+    >
       <SpeechBubbleContent>{children}</SpeechBubbleContent>
     </SpeechBubbleWrapper>
   )
@@ -50,7 +53,10 @@ const SpeechBubbleWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   `}
+
+
   ${breakpoint.md`
+  order: ${props => (props.orderDesktop ? props.orderDesktop : null)};
   &:after {
     width: 10rem;
     height: 8rem;

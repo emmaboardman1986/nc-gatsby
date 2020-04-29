@@ -7,18 +7,18 @@ import Logo from "../../static/assets/logo.svg"
 import TitleJP from "../../static/assets/hero__bg--jp.svg"
 import Gradient from "../components/contentContainers/Gradient"
 import Card from "../components/contentContainers/Card"
-import Grid from "../components/layout/Grid"
-import { setColor } from "../styles/styleHelpers"
-import GridCoordinates from "../components/layout/GridCoordinates"
-import Emphasis from "../components/contentContainers/Emphasis"
+
+import { setColor, breakpoint } from "../styles/styleHelpers"
+import styled from "styled-components"
+
 import SpeechBubble from "../components/contentContainers/SpeechBubble"
-import StarredListItem from "../components/ui/StarredListItem"
+
 import Button from "../components/ui/Button"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import "../components/layout.css"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import MailChimp from "../components/vendor/MailChimp"
-import Testimonial from "../components/Testimonial"
+import Heading from "../components/ui/Heading"
 import Outline from "../components/contentContainers/Outline"
 
 export const query = graphql`
@@ -94,165 +94,139 @@ export default function Homepage({ data }) {
               flexDirection={{ _: "column" }}
               flex={1}
             >
-              <h1>{data.homepage.data.main_title.text}</h1>
+              <Heading
+                variant="h1"
+                text={data.homepage.data.main_title.text}
+              ></Heading>
               <p>{data.homepage.data.sub_title.text}</p>
             </FlexContainer>
           </Hero>
         </Section>
-        <Section>
-          <VerticalSpacing size="7x-large--negative" sizeMd="-0.5rem">
-            <Grid
-              gridColNumber="24"
-              gridColUnit="1fr"
-              gridRowNumber="30"
-              gridRowUnit="2.5rem"
-            >
+        <Section bgColor={setColor.brandPrimaryLight} noPaddingBottom>
+          <FlexContainer justifyContent={{ _: "center", sm: "space-between" }}>
+            <Column>
               {/* Friday Study Club */}
-              <GridCoordinates
-                colStart="1"
-                colFinish="14"
-                rowStart="1"
-                rowFinish="10"
-                mobileOrder="0"
-              >
-                <Gradient>
-                  <Card>
-                    <h2>{data.homepage.data.first_card_title.text}</h2>
-                    <h3>{data.homepage.data.first_card_sub_title1.text}</h3>
-                    <p>{data.homepage.data.first_card_content_line_one.text}</p>
-                    <p>{data.homepage.data.first_card_content_line_two.text}</p>
+              <VerticalSpacing
+                size="7x-large--negative"
+                sizeMd="0"
+              ></VerticalSpacing>
+              <Gradient>
+                <Card>
+                  <Heading
+                    variant="h2"
+                    text={data.homepage.data.first_card_title.text}
+                  ></Heading>
+                  <Heading
+                    variant="h3"
+                    text={data.homepage.data.first_card_sub_title1.text}
+                  ></Heading>
+                  <p>{data.homepage.data.first_card_content_line_one.text}</p>
+                  <p>{data.homepage.data.first_card_content_line_two.text}</p>
 
-                    <Button
-                      link="/friday-study-club"
-                      linkText="Find out more"
-                      bgColor={setColor.brandPrimary}
-                    >
-                      Find out more
-                    </Button>
-                  </Card>
-                </Gradient>
-              </GridCoordinates>
+                  <Button
+                    link="/friday-study-club"
+                    linkText="Find out more"
+                    bgColor={setColor.brandPrimary}
+                  >
+                    Find out more
+                  </Button>
+                </Card>
+              </Gradient>
+
               {/* JLPT Bootcamp */}
-              <GridCoordinates
-                colStart="1"
-                colFinish="14"
-                rowStart="11"
-                rowFinish="20"
-                mobileOrder="4"
+              <VerticalSpacing size="x-large"></VerticalSpacing>
+              <Gradient>
+                <Card>
+                  <h2>{data.homepage.data.second_card_title.text}</h2>
+                  <h3>{data.homepage.data.second_card_sub_title.text}</h3>
+                  <p>{data.homepage.data.second_card_content_line_one.text}</p>
+
+                  <p>{data.homepage.data.second_card_content_line_two.text}</p>
+
+                  <Button
+                    link="/jlpt-bootcamp"
+                    linkText="Find out more"
+                    bgColor={setColor.brandPrimary}
+                  >
+                    Find out more
+                  </Button>
+                </Card>
+              </Gradient>
+
+              {/* Beginner's Bootcamp  */}
+              <VerticalSpacing size="x-large"></VerticalSpacing>
+              <Gradient>
+                <Card>
+                  <h2>{data.homepage.data.third_card_title.text}</h2>
+                  <h3>{data.homepage.data.third_card_sub_title.text}</h3>
+                  <p>{data.homepage.data.third_card_content_line_1.text}</p>
+
+                  <p>{data.homepage.data.third_card_content_line_2.text}</p>
+
+                  <Button
+                    link="/beginners-bootcamp"
+                    linkText="Find out more"
+                    bgColor={setColor.brandPrimary}
+                  >
+                    Find out more
+                  </Button>
+                </Card>
+              </Gradient>
+            </Column>
+
+            <FlexContainer
+              containerWidth={{ _: "100%", md: "48%" }}
+              flexDirection={{ _: "column" }}
+            >
+              <VerticalSpacing size="x-large" sizeMd="6rem" orderDesktop={3}></VerticalSpacing>
+              <Outline
+                color={setColor.brandPrimary}
+                font="AnonymousPro-Regular"
+                orderDesktop={4}
               >
-                <VerticalSpacing size="5x-large" sizeMd="0">
-                  <Gradient>
-                    <Card>
-                      <h2>{data.homepage.data.second_card_title.text}</h2>
-                      <h3>{data.homepage.data.second_card_sub_title.text}</h3>
-                      <p>
-                        {data.homepage.data.second_card_content_line_one.text}
-                      </p>
+                <Card>
+                  <Heading variant="h2" text="About Us"></Heading>
 
-                      <p>
-                        {data.homepage.data.second_card_content_line_two.text}
-                      </p>
+                  <p>
+                    Nihongo Scotland is a Japanese-language study club run by
+                    volunteers.
+                  </p>
 
-                      <Button
-                        link="/jlpt-bootcamp"
-                        linkText="Find out more"
-                        bgColor={setColor.brandPrimary}
-                      >
-                        Find out more
-                      </Button>
-                    </Card>
-                  </Gradient>
-                </VerticalSpacing>
-              </GridCoordinates>
+                  <p>
+                    Our purpose is provide an immersive study environment for
+                    all{" "}
+                  </p>
 
-              {/* Speech Bubble decorative */}
-              <GridCoordinates
-                colStart="17"
-                colFinish="25"
-                rowStart="12"
-                rowFinish="27"
-                mobileOrder="2"
-              >
-                <VerticalSpacing size="large"></VerticalSpacing>
-                <div className="speech-bubble__background"></div>
-              </GridCoordinates>
-              {/* Speech Bubble w/ content*/}
+                  <Button
+                    link="/friday-study-club"
+                    linkText="Find out more"
+                    bgColor={setColor.brandPrimary}
+                  >
+                    Find out more
+                  </Button>
+                </Card>
+              </Outline>
 
-              <GridCoordinates
-                colStart="15"
-                colFinish="25"
-                rowStart="1"
-                rowFinish="18"
-                mobileOrder="2"
-              >
-                <VerticalSpacing
-                  size="large"
-                  sizeMd="-7rem"
-                  sizeLg="-10rem"
-                ></VerticalSpacing>
-                <SpeechBubble pageType="Home">
-                  <h2>{data.homepage.data.speech_bubble_title.text}</h2>
-                  <p>Subscribe to get invited to our events</p>
-                  <MailChimp />
-                </SpeechBubble>
-              </GridCoordinates>
-              {/* </VerticalSpacing> */}
-              {/* Beginners Bootcamp */}
-              <GridCoordinates
-                colStart="1"
-                colFinish="14"
-                rowStart="21"
-                rowFinish="25"
-                mobileOrder="4"
-              >
-                <VerticalSpacing size="large" sizeMd="2x-large--negative">
-                  <Gradient>
-                    <Card>
-                      <h2>{data.homepage.data.third_card_title.text}</h2>
-                      <h3>{data.homepage.data.third_card_sub_title.text}</h3>
-                      <p>{data.homepage.data.third_card_content_line_1.text}</p>
-
-                      <p>{data.homepage.data.third_card_content_line_2.text}</p>
-
-                      <Button
-                        link="/beginners-bootcamp"
-                        linkText="Find out more"
-                        bgColor={setColor.brandPrimary}
-                      >
-                        Find out more
-                      </Button>
-                    </Card>
-                  </Gradient>
-                </VerticalSpacing>
-              </GridCoordinates>
-              {/* <GridCoordinates
-                colStart="15"
-                colFinish="25"
-                rowStart="22"
-                rowFinish="25"
-                mobileOrder="4"
-            
-              >
-               <h2>Testimonials</h2>
-                <Testimonial>
-               
-                  <p style={{textAlign: "left"}}>
-                    I was a wee bit nervous to go along for the first time, but everyone was lovely and supportive.</p><br/><p style={{textAlign: "left"}}> I was surprised by how many people went, which to me just shows how great it is. I'll definitely be making it a regular thing.</p><br/><p style={{textAlign: "left"}}> Thanks, team!</p>
-                   
-                  
-                </Testimonial>
-                
-                <Outline>
-                  <Card>
-                    STUFf
-                  </Card>
-                </Outline>
-                
-              </GridCoordinates> */}
-            </Grid>
-          </VerticalSpacing>
+              <VerticalSpacing
+                sizeMd="-10rem"
+                orderDesktop={1}
+              ></VerticalSpacing>
+              <SpeechBubble orderDesktop={2}>
+                <h2>{data.homepage.data.speech_bubble_title.text}</h2>
+                <p>Subscribe to get invited to our events</p>
+                <MailChimp />
+              </SpeechBubble>
+              <VerticalSpacing size="4x-large" sizeMd="0"></VerticalSpacing>
+            </FlexContainer>
+          </FlexContainer>
         </Section>
       </div>
     </Layout>
   )
 }
+
+const Column = styled.div`
+  width: 100%;
+  ${breakpoint.md`
+width: 48%;`};
+`

@@ -4,7 +4,8 @@ import {
   FlexContainerStyles,
   justifyContentStyle,
   alignItemsStyle,
-  directionStyle
+  directionStyle,
+  widthStyle
 } from "./flexContainerStyle"
 import styled from "styled-components"
 
@@ -13,7 +14,8 @@ const FlexContainer = ({
   flexDirection,
   alignItems,
   justifyContent,
-  flex
+  flex,
+  containerWidth
 }) => {
   return (
     <FlexContainerWrapper
@@ -21,6 +23,7 @@ const FlexContainer = ({
       alignItems={alignItems}
       flex={flex}
       flexDirection={flexDirection}
+      containerWidth={containerWidth}
     >
       {children}
     </FlexContainerWrapper>
@@ -32,6 +35,7 @@ const FlexContainerWrapper = styled.div`
   ${props => props.justifyContent && justifyContentStyle(props.justifyContent)};
   ${props => props.alignItems && alignItemsStyle(props.alignItems)};
   ${props => props.flexDirection && directionStyle(props.flexDirection)};
+  ${props => props.containerWidth && widthStyle(props.containerWidth)};
 `
 
 FlexContainer.propTypes = {

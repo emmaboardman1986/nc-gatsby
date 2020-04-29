@@ -41,3 +41,15 @@ export const directionStyle = direction => {
   }
   return styles
 }
+
+export const widthStyle = width => {
+  const styles = [
+    css`
+      width: ${width["_"]};
+    `,
+  ]
+  if (Object.keys(width).length > 1) {
+    styles.push(createMediaQueries("width", width))
+  }
+  return styles
+}

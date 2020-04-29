@@ -7,9 +7,9 @@ import {
 } from "../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
-const Section = ({ children, flexDirection, bgColor }) => {
+const Section = ({ children, flexDirection, bgColor, noPaddingBottom }) => {
   return (
-    <SectionWrapper flexDirection={flexDirection} bgColor={bgColor}>
+    <SectionWrapper flexDirection={flexDirection} bgColor={bgColor} noPaddingBottom={noPaddingBottom}>
       {children}
     </SectionWrapper>
   )
@@ -17,6 +17,7 @@ const Section = ({ children, flexDirection, bgColor }) => {
 
 const SectionWrapper = styled.section`
   padding: ${setSharedSpacing.sectionPadding};
+  padding-bottom: ${props => props.noPaddingBottom ? "0" : null };
   background-color: ${props => props.bgColor};
   display: flex;
   flex-direction: column;
