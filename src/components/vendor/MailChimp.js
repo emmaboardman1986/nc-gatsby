@@ -10,6 +10,7 @@ import CheckBox from "../form/CheckBox"
 import Emphasis from "../contentContainers/Emphasis"
 import { setColor } from "../../styles/styleHelpers"
 import Button from "../../components/ui/Button"
+import TextLink from "../../components/ui/TextLink"
 
 const MailChimp = ({ emphasisColor }) => {
   const [email, setEmail] = useState("")
@@ -176,13 +177,13 @@ const MailChimp = ({ emphasisColor }) => {
                   We use Mailchimp as our marketing platform. By clicking below
                   to subscribe, you acknowledge that your information will be
                   transferred to Mailchimp for processing.{" "}
-                  <a
-                    href=" https://mailchimp.com/legal/"
-                    target="_blank"
-                    style={{ fontSize: "0.6rem" }}
+                  <TextLink
+                    link=" https://mailchimp.com/legal/"
+                    isExternal
+                    isOnBrandBg
                   >
                     Learn more about Mailchimp's privacy practices here.
-                  </a>
+                  </TextLink>
                 </p>
               </div>
             </GDPR>
@@ -213,23 +214,24 @@ const MailChimp = ({ emphasisColor }) => {
             <Button
               name="subscribe"
               id="mc-embedded-subscribe"
-              linkText="Subscribe"
-              variant="mailchimp"
+              isAction
+              isCentered
               onClick={handleSubmit}
-            />
+            >Subscribe</Button>
             {/* </div> */}
             <p style={{ fontSize: "0.6rem" }}>
               You can unsubscribe at any time by clicking the link in the footer
               of our emails. For information about our privacy practices, please
               visit the{" "}
-              <a
-                href="https://www.nihongoconnection.com"
-                target="_blank"
-                style={{ fontSize: "0.6rem" }}
+              <TextLink
+                link="https://www.nihongoconnection.com"
+                isExternal
+                isOnBrandBg
+               
               >
-                {" "}
+                
                 Nihongo Connection website
-              </a>
+              </TextLink>
             </p>
           </div>
         </Form>
@@ -239,15 +241,7 @@ const MailChimp = ({ emphasisColor }) => {
 }
 
 const MailChimpWrapper = styled.div`
-  p {
-    a {
-      color: ${setColor.brandWhite};
-      &:hover {
-        background: ${setColor.brandWhite};
-        color: ${setColor.brandGreyDark};
-      }
-    }
-  }
+
 `
 
 const MailChimpLegend = styled.legend`
@@ -256,16 +250,5 @@ const MailChimpLegend = styled.legend`
   margin-bottom: 0.5rem;
 `
 
-const InputSubmit = styled.input`
-  width: 60%;
-  padding: 4rem;
-  background-color: ${setColor.brandWhite};
-  color: ${setColor.brandBlack};
-  text-transform: uppercase;
-  font: 600 4rem "AnonymousPro-Regular";
-  span {
-    font-family: "AnonymousPro-Regular";
-  }
-`
 
 export default MailChimp

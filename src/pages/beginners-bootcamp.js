@@ -19,6 +19,7 @@ import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import List from "../components/ui/List"
 import MailChimp from "../components/vendor/MailChimp"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
+import TextLink from "../components/ui/TextLink";
 
 export default function BeginnersBootcampPage({ data }) {
   return (
@@ -137,12 +138,14 @@ export default function BeginnersBootcampPage({ data }) {
                   (M-F))
                 </li>
               </NumberedList>
-              <Button
-                link="https://nihongoconnection.vipmembervault.com/products/courses/view/6"
-                linkText="Book Now"
-                isCentered={true}
-                bgColor={setColor.brandSecondary}
-              ></Button>
+             
+                <Button
+                link="https://nihongoconnection.vipmembervault.com/products/courses/view/26"
+                isCentered
+                isExternal
+                isCTA
+               
+              >Book Now</Button>
             </Card>
           </Gradient>
 
@@ -161,7 +164,7 @@ export default function BeginnersBootcampPage({ data }) {
                   <li>
                     <strong>
                       All bootcamps postponed due to covid-19. Join the{" "}
-                      <a href="#mailing-list">mailing list below</a> to keep
+                      <TextLink href="#mailing-list">mailing list below</TextLink> to keep
                       informed.
                     </strong>
                   </li>

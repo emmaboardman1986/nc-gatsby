@@ -10,6 +10,7 @@ import TimeLine from "../components/timeline/Timeline"
 import Heading from "../components/ui/Heading"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
+import TextLink from "../components/ui/TextLink"
 
 import { setColor } from "../styles/styleHelpers"
 

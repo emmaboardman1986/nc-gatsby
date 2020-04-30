@@ -28,16 +28,7 @@ const SpeechBubbleWrapper = styled.div`
   padding: 2rem;
   p {
     margin: 0;
-    a {
-      color: ${setColor.brandPrimaryLight};
-      &:hover,
-      &:focus {
-        background-color: ${setColor.brandPrimaryLight};
-        color: ${setColor.brandPrimary};
-      }
-    }
   }
-
   &:after {
     content: "";
     background: url(${redSpeechBubble});

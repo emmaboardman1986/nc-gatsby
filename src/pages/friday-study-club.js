@@ -5,13 +5,12 @@ import Section from "../components/layout/Section"
 import Gradient from "../components/contentContainers/Gradient"
 import Card from "../components/contentContainers/Card"
 import AuxHero from "../components/ui/AuxHero"
-import Grid from "../components/layout/Grid"
-import GridCoordinates from "../components/layout/GridCoordinates"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import Emphasis from "../components/contentContainers/Emphasis"
 import styled from "styled-components"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
+import TextLink from "../components/ui/TextLink"
 
 import { setColor } from "../styles/styleHelpers"
 
@@ -46,7 +45,7 @@ export default function FridayStudyClubPage({ data }) {
        
      
           
-          <Section bgColor={setColor.brandPrimaryLight} noPaddingBottom>
+          <Section bgColor={setColor.brandPrimaryLight}>
       <VerticalSpacing size="7x-large--negative" sizeMd="-10rem">
             <FlexContainer justifyContent={{ _: "center" }}>
               <Gradient widthMd="80%">
@@ -55,8 +54,8 @@ export default function FridayStudyClubPage({ data }) {
                   <Emphasis>
                   <Card >
                   <Note>
-                    <p>PLEASE NOTE, due to the ongoing covid-19 pandemic, <a href="https://zoom.us/j/169628752" target="_blank">Nihongo Scotland are now meeting online.</a></p>
-                    <p>You are kindly invited to join us on <a href="https://zoom.us/j/169628752" target="_blank">Zoom</a> every Friday night between 6pm and 8pm</p>
+                    <p>PLEASE NOTE, due to the ongoing covid-19 pandemic, <TextLink link="https://zoom.us/j/169628752" isExternal>Nihongo Scotland are now meeting online.</TextLink></p>
+                    <p>You are kindly invited to join us on <TextLink link="https://zoom.us/j/169628752" isExternal>Zoom</TextLink> every Friday night between 6pm and 8pm</p>
                     <p>
                       <span>You will need a Zoom account to join the meeting.</span>
                     </p>

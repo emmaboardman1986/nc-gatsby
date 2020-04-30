@@ -94,9 +94,9 @@ export default function Homepage({ data }) {
               flexDirection={{ _: "column" }}
               flex={1}
             >
-            <VerticalSpacing size="x-large" sizeMd="2rem"></VerticalSpacing>
+              <VerticalSpacing size="x-large" sizeMd="2rem"></VerticalSpacing>
 
-             <Heading
+              <Heading
                 variant="h1"
                 text={data.homepage.data.main_title.text}
               ></Heading>
@@ -125,13 +125,7 @@ export default function Homepage({ data }) {
                   <p>{data.homepage.data.first_card_content_line_one.text}</p>
                   <p>{data.homepage.data.first_card_content_line_two.text}</p>
 
-                  <Button
-                    link="/friday-study-club"
-                    linkText="Find out more"
-                    bgColor={setColor.brandPrimary}
-                  >
-                    Find out more
-                  </Button>
+                  <Button link="/friday-study-club">Find out more</Button>
                 </Card>
               </Gradient>
 
@@ -145,13 +139,7 @@ export default function Homepage({ data }) {
 
                   <p>{data.homepage.data.second_card_content_line_two.text}</p>
 
-                  <Button
-                    link="/jlpt-bootcamp"
-                    linkText="Find out more"
-                    bgColor={setColor.brandPrimary}
-                  >
-                    Find out more
-                  </Button>
+                  <Button link="/jlpt-bootcamp">Find out more</Button>
                 </Card>
               </Gradient>
 
@@ -165,13 +153,7 @@ export default function Homepage({ data }) {
 
                   <p>{data.homepage.data.third_card_content_line_2.text}</p>
 
-                  <Button
-                    link="/beginners-bootcamp"
-                    linkText="Find out more"
-                    bgColor={setColor.brandPrimary}
-                  >
-                    Find out more
-                  </Button>
+                  <Button link="/beginners-bootcamp">Find out more</Button>
                 </Card>
               </Gradient>
             </Column>
@@ -180,7 +162,11 @@ export default function Homepage({ data }) {
               containerWidth={{ _: "100%", md: "48%" }}
               flexDirection={{ _: "column" }}
             >
-              <VerticalSpacing size="x-large" sizeMd="6rem" orderDesktop={3}></VerticalSpacing>
+              <VerticalSpacing
+                size="x-large"
+                sizeMd="6rem"
+                orderDesktop={3}
+              ></VerticalSpacing>
               <Outline
                 color={setColor.brandPrimary}
                 font="AnonymousPro-Regular"
@@ -199,13 +185,7 @@ export default function Homepage({ data }) {
                     all{" "}
                   </p>
 
-                  <Button
-                    link="/about-us"
-                    linkText="Find out more"
-                    bgColor={setColor.brandPrimary}
-                  >
-                    Find out more
-                  </Button>
+                  <Button link="/about-us">Find out more</Button>
                 </Card>
               </Outline>
 
@@ -216,7 +196,7 @@ export default function Homepage({ data }) {
               <SpeechBubble orderDesktop={2}>
                 <h2>{data.homepage.data.speech_bubble_title.text}</h2>
                 <p>Subscribe to get invited to our events</p>
-                <MailChimp emphasisColor={setColor.brandSecondaryLight}/>
+                <MailChimp emphasisColor={setColor.brandSecondaryLight} />
               </SpeechBubble>
               <VerticalSpacing size="4x-large" sizeMd="0"></VerticalSpacing>
             </FlexContainer>

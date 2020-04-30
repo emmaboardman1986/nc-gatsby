@@ -26,8 +26,7 @@ const SectionWrapper = styled.section`
   background-repeat: no-repeat;
   background-size: 150% auto;
   background-position: 10vw 12vh;
-  padding: ${setSharedSpacing.sectionPaddingDesktop};
-  padding-bottom: ${props => props.noPaddingBottom ? "0" : null };
+
   `}
   ${breakpoint.md`
   background-position: 15vw 8vh;
@@ -35,7 +34,7 @@ const SectionWrapper = styled.section`
     props.flexDirection ? props.flexDirection : "column"};
   align-items: ${props => (props.flexDirection ? "flex-start" : null)};
   justify-content: ${props => (props.flexDirection ? "space-between" : null)};
-  padding-bottom: ${setSharedSpacing.sectionPaddingDesktop};
+  padding: ${setSharedSpacing.sectionPaddingDesktop};
   `}
  
   

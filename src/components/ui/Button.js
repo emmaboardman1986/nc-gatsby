@@ -1,82 +1,116 @@
 import styled, { css } from "styled-components"
 import React from "react"
 import { setColor } from "../../styles/styleHelpers"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
-const Button = ({ bgColor, link, linkText, isCentered, variant, onClick, targetBlank }) => {
+const Button = ({
+  children,
+  link,
+  isCentered,
+  onClick,
+  isExternal,
+  isAction,
+  isCTA,
+}) => {
   return (
     <ButtonWrapper
-      bgColor={bgColor}
-      link={link}
-      linkText={linkText}
       isCentered={isCentered}
-      variant={variant}
-      onClick={onClick} 
+      onClick={onClick}
+      isAction={isAction}
+      isCTA={isCTA}
     >
-      <a href={link} target={targetBlank ? "_blank" : null}>
-        <span>{linkText}</span>
-      </a>
+      {isExternal ? (
+        <a href={link} target="_blank">
+          {children}
+        </a>
+      ) : (
+        <Link to={link}>{children}</Link>
+      )}
     </ButtonWrapper>
   )
 }
 
-const MailChimpStyles = css`
+const ActionButtonStyles = css`
   background-color: ${setColor.brandWhite};
   border: 2px solid ${setColor.brandBlack};
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  a {
+    color: ${setColor.brandBlack};
+  }
   &:hover {
     background-color: ${setColor.brandWhiteOffset};
     border: 2px solid ${setColor.brandPrimary};
   }
+  /* Remove Later */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`
+
+const CTAButtonStyles = css`
+  background-color: ${setColor.brandSecondary};
+  border: 2px solid ${setColor.brandSecondary};
   a {
-    color: ${setColor.brandBlack};
+    color: ${setColor.brandWhite};
+  }
+  &:hover {
+    background-color: ${setColor.brandWhite};
+    border: 2px solid ${setColor.brandSecondary};
+    a {
+      color: ${setColor.brandSecondary};
+    }
   }
 `
 
 const ButtonWrapper = styled.div`
-  background-color: ${props => props.bgColor};
+  /* Common Styles */
   padding: 8px 10px;
   border-radius: 16px;
-  color: white;
   width: 150px;
   align-self: ${props => (props.isCentered ? "center" : "flex-end")};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  /* Default Styles (Primary) */
+  background-color: ${setColor.brandPrimary};
+  border: 2px solid ${setColor.brandPrimary};
+  a {
+    color: ${setColor.brandWhite};
+    text-decoration: none;
+    /* Correct Poppins bottom spacing */
+    margin-top: 3px;
+  }
+  &:hover {
+    background-color: ${setColor.brandWhite};
+    a {
+      color: ${setColor.brandPrimary};
+    }
+  }
+  /* Variant Styles */
+  ${props => props.isAction && ActionButtonStyles};
+  ${props => props.isCTA && CTAButtonStyles};
+  /* TODO: Remove Later */
   margin-right: 4%;
   margin-top: 5%;
   @media (max-width: 500px) {
     margin-top: 8%;
   }
-  border: 2px solid ${props => props.bgColor};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  a {
-    color: white;
-    text-decoration: none;
-    padding-top: 5px;
-    &:hover {
-      color: ${props => props.bgColor};
-    }
-  }
-  &:hover {
-    background-color: white;
-    a {
-      color: ${props => props.bgColor};
-    }
-  }
-  ${props => props.variant && MailChimpStyles};
+  /* In event parent is not flex element */
+  /* TODO: Move to underneath align-self once margin is removed  */
+  margin-left: ${props => (props.isCentered ? "auto" : null)};
+  margin-right: ${props => (props.isCentered ? "auto" : null)};
 `
 
 Button.propTypes = {
-  bgColor: PropTypes.string,
-  bgImg: PropTypes.string,
-}
-
-Button.defaultProps = {
-  bgColor: setColor.brandPrimary,
+  link: PropTypes.string,
+  isCentred: PropTypes.bool,
+  onClick: PropTypes.func,
+  isExternal: PropTypes.bool,
+  isAction: PropTypes.bool,
+  isCTA: PropTypes.bool,
 }
 
 export default Button

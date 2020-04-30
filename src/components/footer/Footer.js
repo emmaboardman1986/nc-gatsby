@@ -8,6 +8,7 @@ import {
   setSharedSpacing,
 } from "../../styles/styleHelpers"
 import FlexContainer from "../../components/layout/FlexContainer/FlexContainer"
+import TextLink from "../../components/ui/TextLink"
 
 const Footer = () => {
   return (
@@ -21,14 +22,10 @@ const Footer = () => {
       </FooterLogo>
       <FooterContent>
         <p>
-          Nihongo Scotland is a part of{" "}
-          <a href="https://nihongoconnection.com" target="_blank">
-            Nihongo Connection
-          </a>
-          . Visit{" "}
-          <a href="https://nihongoconnection.com" target="_blank">
+          Nihongo Scotland is a part of Nihongo Connection. Visit{" "}
+          <TextLink link="https://nihongoconnection.com" isExternal isOnBrandBg>
             NihongoConnection.com
-          </a>{" "}
+          </TextLink>{" "}
           for more Japanese learning opportunities and resources.
         </p>
         <FlexContainer
@@ -68,17 +65,6 @@ const FooterLogo = styled.div``
 
 const FooterContent = styled.div`
   margin-left: 5%;
-
-  a {
-    color: white;
-    font-family: "AnonymousPro-Bold";
-    border-bottom: 1px solid #2f549c;
-    text-decoration: none;
-    padding-bottom: 0.01%;
-    &:hover {
-      border-bottom: 1px solid white;
-    }
-  }
 `
 
 const FooterCopyright = styled.div``

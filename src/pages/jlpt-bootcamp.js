@@ -16,10 +16,11 @@ import Testimonial from "../components/Testimonial"
 import Accordion from "../components/accordion/Accordion"
 import Button from "../components/ui/Button"
 import List from "../components/ui/List"
-import MailChimp from "../components/vendor/MailChimp"
+
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import Heading from "../components/ui/Heading"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
+import TextLink from "../components/ui/TextLink"
 
 export default function JLPTBootcampPage({ data }) {
   return (
@@ -113,13 +114,12 @@ export default function JLPTBootcampPage({ data }) {
                       in our community.
                     </StarredListItem>
                     <StarredListItem>
-                      Invitation to join our{" "}
-                      <a
-                        href="https://nihongoconnection.vipmembervault.com/products/courses/view/3"
-                        target="_blank"
-                      >
-                        online Japanese Conversation Club
-                      </a>{" "}
+                      Invitation to join our <TextLink
+                        link="https://nihongoconnection.vipmembervault.com/products/courses/view/3"
+                        isExternal
+                        isOnBrandBg
+                      >online Japanese Conversation Club
+                      </TextLink>{" "}
                       at a discount rate.
                     </StarredListItem>
                     <StarredListItem>
@@ -159,11 +159,11 @@ export default function JLPTBootcampPage({ data }) {
               </NumberedList>
               <Button
                 link="https://nihongoconnection.vipmembervault.com/products/courses/view/6"
-                linkText="Book Now"
-                isCentered={true}
-                bgColor={setColor.brandSecondary}
-                targetBlank
-              ></Button>
+                isCentered
+                isExternal
+                isCTA
+               
+              >Book Now</Button>
             </Card>
           </Gradient>
 
@@ -182,7 +182,7 @@ export default function JLPTBootcampPage({ data }) {
                   <li>
                     <strong>
                       All bootcamps postponed due to covid-19. Join the{" "}
-                      <a href="#mailing-list">mailing list below</a> to keep
+                      <TextLink link="#mailing-list">mailing list below</TextLink> to keep
                       informed.
                     </strong>
                   </li>
