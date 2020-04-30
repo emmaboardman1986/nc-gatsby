@@ -61,7 +61,7 @@ export default function AboutUsPage({ data }) {
         
         </VerticalSpacing>
       </Section>
-      <VerticalSpacing size="large--negative" sizeMd="6x-large--negative"></VerticalSpacing>
+      <VerticalSpacing sizeMd="-2rem"></VerticalSpacing>
       <Section bgColor={setColor.brandPrimaryLight} style={{paddingTop: 0}}>
         <Heading variant="h2" text="Our Story" style={{margin: '0.25rem'}}></Heading>
         <TimeLine></TimeLine>
