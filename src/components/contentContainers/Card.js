@@ -27,6 +27,10 @@ const CardWrapper = styled.div`
     font-size: 1.1rem;
     &:not(:last-of-type) {
       margin-bottom: 1rem;
+     
+    }
+    a {
+      margin-bottom: 0;
     }
   }
   ${breakpoint.md`
