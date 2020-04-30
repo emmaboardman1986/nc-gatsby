@@ -13,6 +13,7 @@ const LabelWrapper = styled.label`
   display: ${props => (props.display ? props.display : "block")};
   font-size: 0.8rem;
   font-family: "Poppins-Regular";
+  padding-bottom: 1px;
 `
 
 export default Label

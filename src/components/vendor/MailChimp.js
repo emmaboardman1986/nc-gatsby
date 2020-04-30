@@ -219,7 +219,7 @@ const MailChimp = ({ emphasisColor }) => {
               onClick={handleSubmit}
             >Subscribe</Button>
             {/* </div> */}
-            <p style={{ fontSize: "0.6rem" }}>
+            <p style={{ fontSize: "0.6rem", fontFamily: "Poppins-Regular" }}>
               You can unsubscribe at any time by clicking the link in the footer
               of our emails. For information about our privacy practices, please
               visit the{" "}
