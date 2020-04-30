@@ -11,7 +11,7 @@ const Timeline = () => {
     {
       year: "2020",
       yearContent:
-        "Friday Night Study Club moves online! <a href='https://zoom.us/j/169628752' target='_blank'>Join us on Zoom</a> for Japanese Conversation, every Friday between 6pm and 8pm BST UK.",
+        "Friday Night Study Club moves online! <a href='https://zoom.us/j/169628752' target='_blank'>Join us on Zoom</a> for Japanese Conversation, every Friday between 6pm and 8pm BST, UK.",
     },
     {
       year: "2019",

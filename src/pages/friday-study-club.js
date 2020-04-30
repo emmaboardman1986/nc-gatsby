@@ -55,7 +55,7 @@ export default function FridayStudyClubPage({ data }) {
                   <Card >
                   <Note>
                     <p>PLEASE NOTE, due to the ongoing covid-19 pandemic, <TextLink link="https://zoom.us/j/169628752" isExternal>Nihongo Scotland are now meeting online.</TextLink></p>
-                    <p>You are kindly invited to join us on <TextLink link="https://zoom.us/j/169628752" isExternal>Zoom</TextLink> every Friday night between 6pm and 8pm</p>
+                    <p>You are kindly invited to join us on <TextLink link="https://zoom.us/j/169628752" isExternal>Zoom</TextLink> every Friday night between 6pm and 8pm BST, UK</p>
                     <p>
                       <span>You will need a Zoom account to join the meeting.</span>
                     </p>
