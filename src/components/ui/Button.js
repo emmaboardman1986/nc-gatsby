@@ -69,7 +69,7 @@ const CTAButtonStyles = css`
 
 const sharedStyles = css`
   /* Common Styles */
-  padding: 8px 10px;
+  padding: 10px 12px;
   border-radius: 16px;
   width: 150px;
   font-family: "Poppins-SemiBold";
