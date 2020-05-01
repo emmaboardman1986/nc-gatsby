@@ -7,11 +7,11 @@ import Card from "../components/contentContainers/Card"
 import AuxHero from "../components/ui/AuxHero"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import TimeLine from "../components/timeline/Timeline"
-import Heading from "../components/ui/Heading"
+import Heading from "../components/ui/typography/Heading"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
 import TextLink from "../components/ui/TextLink"
-import BodyText from "../components/ui/BodyText"
+import BodyText from "../components/ui/typography/BodyText"
 import { setColor, setFont } from "../styles/styleHelpers"
 
 export const query = graphql`

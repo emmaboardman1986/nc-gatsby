@@ -17,7 +17,7 @@ import Button from "../components/ui/Button"
 import List from "../components/ui/List"
 
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
-import Heading from "../components/ui/Heading"
+import Heading from "../components/ui/typography/Heading"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
 import TextLink from "../components/ui/TextLink"
 import BodyText from "../components/ui/BodyText"

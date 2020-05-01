@@ -5,7 +5,7 @@ import FlexContainer from "../layout/FlexContainer/FlexContainer"
 import Card from "../contentContainers/Card"
 import MailChimp from "../vendor/MailChimp"
 import { setColor, setFont } from "../../styles/styleHelpers"
-import Heading from "../ui/Heading"
+import Heading from "../ui/typography/Heading"
 import BodyText from "../ui/typography/BodyText"
 
 const MailChimpFooter = () => {

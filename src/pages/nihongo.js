@@ -11,7 +11,7 @@ import styled from "styled-components"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import TextLink from "../components/ui/TextLink"
-import Heading from "../components/ui/Heading"
+import Heading from "../components/ui/typography/Heading"
 import BodyText from "../components/ui/typography/BodyText"
 
 

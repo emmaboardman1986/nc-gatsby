@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { setColor } from "../../styles/styleHelpers"
-import { H3Styles } from "../../components/ui/Heading"
+import { H3Styles } from "../../components/ui/typography/Heading"
 
 const AccordionTitle = ({ expanded, onClick, title }) => {
   return (
