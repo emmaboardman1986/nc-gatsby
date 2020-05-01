@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import BodyText from "../../components/ui/typography/BodyText"
-import StarredListItem from "../StarredListItem"
+import BodyText from "../typography/BodyText"
+import StarredListItem from "./StarredListItem"
 
 const List = ({ children, subList, color, isStarred }) => {
   console.log(children.length)

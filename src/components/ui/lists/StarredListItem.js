@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import React from "react"
 import PropTypes from "prop-types"
-import { setColor, breakpoint } from "../../styles/styleHelpers"
-import starSVG from "../../../static/assets/star.svg"
+import { setColor, breakpoint } from "../../../styles/styleHelpers"
+import starSVG from "../../../../static/assets/star.svg"
 
 const StarredListItem = ({ children, color }) => {
   return (
