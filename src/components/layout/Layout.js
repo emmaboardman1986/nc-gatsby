@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
           crossOrigin="anonymous"
         />
       </Helmet>
-      <Container>
+      {/* <Container> */}
       <Header
         isMenuExpanded={isMenuExpanded}
         setIsMenuExpanded={setIsMenuExpanded}
@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
 
       <Main>{children}</Main>
     <Footer></Footer>
-    </Container>
+    {/* </Container> */}
     </>
   )
 }

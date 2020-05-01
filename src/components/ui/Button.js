@@ -69,13 +69,14 @@ const CTAButtonStyles = css`
 
 const sharedStyles = css`
   /* Common Styles */
-  padding: 10px 12px;
+  padding: 8px 10px;
   border-radius: 16px;
   width: 150px;
+  min-height: 44px;
   font-family: "Poppins-SemiBold";
   font-size: 1rem;
   align-self: ${props => (props.isCentered ? "center" : "flex-end")};
-
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;

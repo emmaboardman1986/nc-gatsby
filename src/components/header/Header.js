@@ -14,8 +14,8 @@ const Header = ({ isMenuExpanded, setIsMenuExpanded, children }) => {
     <HeaderWrapper>
       <HeaderLogo>
         <Link to="/">
-          <img src={LogoHeader}></img>
-         </Link>
+          <img src={LogoHeader} alt="Nihongo Scotland"></img>
+        </Link>
       </HeaderLogo>
       <Nav
         isMenuExpanded={isMenuExpanded}
@@ -27,16 +27,16 @@ const Header = ({ isMenuExpanded, setIsMenuExpanded, children }) => {
 
 const HeaderWrapper = styled.header`
   background-color: ${setColor.brandPrimary};
-  background-color: ${setColor.brandPrimary};
   position: fixed;
   z-index: 2;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   width: 100vw;
-  height: 9.5vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
   ${breakpoint.sm`
   height: 12vh;`}
   ${breakpoint.md`
@@ -48,22 +48,16 @@ const HeaderWrapper = styled.header`
 `
 
 const HeaderLogo = styled.div`
-img {
-  /* width: 20px; */
-  height: 26px;
-  /* padding-top: 0.5rem; */
-  padding-left: 1rem;
-}
-  
-  flex: 1;
-  /* img {
-    padding-top: 1rem;
-  } */
-
-  a {
-    color: ${setColor.brandWhite};
-    text-decoration: none;
+/* Compensate for bottom spacing on SVG */
+padding-top: 3.5px;
+  img {
+    height: 26px;
+    padding-left: 1rem;
   }
+  ${breakpoint.md`
+  padding-top: 0px;`}
+
+  flex: 1;
 `
 
 export default Header
