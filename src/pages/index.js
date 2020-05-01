@@ -8,7 +8,7 @@ import TitleJP from "../../static/assets/hero__bg--jp.svg"
 import Gradient from "../components/contentContainers/Gradient"
 import Card from "../components/contentContainers/Card"
 
-import { setColor, breakpoint } from "../styles/styleHelpers"
+import { setColor, breakpoint, setFont } from "../styles/styleHelpers"
 import styled from "styled-components"
 
 import SpeechBubble from "../components/contentContainers/SpeechBubble"
@@ -20,6 +20,8 @@ import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import MailChimp from "../components/vendor/MailChimp"
 import Heading from "../components/ui/Heading"
 import Outline from "../components/contentContainers/Outline"
+import Subtitle from "../components/ui/Subtitle"
+import BodyText from "../components/ui/BodyText"
 
 export const query = graphql`
   query {
@@ -96,11 +98,10 @@ export default function Homepage({ data }) {
             >
               <VerticalSpacing size="x-large" sizeMd="2rem"></VerticalSpacing>
 
-              <Heading
-                variant="h1"
-                text={data.homepage.data.main_title.text}
-              ></Heading>
-              <p>{data.homepage.data.sub_title.text}</p>
+              <Heading text={data.homepage.data.main_title.text}></Heading>
+              <VerticalSpacing />
+              <Subtitle>{data.homepage.data.sub_title.text}</Subtitle>
+              <VerticalSpacing />
             </FlexContainer>
           </Hero>
         </Section>
@@ -122,8 +123,12 @@ export default function Homepage({ data }) {
                     variant="h3"
                     text={data.homepage.data.first_card_sub_title1.text}
                   ></Heading>
-                  <p>{data.homepage.data.first_card_content_line_one.text}</p>
-                  <p>{data.homepage.data.first_card_content_line_two.text}</p>
+                  <BodyText font={setFont.fontSecondary}>
+                    {data.homepage.data.first_card_content_line_one.text}
+                  </BodyText>
+                  <BodyText font={setFont.fontSecondary}>
+                    {data.homepage.data.first_card_content_line_two.text}
+                  </BodyText>
 
                   <Button link="/friday-study-club">Find out more</Button>
                 </Card>
@@ -133,11 +138,21 @@ export default function Homepage({ data }) {
               <VerticalSpacing size="x-large"></VerticalSpacing>
               <Gradient>
                 <Card>
-                  <h2>{data.homepage.data.second_card_title.text}</h2>
-                  <h3>{data.homepage.data.second_card_sub_title.text}</h3>
-                  <p>{data.homepage.data.second_card_content_line_one.text}</p>
+                  <Heading
+                    variant="h2"
+                    text={data.homepage.data.second_card_title.text}
+                  ></Heading>
+                  <Heading
+                    variant="h3"
+                    text={data.homepage.data.second_card_sub_title.text}
+                  ></Heading>
+                  <BodyText font={setFont.fontSecondary}>
+                    {data.homepage.data.second_card_content_line_one.text}
+                  </BodyText>
 
-                  <p>{data.homepage.data.second_card_content_line_two.text}</p>
+                  <BodyText font={setFont.fontSecondary}>
+                    {data.homepage.data.second_card_content_line_two.text}
+                  </BodyText>
 
                   <Button link="/jlpt-bootcamp">Find out more</Button>
                 </Card>
@@ -147,11 +162,17 @@ export default function Homepage({ data }) {
               <VerticalSpacing size="x-large"></VerticalSpacing>
               <Gradient>
                 <Card>
-                  <h2>{data.homepage.data.third_card_title.text}</h2>
-                  <h3>{data.homepage.data.third_card_sub_title.text}</h3>
-                  <p>{data.homepage.data.third_card_content_line_1.text}</p>
+                  <Heading
+                    variant="h2"
+                    text={data.homepage.data.third_card_title.text}
+                  ></Heading>
+                  <Heading
+                    variant="h3"
+                    text={data.homepage.data.third_card_sub_title.text}
+                  ></Heading>
+                  <BodyText font={setFont.fontSecondary}>{data.homepage.data.third_card_content_line_1.text}</BodyText>
 
-                  <p>{data.homepage.data.third_card_content_line_2.text}</p>
+                  <BodyText font={setFont.fontSecondary}>{data.homepage.data.third_card_content_line_2.text}</BodyText>
 
                   <Button link="/beginners-bootcamp">Find out more</Button>
                 </Card>
@@ -174,16 +195,17 @@ export default function Homepage({ data }) {
               >
                 <Card>
                   <Heading variant="h2" text="About Us"></Heading>
+                  <VerticalSpacing></VerticalSpacing>
 
-                  <p>
+                  <BodyText font={setFont.fontSecondary}>
                     Nihongo Scotland is a Japanese-language study club run by
                     volunteers.
-                  </p>
+                    </BodyText>
 
-                  <p>
+                  <BodyText font={setFont.fontSecondary}>
                     Our purpose is provide an immersive study environment for
                     all{" "}
-                  </p>
+                  </BodyText>
 
                   <Button link="/about-us">Find out more</Button>
                 </Card>
@@ -194,8 +216,12 @@ export default function Homepage({ data }) {
                 orderDesktop={1}
               ></VerticalSpacing>
               <SpeechBubble orderDesktop={2}>
-                <h2>{data.homepage.data.speech_bubble_title.text}</h2>
-                <p>Subscribe to get invited to our events</p>
+                <Heading
+                  variant="h2"
+                  text={data.homepage.data.speech_bubble_title.text}
+                  color={setColor.brandWhite}
+                ></Heading>
+                <BodyText color={setColor.brandWhite}>Subscribe to get invited to our events</BodyText>
                 <MailChimp emphasisColor={setColor.brandSecondaryLight} />
               </SpeechBubble>
               <VerticalSpacing size="4x-large" sizeMd="0"></VerticalSpacing>

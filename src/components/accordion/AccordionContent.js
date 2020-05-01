@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import {setColor} from "../../styles/styleHelpers"
+import {setColor, setFont} from "../../styles/styleHelpers"
+import BodyText from "../../components/ui/BodyText"
 
 const AccordionContent = ({ children }) => {
-  return <AccordionContentWrapper>{children}</AccordionContentWrapper>;
+  return <AccordionContentWrapper><BodyText font={setFont.fontSecondary}>{children}</BodyText></AccordionContentWrapper>;
 };
 
 export const AccordionContentWrapper = styled.div`
@@ -11,11 +12,6 @@ export const AccordionContentWrapper = styled.div`
   padding-bottom: 1.25rem;
   background-color: ${setColor.brandPrimaryLight};
   border-bottom: 2px solid ${setColor.brandPrimary};
-  h4 {
-    margin: 0;
-    padding-top: 0.75rem;
-    padding-bottom: 0.5rem;
-  }
 `;
 
 export default AccordionContent;

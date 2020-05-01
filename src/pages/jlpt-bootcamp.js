@@ -6,10 +6,9 @@ import Gradient from "../components/contentContainers/Gradient"
 import Outline from "../components/contentContainers/Outline"
 import Card from "../components/contentContainers/Card"
 import SpeechBubble from "../components/contentContainers/SpeechBubble"
-import { setColor, breakpoint } from "../styles/styleHelpers"
+import { setColor, setFont, breakpoint } from "../styles/styleHelpers"
 import VerticalSpacing from "../components/spacing/VerticalSpacing"
 import styled from "styled-components"
-import StarredListItem from "../components/ui/StarredListItem"
 import NumberedList from "../components/ui/NumberedList"
 import Emphasis from "../components/contentContainers/Emphasis"
 import Testimonial from "../components/Testimonial"
@@ -21,6 +20,7 @@ import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import Heading from "../components/ui/Heading"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
 import TextLink from "../components/ui/TextLink"
+import BodyText from "../components/ui/BodyText"
 
 export default function JLPTBootcampPage({ data }) {
   return (
@@ -28,7 +28,7 @@ export default function JLPTBootcampPage({ data }) {
       <div>
         <Section bgColor={setColor.brandPrimary}>
           <AuxHero>
-            <h1>JLPT Bootcamp</h1>
+            <Heading variant="h1" text="JLPT Bootcamp"></Heading>
           </AuxHero>
         </Section>
 
@@ -37,7 +37,12 @@ export default function JLPTBootcampPage({ data }) {
             <FlexContainer justifyContent={{ _: "center" }}>
               <Gradient widthMd="80%">
                 <Card doublePaddingBottom>
-                  <h2>Would you like to discover...</h2>
+                  <VerticalSpacing size="x-small"></VerticalSpacing>
+                  <Heading
+                    variant="h2"
+                    text="Would you like to discover..."
+                  ></Heading>
+                  <VerticalSpacing size="x-small"></VerticalSpacing>
                   <List>
                     <li>
                       Strategies to save you time during the Japanese Language
@@ -74,6 +79,7 @@ export default function JLPTBootcampPage({ data }) {
                 bgColor={setColor.brandPrimary}
                 constrainWidth={true}
               >
+                <VerticalSpacing size="x-small"></VerticalSpacing>
                 <h2>
                   <MutedTitleText>If</MutedTitleText> YES,
                   <MutedTitleText>
@@ -81,51 +87,48 @@ export default function JLPTBootcampPage({ data }) {
                     here are the JLPT Bootcamp Details:
                   </MutedTitleText>
                 </h2>
+                <VerticalSpacing size="x-small"></VerticalSpacing>
 
-                <List>
-                  <StarredListItem>Online</StarredListItem>
-                  <StarredListItem>
+                <List color={setColor.brandWhite} isStarred>
+                  <li>Online</li>
+                  <li>
                     Experienced and qualified native teachers who have taught
                     multiple successful JLPT students.
-                  </StarredListItem>
-                  <StarredListItem>
-                    Small group lessons (4 people maximum).
-                  </StarredListItem>
-                  <StarredListItem>
-                    Marked & reviewed JLPT Mock Test.
-                  </StarredListItem>
-                  <StarredListItem>
-                    Basic, Plus and VIP experiences available.
-                  </StarredListItem>
-                  <StarredListItem>
+                  </li>
+                  <li>Small group lessons (4 people maximum).</li>
+                  <li>Marked & reviewed JLPT Mock Test.</li>
+                  <li>Basic, Plus and VIP experiences available.</li>
+                  <li>
                     5 hours minimum of formal JLPT Prep Lessons with example
                     exercises.
-                  </StarredListItem>
+                  </li>
                 </List>
                 <VerticalSpacing size="large"> </VerticalSpacing>
                 <Emphasis color={setColor.brandPrimaryMedium}>
-                  <p>Bonus Content!</p>
-                  <List>
-                    <StarredListItem>
-                      JLPT Textbook sent to you.
-                    </StarredListItem>
-                    <StarredListItem>
+                  <BodyText color={setColor.brandWhite}>
+                    Bonus Content!
+                  </BodyText>
+                  <List color={setColor.brandWhite} isStarred>
+                    <li>JLPT Textbook sent to you.</li>
+                    <li>
                       Facebook group to share your JLPT questions with teachers
                       in our community.
-                    </StarredListItem>
-                    <StarredListItem>
-                      Invitation to join our <TextLink
+                    </li>
+                    <li>
+                      Invitation to join our{" "}
+                      <TextLink
                         link="https://nihongoconnection.vipmembervault.com/products/courses/view/3"
                         isExternal
                         isOnBrandBg
-                      >online Japanese Conversation Club
+                      >
+                        online Japanese Conversation Club
                       </TextLink>{" "}
                       at a discount rate.
-                    </StarredListItem>
-                    <StarredListItem>
+                    </li>
+                    <li>
                       Special goodybag if you sign up 45 days or more before
                       your chosen bootcamp.
-                    </StarredListItem>
+                    </li>
                   </List>
                 </Emphasis>
               </SpeechBubble>
@@ -136,7 +139,9 @@ export default function JLPTBootcampPage({ data }) {
           <VerticalSpacing size="4x-large" sizeMd="0"></VerticalSpacing>
           <Gradient widthMd="80%">
             <Card>
-              <h2 style={{ color: setColor.brandPrimary }}>How to book</h2>
+              <VerticalSpacing size="x-small"></VerticalSpacing>
+              <Heading variant="h2" text="How to book"></Heading>
+              <VerticalSpacing size="x-small"></VerticalSpacing>
               <NumberedList>
                 <li>
                   Check your JLPT Level, decide your preferred date, and decide
@@ -162,8 +167,9 @@ export default function JLPTBootcampPage({ data }) {
                 isCentered
                 isExternal
                 isCTA
-               
-              >Book Now</Button>
+              >
+                Book Now
+              </Button>
             </Card>
           </Gradient>
 
@@ -182,8 +188,10 @@ export default function JLPTBootcampPage({ data }) {
                   <li>
                     <strong>
                       All bootcamps postponed due to covid-19. Join the{" "}
-                      <TextLink link="#mailing-list">mailing list below</TextLink> to keep
-                      informed.
+                      <TextLink link="#mailing-list">
+                        mailing list below
+                      </TextLink>{" "}
+                      to keep informed.
                     </strong>
                   </li>
                 </List>
@@ -236,34 +244,33 @@ export default function JLPTBootcampPage({ data }) {
               What do past participants think?
             </h2>
             <Testimonial>
-              <p>
+              <BodyText font={setFont.fontSecondary}>
                 I cannot express enough how much I enjoyed the event and there
                 are no words to express how helpful it was for me.
-              </p>
-              <p>Thank you very much to all those who organised it!</p>
-              <p>
+              </BodyText>
+              <BodyText font={setFont.fontSecondary}>
+                Thank you very much to all those who organised it!
+              </BodyText>
+              <BodyText font={setFont.fontSecondary}>
                 You not only helped improve my Japanese and chance of passing
                 the JLPT, but you have also reignited my passion for it. I am
                 already looking forward to next year.
-              </p>
-              <p>11/21/2017</p>
+              </BodyText>
+              <VerticalSpacing size="x-small"></VerticalSpacing>
+              <BodyText font={setFont.fontSecondary}>11/21/2017</BodyText>
             </Testimonial>
             <VerticalSpacing size="large" sizeMd="0"></VerticalSpacing>
           </Section>
         </VerticalSpacing>
 
         <Section bgColor={setColor.brandPrimaryLight}>
-          <h2
-            style={{
-              color: setColor.brandBlack,
-              marginTop: "0",
-              paddingRight: "2rem",
-              paddingTop: "1rem",
-            }}
-          >
+          <VerticalSpacing size="x-small"></VerticalSpacing>
+          <Heading variant="h2" color={setColor.brandBlack} text="FAQs">
             FAQs
-          </h2>
+          </Heading>
+          <VerticalSpacing size="x-small"></VerticalSpacing>
           <Accordion>
+            {/* TODO: find smarter way to handle styling of accordion content */}
             <div title="How do I book?">
               <p>
                 Decide if you want Basic, Plus or VIP and make the payment.
@@ -284,31 +291,38 @@ export default function JLPTBootcampPage({ data }) {
                 (These times are approximate and will be confirmed with
                 participants one week before their bootcamp)
               </p>
+              <br></br>
               <p>
                 <strong>Day One</strong> 08:45-17:30
               </p>
+              <br></br>
               <p>
                 <strong>Day Two</strong> 09:00-11:00 for Basic / 09:00-16:00 for
                 Plus and VIPs.
               </p>
+              <br></br>
               <p>
                 {" "}
                 The basic Bootcamp consists of 5 hours of JLPT preparation
                 classes.
               </p>
+              <br></br>
               <p>
                 Three hours in the morning of Day 1 and the mock test is given
                 in the afternoon.
               </p>{" "}
+              <br></br>
               <p>
                 In the morning of Day 2 mock test results are given and reviewed
                 for two hours.
               </p>{" "}
+              <br></br>
               <p>
                 If you choose the Plus option you get two extra hours to review
                 your results with the teacher, plus lunchtime conversation on
                 each of the two days.
               </p>
+              <br></br>
               <p>
                 {" "}
                 If you choose the VIP option you also get the “Plus” benefits
@@ -316,6 +330,7 @@ export default function JLPTBootcampPage({ data }) {
                 taken during the bootcamp weekend* or taken 30 days before or 30
                 days after your chosen bootcamp.
               </p>
+              <br></br>
               <p>
                 {" "}
                 *limited 1-1 time available during the bootcamp - first come
@@ -374,7 +389,7 @@ export default function JLPTBootcampPage({ data }) {
             </div>
           </Accordion>
         </Section>
-    <MailChimpFooter></MailChimpFooter>
+        <MailChimpFooter></MailChimpFooter>
       </div>
     </Layout>
   )

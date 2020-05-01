@@ -12,6 +12,8 @@ const Header = ({ isMenuExpanded, setIsMenuExpanded, children }) => {
   const headerLogoEl = useRef()
 
   useEffect(() => {
+    // TODO: configure flow parsing to allow for refactor to useRef()
+    // TODO: reconsider this design choice in general 
     if (typeof window !== `undefined`) {
       const currentPage = window.location.href
       const lastChar = currentPage.substr(-1)

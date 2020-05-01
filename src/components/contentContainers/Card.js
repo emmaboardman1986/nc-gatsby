@@ -16,22 +16,16 @@ const CardWrapper = styled.div`
   background: ${props => (props.bgColor ? props.bgColor : setColor.brandWhite)};
   color: ${props => (props.color ? props.color : setColor.brandBlack)};
 
-  h2 {
-    color: ${setColor.brandPrimary};
-  }
   h3 {
     margin-top: 0.5rem;
     margin-bottom: 0.75rem;
   }
   p {
-    font-size: 1.1rem;
     &:not(:last-of-type) {
       margin-bottom: 1rem;
      
     }
-    a {
-      margin-bottom: 0;
-    }
+
   }
   ${breakpoint.md`
   padding-bottom: ${props => props.doublePaddingBottom ? "3rem" : null}`}

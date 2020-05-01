@@ -6,9 +6,12 @@ import {
   breakpoint,
   setFlex,
   setSharedSpacing,
+  setFont,
+  setColor,
 } from "../../styles/styleHelpers"
 import FlexContainer from "../../components/layout/FlexContainer/FlexContainer"
 import TextLink from "../../components/ui/TextLink"
+import BodyText from "../../components/ui/BodyText"
 
 const Footer = () => {
   return (
@@ -21,25 +24,42 @@ const Footer = () => {
         ></img>
       </FooterLogo>
       <FooterContent>
-        <p>
+        <BodyText font={setFont.fontSecondary} color={setColor.brandWhite}>
           Nihongo Scotland is a part of Nihongo Connection. Visit{" "}
           <TextLink link="https://nihongoconnection.com" isExternal isOnBrandBg>
             NihongoConnection.com
           </TextLink>{" "}
           for more Japanese learning opportunities and resources.
-        </p>
+        </BodyText>
         <FlexContainer
           flexDirection={{ _: "column", xs: "row" }}
           justifyContent={{ _: "center", xs: "space-between" }}
-          alignItems={{_: "center", xs: "flex-end"}}
+          alignItems={{ _: "center", xs: "flex-end" }}
         >
-          <FooterCopyright style={{marginTop: "1rem"}}>
-            © {new Date().getFullYear()} Nihongo Connection
+          <FooterCopyright style={{ marginTop: "1rem" }}>
+            <BodyText font={setFont.fontSecondary} color={setColor.brandWhite}>
+              {" "}
+              © {new Date().getFullYear()} Nihongo Connection
+            </BodyText>
           </FooterCopyright>
-          <FooterSocialIcons style={{marginTop: "0.75rem"}}>
-            <a href="https://www.instagram.com/nihongo_connection/" target="_blank" style={{marginRight: "0.5rem"}}><Icon icon="instagram" fill="white" stroke="none"/></a>
-            <a href="https://www.facebook.com/groups/984083104951153/" target="_blank" style={{marginRight: "0.5rem"}}><Icon icon="facebook" fill="white" stroke="none" /></a>
-            <a href="https://twitter.com/nihongoconnect" target="_blank"><Icon icon="twitter" fill="white" stroke="none" /></a>
+          <FooterSocialIcons style={{ marginTop: "0.75rem" }}>
+            <a
+              href="https://www.instagram.com/nihongo_connection/"
+              target="_blank"
+              style={{ marginRight: "0.5rem" }}
+            >
+              <Icon icon="instagram" fill="white" stroke="none" />
+            </a>
+            <a
+              href="https://www.facebook.com/groups/984083104951153/"
+              target="_blank"
+              style={{ marginRight: "0.5rem" }}
+            >
+              <Icon icon="facebook" fill="white" stroke="none" />
+            </a>
+            <a href="https://twitter.com/nihongoconnect" target="_blank">
+              <Icon icon="twitter" fill="white" stroke="none" />
+            </a>
           </FooterSocialIcons>
         </FlexContainer>
       </FooterContent>
@@ -49,9 +69,7 @@ const Footer = () => {
 
 const FooterWrapper = styled.footer`
   background-color: #2f549c;
-  color: #fff;
   padding: ${setSharedSpacing.sectionPadding};
-  font-family: "AnonymousPro-Regular";
   ${setFlex()};
   text-align: center;
   flex-direction: column;

@@ -1,10 +1,6 @@
 body {
   margin: 0;
   background-color: #f0f0f9;
-
-  
-
-
 }
 
 
@@ -71,35 +67,14 @@ ol {
   font-display: swap;
 }
 
-h1 {
-  font-family: "Poppins-Bold", Arial;
-  text-rendering: optimizeLegibility;
-  font-size: 4.5rem;
-  line-height: 1;
-  letter-spacing: 0.01em;
-}
+/* TODO rethink heading to allow for variety within heading text itself (Bootcamp if YES <MutedTitleText> ) */
 h2 {
   font-family: "Poppins-Bold";
   text-rendering: optimizeLegibility;
   font-size: 2.2rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
-h3 {
-  font-family: "Poppins-SemiBold";
-  text-rendering: optimizeLegibility;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-}
-p {
-  font-family: "AnonymousPro-Regular";
-  font-size: 1rem;
-  letter-spacing: 0.01rem;
-  line-height: 1.2rem;
-}
-a {
-  font-family: "Poppins-SemiBold";
-  font-size: 1rem;
-}
+
 
 .speech-bubble__background {
   display: block;

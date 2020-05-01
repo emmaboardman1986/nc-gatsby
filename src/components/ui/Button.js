@@ -14,27 +14,31 @@ const Button = ({
   isCTA,
 }) => {
   return (
-    <ButtonWrapper
-      isCentered={isCentered}
-      onClick={onClick}
-      isAction={isAction}
-      isCTA={isCTA}
-    >
-      {isExternal ? (
-        <a href={link} target="_blank">
-          {children}
-        </a>
+    <>
+      {isAction ? (
+        <ActionWrapper onClick={onClick} isCentered={isCentered}>
+          <span>{children}</span>
+        </ActionWrapper>
       ) : (
-        <Link to={link}>{children}</Link>
+        <LinkWrapper isCentered={isCentered} isCTA={isCTA}>
+          {isExternal ? (
+            <a href={link} target="_blank">
+              {children}
+            </a>
+          ) : (
+            <Link to={link}>{children}</Link>
+          )}
+        </LinkWrapper>
       )}
-    </ButtonWrapper>
+    </>
   )
 }
 
 const ActionButtonStyles = css`
   background-color: ${setColor.brandWhite};
   border: 2px solid ${setColor.brandBlack};
-  a {
+  a, span {
+
     color: ${setColor.brandBlack};
   }
   &:hover {
@@ -63,11 +67,13 @@ const CTAButtonStyles = css`
   }
 `
 
-const ButtonWrapper = styled.div`
+const sharedStyles = css`
   /* Common Styles */
   padding: 8px 10px;
   border-radius: 16px;
   width: 150px;
+  font-family: "Poppins-SemiBold";
+  font-size: 1rem;
   align-self: ${props => (props.isCentered ? "center" : "flex-end")};
 
   display: flex;
@@ -77,7 +83,7 @@ const ButtonWrapper = styled.div`
   /* Default Styles (Primary) */
   background-color: ${setColor.brandPrimary};
   border: 2px solid ${setColor.brandPrimary};
-  a {
+  a, span {
     color: ${setColor.brandWhite};
     text-decoration: none;
     /* Correct Poppins bottom spacing */
@@ -89,8 +95,17 @@ const ButtonWrapper = styled.div`
       color: ${setColor.brandPrimary};
     }
   }
+`
+
+const ActionWrapper = styled.button`
+  ${sharedStyles};
+  ${ActionButtonStyles};
+`
+
+const LinkWrapper = styled.div`
+  ${sharedStyles};
+
   /* Variant Styles */
-  ${props => props.isAction && ActionButtonStyles};
   ${props => props.isCTA && CTAButtonStyles};
   /* TODO: Remove Later */
   margin-right: 4%;

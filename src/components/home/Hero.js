@@ -16,19 +16,11 @@ const HeroWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  color: ${setColor.brandWhiteOffset};
   align-items: center;
   justify-content: space-between;
   padding-bottom: 6rem;
   margin-top: ${setSharedHeights.navHeight};
-  p {
-  font-family: "AnonymousPro-Regular";
-  text-rendering: optimizeLegibility;
-  font-size: 1.5rem;
-  line-height: 1.6;
-  letter-spacing: 0.01em;
-  margin: 1rem 0;
-  }
+ 
   div:first-child {
     width: 70%;
     height: auto;

@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { setColor } from "../../styles/styleHelpers"
+import { H3Styles } from "../../components/ui/Heading"
 
 const AccordionTitle = ({ expanded, onClick, title }) => {
   return (
@@ -31,6 +32,7 @@ const AccordionTitleWrapper = styled.div`
 `
 
 const AccordionTitleContent = styled.h3`
+  ${H3Styles};
   text-transform: none;
   display: flex;
   font-size: 1.2rem;

@@ -21,6 +21,13 @@ export const setColor = {
   gradientRed: "#ED2530",
 }
 
+export const setFont = {
+  fontPrimaryBold: '"Poppins-Bold", sans-serif',
+  fontPrimarySemiBold: '"Poppins-SemiBold", sans-serif',
+  fontPrimaryRegular: '"Poppins-Regular", sans-serif',
+  fontSecondary: '"AnonymousPro-Regular", monospace'
+}
+
 export const setFlex = ({ x = "center", y = "center" } = {}) => {
   return `display: flex;align-items:${y};justify-content:${x}`
 }

@@ -62,11 +62,6 @@ const SpeechBubbleContent = styled.div`
     font-family: "Poppins-Regular";
     margin-bottom: 0.75rem;
   }
-  h2 {
-    color: ${setColor.brandWhite};
-    margin-top: 0.5rem;
-    margin-bottom: 0.6rem;
-  }
 `
 
 SpeechBubble.propTypes = {
