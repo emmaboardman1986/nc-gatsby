@@ -4,7 +4,6 @@ import BodyText from "../typography/BodyText"
 import StarredListItem from "./StarredListItem"
 
 const List = ({ children, subList, color, isStarred }) => {
-  console.log(children.length)
   return (
     <ListWrapper subList={subList}>
       {isStarred ? (
