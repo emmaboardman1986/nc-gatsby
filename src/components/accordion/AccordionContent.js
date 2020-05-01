@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {setColor, setFont} from "../../styles/styleHelpers"
-import BodyText from "../../components/ui/BodyText"
+import BodyText from "../../components/ui/typography/BodyText"
 
 const AccordionContent = ({ children }) => {
   return <AccordionContentWrapper><BodyText font={setFont.fontSecondary}>{children}</BodyText></AccordionContentWrapper>;

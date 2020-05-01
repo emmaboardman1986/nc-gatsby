@@ -20,8 +20,8 @@ import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import MailChimp from "../components/vendor/MailChimp"
 import Heading from "../components/ui/typography/Heading"
 import Outline from "../components/contentContainers/Outline"
-import Subtitle from "../components/ui/Subtitle"
-import BodyText from "../components/ui/BodyText"
+import Subtitle from "../components/ui/typography/Subtitle"
+import BodyText from "../components/ui/typography/BodyText"
 
 export const query = graphql`
   query {

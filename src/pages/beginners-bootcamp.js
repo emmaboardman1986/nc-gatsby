@@ -15,11 +15,11 @@ import Testimonial from "../components/Testimonial"
 import Accordion from "../components/accordion/Accordion"
 import Button from "../components/ui/Button"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
-import List from "../components/ui/List"
+import List from "../components/ui/typography/List"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
 import TextLink from "../components/ui/TextLink";
-import Heading from "../components/ui/Heading"
-import BodyText from "../components/ui/BodyText"
+import Heading from "../components/ui/typography/Heading"
+import BodyText from "../components/ui/typography/BodyText"
 
 export default function BeginnersBootcampPage({ data }) {
   return (

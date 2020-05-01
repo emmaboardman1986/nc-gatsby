@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import BodyText from "../../components/ui/BodyText"
+import BodyText from "../../components/ui/typography/BodyText"
 import StarredListItem from "../StarredListItem"
 
 const List = ({ children, subList, color, isStarred }) => {

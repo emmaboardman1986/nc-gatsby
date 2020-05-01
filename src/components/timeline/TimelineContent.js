@@ -4,7 +4,7 @@ import TimelineDate from "./TimelineDate"
 import Card from "../contentContainers/Card"
 import Outline from "../contentContainers/Outline"
 import { breakpoint, setFont, setColor } from "../../styles/styleHelpers"
-import BodyText from "../ui/BodyText"
+import BodyText from "../ui/typography/BodyText"
 
 const TimelineContent = ({ year, content }) => {
   function createMarkup(content) {

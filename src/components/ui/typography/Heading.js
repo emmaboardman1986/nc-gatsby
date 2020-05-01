@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
-import { setColor, setFont } from "../../styles/styleHelpers"
+import { setColor, setFont } from "../../../styles/styleHelpers"
 
 const Heading = ({ variant, text, color }) => {
   // const H = variant
