@@ -11,7 +11,7 @@ import {
 } from "../../styles/styleHelpers"
 import FlexContainer from "../../components/layout/FlexContainer/FlexContainer"
 import TextLink from "../../components/ui/TextLink"
-import BodyText from "../../components/ui/BodyText"
+import BodyText from "../ui/typography/BodyText"
 
 const Footer = () => {
   return (

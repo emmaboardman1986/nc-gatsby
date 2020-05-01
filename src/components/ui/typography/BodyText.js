@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import React from "react"
-import { setColor, setFont } from "../../styles/styleHelpers"
+import { setColor, setFont } from "../../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
 const BodyText = ({ children, font, color, align }) => {

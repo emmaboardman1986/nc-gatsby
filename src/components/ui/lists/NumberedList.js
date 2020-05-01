@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import React from "react"
-import { setColor, breakpoint } from "../../styles/styleHelpers"
+import { setColor, breakpoint } from "../../../styles/styleHelpers"
 
 const NumberedList = ({ children }) => {
   return <NumberedListWrapper>{children}</NumberedListWrapper>

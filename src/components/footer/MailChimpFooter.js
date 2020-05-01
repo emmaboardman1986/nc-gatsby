@@ -6,7 +6,7 @@ import Card from "../contentContainers/Card"
 import MailChimp from "../vendor/MailChimp"
 import { setColor, setFont } from "../../styles/styleHelpers"
 import Heading from "../ui/Heading"
-import BodyText from "../ui/BodyText"
+import BodyText from "../ui/typography/BodyText"
 
 const MailChimpFooter = () => {
   return (
