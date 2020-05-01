@@ -282,7 +282,8 @@ const MailChimp = ({ emphasisColor }) => {
               />
             </div>
             {/* <div className="clear"> */}
-            <Button
+           
+            { result ? result.result === "success" && <p>{result.msg}</p> :  <Button
               type="button"
               name="subscribe"
               id="mc-embedded-subscribe"
@@ -291,8 +292,7 @@ const MailChimp = ({ emphasisColor }) => {
               onClick={handleSubmit}
             >
               Subscribe
-            </Button>
-            {result.result === "success" && <p>{result.msg}</p>}
+            </Button>}
             {/* </div> */}
             <p style={{ fontSize: "0.6rem", fontFamily: "Poppins-Regular" }}>
               You can unsubscribe at any time by clicking the link in the footer
