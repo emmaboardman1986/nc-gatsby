@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useReducer } from "react"
 import styled from "styled-components"
 import Form from "../form/Form"
 import FormList from "../form/FormList"
@@ -11,27 +11,90 @@ import Emphasis from "../contentContainers/Emphasis"
 import { setColor } from "../../styles/styleHelpers"
 import Button from "../../components/ui/Button"
 import TextLink from "../../components/ui/TextLink"
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 const MailChimp = ({ emphasisColor }) => {
-  const [email, setEmail] = useState("")
+  const [result, setResult] = useState(null);
 
-  const handleSubmit = () => {
-    alert("not hooked up yet :) please try back week of May 3rd");
-    // addToMailchimp(email, {
-    //   PATHNAME: '/blog-post-1',
-    //   FNAME: 'Ben',
-    //   LNAME: 'Coder'
-    //  
-    // })
-    
+  const initialState = {
+    email: "",
+    firstName: "",
+    oneToOne: false,
+    jlptBootcamp: false,
+    beginnersCourse: false,
+    beginnersBootcamp: false,
+    onlineConversationClub: false,
+    marketingByEmail: false,
   }
 
+  function reducer(state, { field, value }) {
+    return {
+      ...state,
+      [field]: value,
+    }
+  }
+
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const onChange = e => {
+    dispatch({ field: e.target.name, value: e.target.value })
+  }
+
+  const onToggle = e => {
+    dispatch({ field: e.target.name, value: !state[e.target.name] })
+  }
+
+  const {
+    email,
+    firstName,
+    oneToOne,
+    jlptBootcamp,
+    beginnersCourse,
+    beginnersBootcamp,
+    onlineConversationClub,
+    marketingByEmail,
+  } = state
+
+
+  // TODO: make less awful :) 
+  const buildMailChimpObject  = () => {
+    const mailchimpObject = {
+      FNAME: firstName
+    };
+    if (oneToOne) {
+      mailchimpObject["group[1891][4]"] = "4"
+    } 
+    if (jlptBootcamp) {
+      mailchimpObject["group[1891][8]"] = "8"
+    }
+    if (beginnersCourse) {
+      mailchimpObject["group[1891][16]"] = "16"
+    }
+    if (beginnersBootcamp) {
+      mailchimpObject["group[1891][32]"] = "32"
+    }
+    if (onlineConversationClub) {
+      mailchimpObject["group[1891][64]"] = "64"
+    }
+    if (marketingByEmail) {
+      mailchimpObject["gdpr[27377]"] = "Y"
+    }
+    return mailchimpObject
+  }
+  const handleSubmit = async () => {
+    const mailchimpResult = await addToMailchimp(email, buildMailChimpObject());
+    setResult(mailchimpResult);
+    console.log(mailchimpResult);
+  }
+
+
+ 
   return (
     <MailChimpWrapper>
       <div id="mc_embed_signup">
         <Form
           //   action="https://nihongoscotland.us16.list-manage.com/subscribe/post?u=17e930ef2f11232d3ac0dca1e&amp;id=200df291c9"
-          method="post"
+          // method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
           className="validate"
@@ -46,20 +109,21 @@ const MailChimp = ({ emphasisColor }) => {
               <InputBox
                 type="email"
                 value={email}
-                name="EMAIL"
-                className="required email"
+                name="email"
                 id="mce-EMAIL"
-                onChange={e => setEmail(e.target.value)}
+                onChange={onChange}
+                required
               />
             </div>
             <div className="mc-field-group">
               <Label htmlFor="mce-FNAME">First Name </Label>
               <InputBox
                 type="text"
-                value=""
-                name="FNAME"
+                value={firstName}
+                name="firstName"
                 className=""
                 id="mce-FNAME"
+                onChange={onChange}
               />
             </div>
             <Emphasis
@@ -73,9 +137,10 @@ const MailChimp = ({ emphasisColor }) => {
               <FormList flex={true}>
                 <ListItem flex={true}>
                   <CheckBox
-                    value="4"
-                    name="group[1891][4]"
+                    value={oneToOne}
+                    name="oneToOne"
                     id="mce-group[1891]-1891-0"
+                    onChange={onToggle}
                   />
                   <Label
                     htmlFor="mce-group[1891]-1891-0"
@@ -86,9 +151,10 @@ const MailChimp = ({ emphasisColor }) => {
                 </ListItem>
                 <ListItem flex={true}>
                   <CheckBox
-                    value="8"
-                    name="group[1891][8]"
+                    value={jlptBootcamp}
+                    name="jlptBootcamp"
                     id="mce-group[1891]-1891-1"
+                    onChange={onToggle}
                   />
                   <Label
                     htmlFor="mce-group[1891]-1891-1"
@@ -99,9 +165,10 @@ const MailChimp = ({ emphasisColor }) => {
                 </ListItem>
                 <ListItem flex={true}>
                   <CheckBox
-                    value="16"
-                    name="group[1891][16]"
+                    value={beginnersCourse}
+                    name="beginnersCourse"
                     id="mce-group[1891]-1891-2"
+                    onChange={onToggle}
                   />
                   <Label
                     htmlFor="mce-group[1891]-1891-2"
@@ -112,9 +179,10 @@ const MailChimp = ({ emphasisColor }) => {
                 </ListItem>
                 <ListItem flex={true}>
                   <CheckBox
-                    value="32"
-                    name="group[1891][32]"
+                    value={beginnersBootcamp}
+                    name="beginnersBootcamp"
                     id="mce-group[1891]-1891-3"
+                    onChange={onToggle}
                   />
                   <Label
                     htmlFor="mce-group[1891]-1891-3"
@@ -125,9 +193,10 @@ const MailChimp = ({ emphasisColor }) => {
                 </ListItem>
                 <ListItem flex={true}>
                   <CheckBox
-                    value="64"
-                    name="group[1891][64]"
+                    value={onlineConversationClub}
+                    name="onlineConversationClub"
                     id="mce-group[1891]-1891-4"
+                    onChange={onToggle}
                   />
                   <Label
                     htmlFor="mce-group[1891]-1891-4"
@@ -155,9 +224,10 @@ const MailChimp = ({ emphasisColor }) => {
                   <Label className="checkbox subfield" htmlFor="gdpr_27377">
                     <CheckBox
                       id="gdpr_27377"
-                      name="gdpr[27377]"
-                      value="Y"
+                      name="marketingByEmail"
+                      value={marketingByEmail}
                       className="av-checkbox gdpr"
+                      onChange={onToggle}
                     />
                     <span>Contact me by Email</span>{" "}
                   </Label>
@@ -208,16 +278,21 @@ const MailChimp = ({ emphasisColor }) => {
                 name="b_17e930ef2f11232d3ac0dca1e_200df291c9"
                 tabindex="-1"
                 value=""
+                onChange={onToggle}
               />
             </div>
             {/* <div className="clear"> */}
             <Button
+              type="button"
               name="subscribe"
               id="mc-embedded-subscribe"
               isAction
               isCentered
               onClick={handleSubmit}
-            >Subscribe</Button>
+            >
+              Subscribe
+            </Button>
+            {result.result === "success" && <p>{result.msg}</p>}
             {/* </div> */}
             <p style={{ fontSize: "0.6rem", fontFamily: "Poppins-Regular" }}>
               You can unsubscribe at any time by clicking the link in the footer
@@ -227,9 +302,7 @@ const MailChimp = ({ emphasisColor }) => {
                 link="https://www.nihongoconnection.com"
                 isExternal
                 isOnBrandBg
-               
               >
-                
                 Nihongo Connection website
               </TextLink>
             </p>
@@ -240,15 +313,12 @@ const MailChimp = ({ emphasisColor }) => {
   )
 }
 
-const MailChimpWrapper = styled.div`
-
-`
+const MailChimpWrapper = styled.div``
 
 const MailChimpLegend = styled.legend`
   font-size: 0.8rem;
   font-family: "Poppins-Regular";
   margin-bottom: 0.5rem;
 `
-
 
 export default MailChimp

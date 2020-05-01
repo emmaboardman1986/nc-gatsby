@@ -14,23 +14,27 @@ import TextLink from "../../components/ui/TextLink"
 import BodyText from "../ui/typography/BodyText"
 
 const Footer = () => {
+  // TODO replace footer hardcoded spacing with spacing component
   return (
+    
     <FooterWrapper>
       <FooterLogo>
-        <img
+        <FooterImage
           src={NCLogoSm}
           alt="Nihongo Connection"
           style={{ width: `200px` }}
-        ></img>
+        ></FooterImage>
       </FooterLogo>
       <FooterContent>
         <BodyText font={setFont.fontSecondary} color={setColor.brandWhite}>
+        <span style={{fontSize: "1rem"}}>
           Nihongo Scotland is a part of Nihongo Connection. Visit{" "}
           <TextLink link="https://nihongoconnection.com" isExternal isOnBrandBg>
             NihongoConnection.com
           </TextLink>{" "}
-          for more Japanese learning opportunities and resources.
+          for more Japanese learning opportunities and resources.</span>
         </BodyText>
+
         <FlexContainer
           flexDirection={{ _: "column", xs: "row" }}
           justifyContent={{ _: "center", xs: "space-between" }}
@@ -39,7 +43,7 @@ const Footer = () => {
           <FooterCopyright style={{ marginTop: "1rem" }}>
             <BodyText font={setFont.fontSecondary} color={setColor.brandWhite}>
               {" "}
-              © {new Date().getFullYear()} Nihongo Connection
+             <span style={{fontSize: "1rem"}}> © {new Date().getFullYear()} Nihongo Connection</span>
             </BodyText>
           </FooterCopyright>
           <FooterSocialIcons style={{ marginTop: "0.75rem" }}>
@@ -79,7 +83,13 @@ const FooterWrapper = styled.footer`
   `}
 `
 
+
 const FooterLogo = styled.div``
+
+const FooterImage = styled.img`
+margin-bottom: 0.5rem;
+${breakpoint.xs`
+margin-bottom: 0;`}`
 
 const FooterContent = styled.div`
   margin-left: 5%;

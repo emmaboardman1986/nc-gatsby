@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { setColor, setSharedBorderRadius } from "../../styles/styleHelpers"
 
-const InputBox = ({ type, value, onChange, id, name, className }) => {
+const InputBox = ({ type, value, onChange, id, name, className, required}) => {
   return (
     <>
       <InputBoxWrapper
@@ -12,6 +12,7 @@ const InputBox = ({ type, value, onChange, id, name, className }) => {
         id={id}
         name={name}
         className={className}
+        required={required}
       ></InputBoxWrapper>
 
       <VerticalSpacing />

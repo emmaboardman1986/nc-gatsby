@@ -12,11 +12,12 @@ const Button = ({
   isExternal,
   isAction,
   isCTA,
+  type
 }) => {
   return (
     <>
       {isAction ? (
-        <ActionWrapper onClick={onClick} isCentered={isCentered}>
+        <ActionWrapper onClick={onClick} isCentered={isCentered} type={type}>
           <span>{children}</span>
         </ActionWrapper>
       ) : (
