@@ -42,7 +42,7 @@ const TopLevelLinkListItemWrapper = styled.li`
     color: ${setColor.brandGreyDark};
     font-size: 1.2rem;
     text-decoration: none;
-    font-family: "Poppins-Medium";
+    font-family: "Poppins-Regular";
   }
   &:nth-of-type(1) {
     background-color: ${setColor.gradientCyanLight};
