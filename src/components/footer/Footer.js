@@ -53,6 +53,7 @@ const Footer = () => {
               style={{ marginRight: "0.5rem" }}
             >
               <Icon icon="instagram" fill="white" stroke="none" />
+              <span class="visually-hidden">Instagram</span>
             </a>
             <a
               href="https://www.facebook.com/groups/984083104951153/"
@@ -60,9 +61,11 @@ const Footer = () => {
               style={{ marginRight: "0.5rem" }}
             >
               <Icon icon="facebook" fill="white" stroke="none" />
+              <span class="visually-hidden">Facebook</span>
             </a>
             <a href="https://twitter.com/nihongoconnect" target="_blank">
               <Icon icon="twitter" fill="white" stroke="none" />
+              <span class="visually-hidden">Twitter</span>
             </a>
           </FooterSocialIcons>
         </FlexContainer>

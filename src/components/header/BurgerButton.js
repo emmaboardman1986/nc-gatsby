@@ -11,6 +11,7 @@ const BurgerButton = ({ isMenuExpanded, setIsMenuExpanded }) => {
     <BurgerButtonWrapper
       aria-expanded={isMenuExpanded}
       onClick={() => setIsMenuExpanded(!isMenuExpanded)}
+      aria-label="Open Site Navigation Menu"
     >
       <span></span>
       <span></span>
