@@ -229,7 +229,7 @@ const MailChimp = ({ emphasisColor }) => {
         </GDPR>
 
         {result && result.msg ? (
-          <>
+          <div role="status" aria-live="polite">
             <VerticalSpacing></VerticalSpacing>
             <Emphasis padding="0rem" color={setColor.brandBlack}>
               <Card bgColor={setColor.brandWhiteOffset} alignCenter>
@@ -245,7 +245,7 @@ const MailChimp = ({ emphasisColor }) => {
               </Card>
             </Emphasis>
             <VerticalSpacing></VerticalSpacing>
-          </>
+          </div>
         ) : (
           <Button
             ref={submitButtonEl}
