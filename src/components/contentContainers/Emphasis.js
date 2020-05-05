@@ -11,7 +11,7 @@ const FormEmphasis= ({children, color, padding}) => {
 }
 
 const FormEmphasisWrapper = styled.div`
-border-radius: 6px;
+border-radius: 10px;
 border: 1px dashed ${props => props.color};
 padding: ${props => props.padding ? props.padding : "5%"};
 `

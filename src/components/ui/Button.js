@@ -3,22 +3,33 @@ import React from "react"
 import { setColor } from "../../styles/styleHelpers"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import BrandTick from "../../../static/assets/brandtick.svg"
+import BrandWarn from "../../../static/assets/brandwarn.svg"
 
-const Button = ({
-  children,
-  link,
-  isCentered,
-  onClick,
-  isExternal,
-  isAction,
-  isCTA,
-  type
-}) => {
+const Button = React.forwardRef((props, ref) => {
+  const {
+    children,
+    link,
+    isCentered,
+    onClick,
+    isExternal,
+    isAction,
+    isCTA,
+    type,
+    name,
+  } = props
+
   return (
     <>
       {isAction ? (
-        <ActionWrapper onClick={onClick} isCentered={isCentered} type={type}>
-          <span>{children}</span>
+        <ActionWrapper
+          onClick={onClick}
+          isCentered={isCentered}
+          type={type}
+          ref={ref}
+          name={name}
+        >
+          <span></span>
         </ActionWrapper>
       ) : (
         <LinkWrapper isCentered={isCentered} isCTA={isCTA}>
@@ -33,13 +44,16 @@ const Button = ({
       )}
     </>
   )
-}
+})
 
 const ActionButtonStyles = css`
+  &:after {
+    content: "${props => props.name}";
+    margin-top: 3px;
+  }
   background-color: ${setColor.brandWhite};
   border: 2px solid ${setColor.brandBlack};
   a, span {
-
     color: ${setColor.brandBlack};
   }
   &:hover {
@@ -51,6 +65,44 @@ const ActionButtonStyles = css`
   margin-right: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  transition: all 0.15s ease;
+  position: relative;
+  &.on-click {
+  width: 44px;
+  border-radius: 50%;
+  border-left-color: ${setColor.brandPrimary};
+  animation: rotating 2s 0.25s linear infinite;
+    &:after {
+      content: "";
+      
+    }
+  }
+  &.success {
+  &:after {
+    content: " ";
+    width: 30px;
+    height: 30px;
+    background-image: url(${BrandTick});
+    background-size: cover;
+  }
+  }
+  &.error {
+  &:after {
+    content: " ";
+    width: 30px;
+    height: 30px;
+    background-image: url(${BrandWarn});
+    background-size: cover;
+  }
+  }
+  @keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 `
 
 const CTAButtonStyles = css`
@@ -85,7 +137,8 @@ const sharedStyles = css`
   /* Default Styles (Primary) */
   background-color: ${setColor.brandPrimary};
   border: 2px solid ${setColor.brandPrimary};
-  a, span {
+  a,
+  span {
     color: ${setColor.brandWhite};
     text-decoration: none;
     /* Correct Poppins bottom spacing */

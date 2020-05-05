@@ -1,19 +1,14 @@
 import React from "react"
 import styled from "styled-components"
+import BodyText from "../ui/typography/BodyText"
+import {setColor} from "../../styles/styleHelpers"
 
 const GDPR = ({ children, className }) => {
-  return <GDPRWrapper className={className}>{children}</GDPRWrapper>
+  return <GDPRWrapper className={className}><BodyText size="0.8rem" color={setColor.brandWhite}>{children}</BodyText></GDPRWrapper>
 }
 
 const GDPRWrapper = styled.div`
   margin-top: 1rem;
-  p {
-    font-size: 0.8rem;
-    font-family: "Poppins-Regular";
-  }
-  
-  font-size: 0.6rem;
-  font-family: "Poppins-Regular";
   fieldset {
     border: none;
     display: flex;

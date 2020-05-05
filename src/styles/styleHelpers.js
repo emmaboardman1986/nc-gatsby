@@ -28,6 +28,10 @@ export const setFont = {
   fontSecondary: '"AnonymousPro-Regular", monospace'
 }
 
+export const setFontSize = {
+  small: '0.8rem',
+}
+
 export const setFlex = ({ x = "center", y = "center" } = {}) => {
   return `display: flex;align-items:${y};justify-content:${x}`
 }

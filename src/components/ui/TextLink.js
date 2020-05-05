@@ -20,7 +20,6 @@ const onBrandBgStyles = css`
 `
 
 const TextLinkWrapper = styled.a`
- all: inherit;
  display: inline;
  text-decoration: underline;
  font-family: 'Poppins-SemiBold';

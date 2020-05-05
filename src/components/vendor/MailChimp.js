@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react"
+import React, { useState, useReducer, useRef } from "react"
 import styled from "styled-components"
 import Form from "../form/Form"
 import FormList from "../form/FormList"
@@ -8,13 +8,19 @@ import GDPR from "../form/GDPR"
 import ListItem from "../ui/lists/ListItem"
 import CheckBox from "../form/CheckBox"
 import Emphasis from "../contentContainers/Emphasis"
-import { setColor } from "../../styles/styleHelpers"
+import { setColor, setFont } from "../../styles/styleHelpers"
 import Button from "../../components/ui/Button"
 import TextLink from "../../components/ui/TextLink"
-import addToMailchimp from 'gatsby-plugin-mailchimp'
+import addToMailchimp from "gatsby-plugin-mailchimp"
+import Card from "../contentContainers/Card"
+import BodyText from "../ui/typography/BodyText"
+import VerticalSpacing from "../spacing/VerticalSpacing"
+import BrandSuccess from "../../../static/assets/brandtick.svg"
+import BrandWarn from "../../../static/assets/brandwarn.svg"
 
 const MailChimp = ({ emphasisColor }) => {
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState(null)
+  const submitButtonEl = useRef(null)
 
   const initialState = {
     email: "",
@@ -37,6 +43,7 @@ const MailChimp = ({ emphasisColor }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const onChange = e => {
+    setResult(null)
     dispatch({ field: e.target.name, value: e.target.value })
   }
 
@@ -55,15 +62,14 @@ const MailChimp = ({ emphasisColor }) => {
     marketingByEmail,
   } = state
 
-
-  // TODO: make less awful :) 
-  const buildMailChimpObject  = () => {
+  // TODO: make less awful :)
+  const buildMailChimpObject = () => {
     const mailchimpObject = {
-      FNAME: firstName
-    };
+      FNAME: firstName,
+    }
     if (oneToOne) {
       mailchimpObject["group[1891][4]"] = "4"
-    } 
+    }
     if (jlptBootcamp) {
       mailchimpObject["group[1891][8]"] = "8"
     }
@@ -81,14 +87,14 @@ const MailChimp = ({ emphasisColor }) => {
     }
     return mailchimpObject
   }
-  const handleSubmit = async () => {
-    const mailchimpResult = await addToMailchimp(email, buildMailChimpObject());
-    setResult(mailchimpResult);
-    console.log(mailchimpResult);
+  const handleSubmit = async e => {
+    e.preventDefault()
+    submitButtonEl.current.classList.add("on-click")
+    const mailchimpResult = await addToMailchimp(email, buildMailChimpObject())
+    setResult(mailchimpResult)
+    console.log(mailchimpResult)
   }
 
-
- 
   return (
     <MailChimpWrapper>
       <div id="mc_embed_signup">
@@ -257,43 +263,39 @@ const MailChimp = ({ emphasisColor }) => {
                 </p>
               </div>
             </GDPR>
-            <div id="mce-responses" className="clear">
-              <div
-                className="response"
-                id="mce-error-response"
-                style={{ display: "none" }}
-              ></div>
-              <div
-                className="response"
-                id="mce-success-response"
-                style={{ display: "none" }}
-              ></div>
-            </div>
-            <div
-              style={{ position: "absolute", left: "-5000px" }}
-              aria-hidden="true"
-            >
-              <InputBox
-                type="text"
-                name="b_17e930ef2f11232d3ac0dca1e_200df291c9"
-                tabindex="-1"
-                value=""
-                onChange={onToggle}
-              />
-            </div>
-            {/* <div className="clear"> */}
-           
-            { result ? result.result === "success" && <p>{result.msg}</p> :  <Button
-              type="button"
-              name="subscribe"
-              id="mc-embedded-subscribe"
-              isAction
-              isCentered
-              onClick={handleSubmit}
-            >
-              Subscribe
-            </Button>}
-            {/* </div> */}
+
+            {result && result.msg ? (
+              <>
+                <VerticalSpacing></VerticalSpacing>
+                <Emphasis padding="0rem" color={setColor.brandBlack}>
+                  <Card bgColor={setColor.brandWhiteOffset}>
+                    {result.result === "success" ? (
+                      <img src={BrandSuccess} alt="Success" width="44px"></img>
+                    ) : (
+                      <img src={BrandWarn} alt="error" width="44px"></img>
+                    )}
+                    <VerticalSpacing></VerticalSpacing>
+                    <BodyText font={setFont.fontSecondary} align="center">
+                      {result.msg}
+                    </BodyText>
+                  </Card>
+                </Emphasis>
+                <VerticalSpacing></VerticalSpacing>
+              </>
+            ) : (
+              <Button
+                ref={submitButtonEl}
+                type="submit"
+                name="subscribe"
+                id="mc-embedded-subscribe"
+                isAction
+                isCentered
+                onClick={handleSubmit}
+              >
+                Subscribe
+              </Button>
+            )}
+
             <p style={{ fontSize: "0.6rem", fontFamily: "Poppins-Regular" }}>
               You can unsubscribe at any time by clicking the link in the footer
               of our emails. For information about our privacy practices, please

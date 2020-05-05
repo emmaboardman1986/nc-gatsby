@@ -15,6 +15,7 @@ const CardWrapper = styled.div`
   position: relative;
   background: ${props => (props.bgColor ? props.bgColor : setColor.brandWhite)};
   color: ${props => (props.color ? props.color : setColor.brandBlack)};
+  align-items: center;
 
   h3 {
     margin-top: 0.5rem;

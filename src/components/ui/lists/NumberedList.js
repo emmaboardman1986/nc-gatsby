@@ -22,6 +22,7 @@ const NumberedListWrapper = styled.ol`
     flex: 1 0 30%;
     `}
     list-style-type: none;
+    line-height: 1.4;
     font-family: "Poppins-Regular";
     align-items: end;
     display: flex;

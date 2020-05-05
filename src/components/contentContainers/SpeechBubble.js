@@ -59,7 +59,6 @@ const SpeechBubbleContent = styled.div`
   position: relative;
   p {
     font-size: 1rem;
-    font-family: "Poppins-Regular";
     margin-bottom: 0.75rem;
   }
 `
