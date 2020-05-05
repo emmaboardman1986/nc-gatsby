@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import React from "react"
-import { setColor, setFont } from "../../../styles/styleHelpers"
+import { setColor, setFont, setFontSize } from "../../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
 const BodyText = ({ children, font, color, align, size }) => {
@@ -9,7 +9,7 @@ const BodyText = ({ children, font, color, align, size }) => {
 
 const BodyTextWrapper = styled.p`
   font-family: ${props => props.font ? props.font : setFont.fontPrimaryRegular};
-  font-size: ${props => props.size ? props.size : "1.1rem"};
+  font-size: ${props => props.size ? props.size : "1rem"};
   letter-spacing: 0.01rem;
   line-height: ${props => props.font === setFont.fontSecondary ? "1.2" : "1.4"};
   color: ${props => props.color ? props.color : setColor.brandBlack};
@@ -20,7 +20,7 @@ const BodyTextWrapper = styled.p`
 BodyText.propTypes = {
     font: PropTypes.oneOf([setFont.fontSecondary, setFont.fontPrimaryBold, setFont.fontPrimarySemiBold, setFont.fontPrimaryRegular]),
     color: PropTypes.oneOf([setColor.brandWhite, setColor.brandWhiteOffset, setColor.brandPrimary, setColor.brandBlack]),
-    // size: PropTypes.oneOf([])
+    size: PropTypes.oneOf([setFontSize.muted, setFontSize.small, setFontSize.regular, setFontSize.medium])
 }
 
 export default BodyText

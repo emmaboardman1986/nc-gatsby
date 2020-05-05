@@ -29,7 +29,10 @@ export const setFont = {
 }
 
 export const setFontSize = {
+  muted: '0.63rem',
   small: '0.8rem',
+  regular: '1rem',
+  medium: '1.1rem'
 }
 
 export const setFlex = ({ x = "center", y = "center" } = {}) => {

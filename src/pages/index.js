@@ -221,6 +221,7 @@ export default function Homepage({ data }) {
                   text={data.homepage.data.speech_bubble_title.text}
                   color={setColor.brandWhite}
                 ></Heading>
+                <VerticalSpacing size="small"></VerticalSpacing>
                 <BodyText color={setColor.brandWhite}>Subscribe to get invited to our events</BodyText>
                 <MailChimp emphasisColor={setColor.brandSecondaryLight} />
               </SpeechBubble>

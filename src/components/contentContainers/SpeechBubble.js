@@ -58,7 +58,7 @@ const SpeechBubbleContent = styled.div`
   color: ${setColor.brandWhite};
   position: relative;
   p {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     margin-bottom: 0.75rem;
   }
 `

@@ -38,10 +38,7 @@ const StarredListItemWrapper = styled.li`
   &:before {
     margin-left: -3rem;
   }`}
-  ${breakpoint.md`
-  &:before {
-    margin-left: -4rem;
-  }`}
+ 
 `
 
 StarredListItem.propTypes = {

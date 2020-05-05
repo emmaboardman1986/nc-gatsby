@@ -2,8 +2,8 @@ import styled from "styled-components"
 import React from "react"
 import { setColor, breakpoint } from "../../styles/styleHelpers"
 
-const Card = ({ children, bgColor, color, doublePaddingBottom }) => {
-  return <CardWrapper bgColor={bgColor} color={color} doublePaddingBottom={doublePaddingBottom}>{children}</CardWrapper>
+const Card = ({ children, bgColor, color, doublePaddingBottom, alignCenter}) => {
+  return <CardWrapper bgColor={bgColor} color={color} doublePaddingBottom={doublePaddingBottom} alignCenter={alignCenter}>{children}</CardWrapper>
 }
 
 const CardWrapper = styled.div`
@@ -15,7 +15,7 @@ const CardWrapper = styled.div`
   position: relative;
   background: ${props => (props.bgColor ? props.bgColor : setColor.brandWhite)};
   color: ${props => (props.color ? props.color : setColor.brandBlack)};
-  align-items: center;
+  align-items: ${props => props.alignCenter ? "center" : null};
 
   h3 {
     margin-top: 0.5rem;
