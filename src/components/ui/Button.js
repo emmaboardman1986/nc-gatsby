@@ -29,7 +29,7 @@ const Button = React.forwardRef((props, ref) => {
           ref={ref}
           name={name}
         >
-          <span></span>
+          <span class="visually-hidden">{name}</span>
         </ActionWrapper>
       ) : (
         <LinkWrapper isCentered={isCentered} isCTA={isCTA}>
