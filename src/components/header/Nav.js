@@ -3,9 +3,7 @@ import React from "react"
 import TopLevelLinkListItem from "./TopLevelLinkListItem"
 import { Link } from "gatsby"
 import {
-  setColor,
   breakpoint,
-  setSharedHeights,
   setSharedSpacing,
 } from "../../styles/styleHelpers"
 import BurgerButton from "./BurgerButton"

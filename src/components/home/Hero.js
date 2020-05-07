@@ -5,11 +5,10 @@ import {
   setSharedSpacing,
   setSharedHeights,
   breakpoint,
-  setColor,
 } from "../../styles/styleHelpers"
 
-const Hero = ({ children }) => {
-  return <HeroWrapper>{children}</HeroWrapper>
+const Hero = ({ children, isBannerDisplayed }) => {
+  return <HeroWrapper isBannerDisplayed={isBannerDisplayed}>{children}</HeroWrapper>
 }
 
 const HeroWrapper = styled.div`
@@ -19,9 +18,11 @@ const HeroWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-bottom: 6rem;
-  margin-top: ${setSharedHeights.navHeight};
+  margin-top: ${props => props.isBannerDisplayed ? setSharedHeights.navHeight : setSharedHeights.navHeightNoMessaging};
+  padding-top: 10vh;
  
   div:first-child {
+    display: none;
     width: 70%;
     height: auto;
     img {
@@ -32,13 +33,11 @@ const HeroWrapper = styled.div`
   `}
     }
   }
-  div:last-child {
-    text-align: center;
-  }
-
   ${breakpoint.sm`
+ 
     flex-direction: row;
     div:first-child {
+      display: block;
      margin-left: -6rem;
       img {
         width: 90%;

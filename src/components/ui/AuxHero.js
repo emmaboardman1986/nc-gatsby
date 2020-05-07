@@ -1,14 +1,25 @@
+import React from 'react'
 import styled from "styled-components"
 import {
   setColor,
   setSharedSpacing,
   breakpoint,
+  setSharedHeights
 } from "../../styles/styleHelpers"
 
-const AuxHero = styled.div`
+
+const AuxHero = ({children, isBannerDisplayed}) => {
+  return (
+    <AuxHeroWrapper isBannerDisplayed={isBannerDisplayed}>
+  {children}
+    </AuxHeroWrapper>
+  )
+}
+const AuxHeroWrapper = styled.div`
   padding: ${setSharedSpacing.sectionPadding};
-  padding-top: 8rem;
+  padding-top: 3rem;
   padding-bottom: 8rem;
+  margin-top: ${props => props.isBannerDisplayed ? setSharedHeights.navHeight : setSharedHeights.navHeightNoMessaging};
   ${breakpoint.md`
   padding-top: 4rem;`}
   h1 {

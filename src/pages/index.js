@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useContext} from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
 import Section from "../components/layout/Section"
@@ -22,6 +22,9 @@ import Heading from "../components/ui/typography/Heading"
 import Outline from "../components/contentContainers/Outline"
 import Subtitle from "../components/ui/typography/Subtitle"
 import BodyText from "../components/ui/typography/BodyText"
+
+import { BannerContext } from "../context/UpdateBannerContext"
+
 
 export const query = graphql`
   query {
@@ -80,11 +83,12 @@ export const query = graphql`
   }
 `
 export default function Homepage({ data }) {
+  const { state } = useContext(BannerContext);
   return (
     <Layout>
       <div>
         <Section bgColor={setColor.brandPrimary} bgImg={TitleJP}>
-          <Hero>
+          <Hero isBannerDisplayed={state.isBannerDisplayed}>
             <FlexContainer
               justifyContent={{ _: "center", sm: "flex-start" }}
               alignItems={{ _: "flex-start" }}

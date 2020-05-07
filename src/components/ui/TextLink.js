@@ -3,9 +3,9 @@ import styled, { css } from "styled-components"
 import { setColor } from "../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
-const TextLink = ({children, link, isOnBrandBg, isExternal}) => {
+const TextLink = ({children, link, isOnBrandBg, isExternal, noUnderline}) => {
     return (
-        <TextLinkWrapper href={link} target="_blank" isOnBrandBg={isOnBrandBg} target={isExternal ? "_blank" : null}>
+        <TextLinkWrapper href={link} target="_blank" isOnBrandBg={isOnBrandBg} noUnderline={noUnderline} target={isExternal ? "_blank" : null}>
             {children}
         </TextLinkWrapper>
     )
@@ -21,7 +21,7 @@ const onBrandBgStyles = css`
 
 const TextLinkWrapper = styled.a`
  display: inline;
- text-decoration: underline;
+ text-decoration: ${props => props.noUnderline ? "none" : "underline"};
  font-family: 'Poppins-SemiBold';
  color: ${setColor.brandPrimary};
  &:hover {

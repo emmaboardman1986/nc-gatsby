@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { setColor, setSharedBorderRadius } from "../../styles/styleHelpers"
+import { setColor} from "../../styles/styleHelpers"
 
 const CheckBox = ({ onChange, id, name, className, checked }) => {
   return (

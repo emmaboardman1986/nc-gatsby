@@ -1,12 +1,9 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import TimelineContent from "./TimelineContent"
 import TimelineImage from "./TimelineImage"
-import VerticalSpacing from "../spacing/VerticalSpacing"
 import {
-  setColor,
   breakpoint,
-  setSharedSpacing,
 } from "../../styles/styleHelpers"
 
 const TimelineBlock = ({year, content}) => {

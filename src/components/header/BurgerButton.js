@@ -2,7 +2,6 @@ import styled from "styled-components"
 import React from "react"
 import {
   setColor,
-  setSharedHeights,
   breakpoint,
 } from "../../styles/styleHelpers"
 

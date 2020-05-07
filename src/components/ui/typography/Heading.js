@@ -11,8 +11,8 @@ const Heading = ({ variant, text, color }) => {
 
 const H1Styles = css`
   font-family: ${setFont.fontPrimaryBold};
-  font-size: 4.5rem;
-  line-height: 1;
+  font-size: 4rem;
+  line-height: 1.1;
   letter-spacing: 0.01em;
   color: ${props => props.color ? props.color : setColor.brandWhiteOffset};
 `

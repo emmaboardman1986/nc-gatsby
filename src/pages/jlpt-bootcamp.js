@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import Layout from "../components/layout/Layout"
 import Section from "../components/layout/Section"
 import AuxHero from "../components/ui/AuxHero"
@@ -22,12 +22,15 @@ import MailChimpFooter from "../components/footer/MailChimpFooter"
 import TextLink from "../components/ui/TextLink"
 import BodyText from "../components/ui/typography/BodyText"
 
+import { BannerContext } from "../context/UpdateBannerContext"
+
 export default function JLPTBootcampPage({ data }) {
+  const { state } = useContext(BannerContext)
   return (
     <Layout>
       <div>
         <Section bgColor={setColor.brandPrimary}>
-          <AuxHero>
+          <AuxHero isBannerDisplayed={state.isBannerDisplayed}>
             <Heading variant="h1" text="JLPT Bootcamp"></Heading>
           </AuxHero>
         </Section>

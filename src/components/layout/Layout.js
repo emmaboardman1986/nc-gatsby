@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
@@ -8,12 +8,14 @@ import Footer from "../../components/footer/Footer"
 import "../../components/layout.css"
 import "../../styles/main.scss"
 import { breakpoints } from "../../styles/styleHelpers"
-
 import H1Font from "../../../static/assets/fonts/poppins-bold-webfont.woff2"
 import { Helmet } from "react-helmet"
+import { BannerContext } from "../../context/UpdateBannerContext"
+import UpdateBanner from "../layout/UpdateBanner"
 
 const Layout = ({ children }) => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false)
+  const { state, dispatch } = useContext(BannerContext)
 
   if (typeof window !== `undefined`) {
     window.prismic = {
@@ -32,24 +34,25 @@ const Layout = ({ children }) => {
           crossOrigin="anonymous"
         />
       </Helmet>
-      {/* <Container> */}
-      <Header
-        isMenuExpanded={isMenuExpanded}
-        setIsMenuExpanded={setIsMenuExpanded}
-      />
+      <Container>
+        <UpdateBanner isBannerDisplayed={state.isBannerDisplayed} />
+        <Header
+          isBannerDisplayed={state.isBannerDisplayed}
+          isMenuExpanded={isMenuExpanded}
+          setIsMenuExpanded={setIsMenuExpanded}
+        />
 
-      <Main>{children}</Main>
-    <Footer></Footer>
-    {/* </Container> */}
+        <Main>{children}</Main>
+        <Footer></Footer>
+      </Container>
     </>
   )
 }
 
-
 const Container = styled.div`
-max-width: ${breakpoints.xl};
-margin-left: auto;
-margin-right: auto;
+  max-width: ${breakpoints.xl};
+  margin-left: auto;
+  margin-right: auto;
 `
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

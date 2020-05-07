@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useContext} from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
 import Section from "../components/layout/Section"
@@ -10,9 +10,10 @@ import TimeLine from "../components/timeline/Timeline"
 import Heading from "../components/ui/typography/Heading"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
-import TextLink from "../components/ui/TextLink"
 import BodyText from "../components/ui/typography/BodyText"
-import { setColor, setFont } from "../styles/styleHelpers"
+import { setColor } from "../styles/styleHelpers"
+
+import { BannerContext } from "../context/UpdateBannerContext"
 
 export const query = graphql`
   query {
@@ -30,6 +31,7 @@ export const query = graphql`
 `
 
 export default function AboutUsPage({ data }) {
+  const { state } = useContext(BannerContext)
   function createMarkup(content) {
     return { __html: content }
   }
@@ -37,7 +39,7 @@ export default function AboutUsPage({ data }) {
   return (
     <Layout>
       <Section bgColor={setColor.brandPrimary}>
-        <AuxHero>
+        <AuxHero isBannerDisplayed={state.isBannerDisplayed}>
           <Heading
             variant="h1"
             text={data.aboutUs.data.about_us_title.text}

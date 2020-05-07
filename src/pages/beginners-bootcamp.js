@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import Layout from "../components/layout/Layout"
 import Section from "../components/layout/Section"
 import AuxHero from "../components/ui/AuxHero"
@@ -17,16 +17,18 @@ import Button from "../components/ui/Button"
 import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import List from "../components/ui/lists/List"
 import MailChimpFooter from "../components/footer/MailChimpFooter"
-import TextLink from "../components/ui/TextLink";
 import Heading from "../components/ui/typography/Heading"
 import BodyText from "../components/ui/typography/BodyText"
 
+import { BannerContext } from "../context/UpdateBannerContext"
+
 export default function BeginnersBootcampPage({ data }) {
+  const { state } = useContext(BannerContext)
   return (
     <Layout>
     <div>
       <Section bgColor={setColor.brandPrimary}>
-        <AuxHero>
+        <AuxHero isBannerDisplayed={state.isBannerDisplayed}>
           <Heading variant="h1" text="Beginner's Bootcamp"></Heading>
         </AuxHero>
       </Section>
@@ -77,7 +79,7 @@ export default function BeginnersBootcampPage({ data }) {
                 <MutedTitleText>If</MutedTitleText> YES,
                 <MutedTitleText>
                   {" "}
-                  here are the JLPT Bootcamp Details:
+                  here are the Beginner's Bootcamp Details:
                 </MutedTitleText>
               </h2>
               <VerticalSpacing size="x-small"></VerticalSpacing>
@@ -94,7 +96,7 @@ export default function BeginnersBootcampPage({ data }) {
                     Basic, Plus and VIP experiences available.
                   </li>
                   <li>
-                    5 hours minimum of formal JLPT Prep Lessons with example
+                    5 hours minimum of formal lessons with example
                     exercises.
                   </li>
                   <li>
@@ -174,11 +176,17 @@ export default function BeginnersBootcampPage({ data }) {
               <List>
                 <li>
                   <strong>
-                    All bootcamps postponed due to covid-19. Join the{" "}
-                    <TextLink link="#mailing-list">
-                      mailing list below
-                    </TextLink>{" "}
-                    to keep informed.
+                   Sat 4 - Sun 5 April 2020
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                   Sat 11 - Sun 12 April 2020
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                   Sat 18 - Sun 19 April 2020
                   </strong>
                 </li>
               </List>
@@ -254,8 +262,7 @@ export default function BeginnersBootcampPage({ data }) {
           <div title="How do I book?">
             <p>
               Decide if you want Basic, Plus or VIP and make the payment.
-              After payment you will be asked to specify your preferred JLPT
-              level and bootcamp date. We will contact you within 48 hours to
+              After payment you will be asked to specify your preferred bootcamp date. We will contact you within 48 hours to
               confirm your place.
             </p>
           </div>
@@ -304,13 +311,7 @@ export default function BeginnersBootcampPage({ data }) {
           <div title="How old are participants?">
              <p>Past participants have been from 18 to 55 years of age.</p>
           </div>
-          <div title="Is the mock test the full test?">
-             <p>
-              Yes, we want to give you the authentic experience for your level
-              so that you can experience the layout and timing for each
-              section.
-            </p>
-          </div>
+         
           <div title="Can I pay for basic and upgrade to Plus or VIP later on?">
              <p>
               No, please choose Basic, Plus or VIP when you book as this will

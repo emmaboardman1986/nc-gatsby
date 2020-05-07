@@ -61,7 +61,8 @@ export const breakpoints = {
 }
 
 export const setSharedHeights = {
-  navHeight: "8vh",
+  navHeight: "25vh",
+  navHeightNoMessaging: "10vh"
 }
 
 export const breakpoint = Object.keys(breakpoints).reduce(

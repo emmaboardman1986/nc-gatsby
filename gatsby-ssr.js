@@ -8,3 +8,5 @@ export function onRenderBody(
     ]);
   }
 
+export { wrapRootElement } from "./wrapRootElement"
+

@@ -1,10 +1,12 @@
 import styled from "styled-components"
-import React from "react"
+import React, { useContext }  from "react"
 import { setColor, breakpoint } from "../../styles/styleHelpers"
+import { BannerContext } from "../../context/UpdateBannerContext"
 
 const TopLevelLinkList = ({ isMenuExpanded, children }) => {
+  const { state } =  useContext(BannerContext);
   return (
-    <TopLevelLinkListWrapper isMenuExpanded={isMenuExpanded}>
+    <TopLevelLinkListWrapper isMenuExpanded={isMenuExpanded} isBannerDisplayed={state.isBannerDisplayed}>
       {children}
     </TopLevelLinkListWrapper>
   )
@@ -13,7 +15,7 @@ const TopLevelLinkList = ({ isMenuExpanded, children }) => {
 const TopLevelLinkListWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: ${props => props.isBannerDisplayed ? "75vh" : "90vh"};
   position: fixed;
   z-index: 1;
   bottom: 0;

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext} from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
 import Section from "../components/layout/Section"
@@ -13,6 +13,8 @@ import FlexContainer from "../components/layout/FlexContainer/FlexContainer"
 import TextLink from "../components/ui/TextLink"
 import Heading from "../components/ui/typography/Heading"
 import BodyText from "../components/ui/typography/BodyText"
+
+import { BannerContext } from "../context/UpdateBannerContext"
 
 import { setColor, setFont } from "../styles/styleHelpers"
 
@@ -32,6 +34,7 @@ export const query = graphql`
 `
 
 export default function FridayStudyClubPage({ data }) {
+  const { state } = useContext(BannerContext)
   function createMarkup(content) {
     return { __html: content }
   }
@@ -40,7 +43,7 @@ export default function FridayStudyClubPage({ data }) {
     <Layout>
       <div>
         <Section bgColor={setColor.brandPrimary}>
-          <AuxHero>
+          <AuxHero isBannerDisplayed={state.isBannerDisplayed}>
             <Heading
               variant="h1"
               text={data.fridayStudyClub.data.friday_study_club_title.text}

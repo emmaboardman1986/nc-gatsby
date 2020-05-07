@@ -92,7 +92,6 @@ const MailChimp = ({ emphasisColor }) => {
     submitButtonEl.current.classList.add("on-click")
     const mailchimpResult = await addToMailchimp(email, buildMailChimpObject())
     setResult(mailchimpResult)
-    console.log(mailchimpResult)
   }
 
   return (

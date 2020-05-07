@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import TimelineDate from "./TimelineDate"
 import Card from "../contentContainers/Card"
-import Outline from "../contentContainers/Outline"
+
 import { breakpoint, setFont, setColor } from "../../styles/styleHelpers"
-import BodyText from "../ui/typography/BodyText"
+
 
 const TimelineContent = ({ year, content }) => {
   function createMarkup(content) {
@@ -13,12 +13,12 @@ const TimelineContent = ({ year, content }) => {
 
   return (
     <TimelineContentWrapper>
-      {/* <Outline> */}
+
       <Card>
         <TimelineDate>{year}</TimelineDate>
         <p dangerouslySetInnerHTML={createMarkup(content)}></p>
       </Card>
-      {/* </Outline> */}
+    
     </TimelineContentWrapper>
   )
 }
