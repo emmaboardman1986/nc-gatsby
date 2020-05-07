@@ -43,7 +43,7 @@ const UpdateWrapper = styled.aside`
   position: fixed;
   top: 0;
   padding: 0.75rem;
-  height: 17vh;
+  height: 18vh;
   z-index: 10;
   box-sizing: border-box;
   transition: height 0.25s ease;

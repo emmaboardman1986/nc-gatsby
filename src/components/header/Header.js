@@ -36,7 +36,7 @@ const HeaderWrapper = styled.header`
   color: ${setColor.brandWhite};
   position: fixed;
   z-index: 2;
-  top: ${props => props.isBannerDisplayed ? "17vh" : "0px"};
+  top: ${props => props.isBannerDisplayed ? "18vh" : "0px"};
   left: 0px;
   width: 100vw;
   height: 10vh;
