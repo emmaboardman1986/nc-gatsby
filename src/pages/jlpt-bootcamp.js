@@ -190,7 +190,7 @@ export default function JLPTBootcampPage({ data }) {
                 <List>
                   <li>
                     <strong>
-                      All bootcamps postponed due to covid-19. Join the{" "}
+                      JLPT bootcamps are postponed due to covid-19. Join the{" "}
                       <TextLink link="#mailing-list">
                         mailing list below
                       </TextLink>{" "}
