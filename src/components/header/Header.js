@@ -4,6 +4,7 @@ import {
   setColor,
   breakpoint,
   setSharedSpacing,
+  setSharedHeights,
   setFlex,
 } from "../../styles/styleHelpers"
 import Nav from "./Nav"
@@ -36,17 +37,20 @@ const HeaderWrapper = styled.header`
   color: ${setColor.brandWhite};
   position: fixed;
   z-index: 2;
-  top: ${props => props.isBannerDisplayed ? "18vh" : "0px"};
+  top: ${props => props.isBannerDisplayed ? "120px" : "0px"};
   left: 0px;
   width: 100vw;
-  height: 10vh;
+  height: ${setSharedHeights.navHeightNoMessaging};
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  ${breakpoint.xs`
+  top: ${props => props.isBannerDisplayed ? "100px" : "0px"};
+  `}
   ${breakpoint.sm`
-  top: ${props => props.isBannerDisplayed ? "14vh" : "0px"};
-  height: 12vh;`}
+  top: ${props => props.isBannerDisplayed ? "80px" : "0px"};
+  `}
   ${breakpoint.md`
   top: 0;
   position: relative;

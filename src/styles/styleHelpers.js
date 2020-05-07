@@ -61,10 +61,10 @@ export const breakpoints = {
 }
 
 export const setSharedHeights = {
-  navHeight: "25vh",
-  navHeightSm: "22vh",
+  navHeight: "190px",
+  navHeightSm: "170px",
   navHeightMd: "18vh",
-  navHeightNoMessaging: "10vh",
+  navHeightNoMessaging: "70px",
 }
 
 export const breakpoint = Object.keys(breakpoints).reduce(

@@ -15,7 +15,7 @@ const TopLevelLinkList = ({ isMenuExpanded, children }) => {
 const TopLevelLinkListWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  height: ${props => props.isBannerDisplayed ? "73vh" : "90vh"};
+  height: ${props => props.isBannerDisplayed ? 'calc(100% - 190px)' : 'calc(100% - 70px)'};
   position: fixed;
   z-index: 1;
   bottom: 0;

@@ -43,15 +43,16 @@ const UpdateWrapper = styled.aside`
   position: fixed;
   top: 0;
   padding: 0.75rem;
-  height: 18vh;
-  overflow: hidden;
+  height: 120px;
   z-index: 10;
   box-sizing: border-box;
+
   ${breakpoint.xs`
+  height: 100px;
   text-align: center;
   align-items: center;`}
   ${breakpoint.sm`
-  height: 14vh;`}
+  height: 80px;`}
   ${breakpoint.md`
   position: relative;
   height: auto;
