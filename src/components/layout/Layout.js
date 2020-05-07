@@ -9,6 +9,7 @@ import "../../components/layout.css"
 import "../../styles/main.scss"
 import { breakpoints } from "../../styles/styleHelpers"
 import H1Font from "../../../static/assets/fonts/poppins-bold-webfont.woff2"
+import UpdateMessageFont from "../../../static/assets/fonts/poppins-regular-webfont.woff2"
 import { Helmet } from "react-helmet"
 import { BannerContext } from "../../context/UpdateBannerContext"
 import UpdateBanner from "../layout/UpdateBanner"
@@ -30,6 +31,13 @@ const Layout = ({ children }) => {
           rel="preload"
           as="font"
           href={H1Font}
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+         <link
+          rel="preload"
+          as="font"
+          href={UpdateMessageFont}
           type="font/woff2"
           crossOrigin="anonymous"
         />
