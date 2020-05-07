@@ -44,9 +44,9 @@ const UpdateWrapper = styled.aside`
   top: 0;
   padding: 0.75rem;
   height: 18vh;
+  overflow: hidden;
   z-index: 10;
   box-sizing: border-box;
-  transition: height 0.25s ease;
   ${breakpoint.xs`
   text-align: center;
   align-items: center;`}
