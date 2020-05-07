@@ -243,7 +243,7 @@ export default function BeginnersBootcampPage({ data }) {
                 big recommendation!
             </BodyText>
             <BodyText font={setFont.fontSecondary}>
-             2020
+             - Leon
             </BodyText>
              
           </Testimonial>
