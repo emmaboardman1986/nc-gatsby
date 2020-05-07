@@ -7,9 +7,9 @@ import {
 } from "../../styles/styleHelpers"
 import PropTypes from "prop-types"
 
-const Section = ({ children, flexDirection, bgColor, bgImg, noPaddingBottom}) => {
+const Section = ({ children, flexDirection, bgColor, bgImg, noPaddingBottom, isBannerDisplayed}) => {
   return (
-    <SectionWrapper flexDirection={flexDirection} bgColor={bgColor} noPaddingBottom={noPaddingBottom} bgImg={bgImg}>
+    <SectionWrapper flexDirection={flexDirection} bgColor={bgColor} noPaddingBottom={noPaddingBottom} bgImg={bgImg} isBannerDisplayed={isBannerDisplayed}>
       {children}
     </SectionWrapper>
   )
@@ -25,7 +25,7 @@ const SectionWrapper = styled.section`
   background-image: url(${props => (props.bgImg ? props.bgImg : "none")});
   background-repeat: no-repeat;
   background-size: 150% auto;
-  background-position: 10vw 12vh;
+  background-position: ${props => props.isBannerDisplayed ? '10vw 30vh' : '10vw 18vh'};
 
   `}
   ${breakpoint.md`

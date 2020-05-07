@@ -62,8 +62,8 @@ export const breakpoints = {
 
 export const setSharedHeights = {
   navHeight: "190px",
-  navHeightSm: "170px",
-  navHeightMd: "18vh",
+  navHeightSm: "150px",
+  navHeightMd: "50px",
   navHeightNoMessaging: "70px",
 }
 

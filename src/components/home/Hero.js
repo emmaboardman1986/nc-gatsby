@@ -8,7 +8,9 @@ import {
 } from "../../styles/styleHelpers"
 
 const Hero = ({ children, isBannerDisplayed }) => {
-  return <HeroWrapper isBannerDisplayed={isBannerDisplayed}>{children}</HeroWrapper>
+  return (
+    <HeroWrapper isBannerDisplayed={isBannerDisplayed}>{children}</HeroWrapper>
+  )
 }
 
 const HeroWrapper = styled.div`
@@ -18,70 +20,60 @@ const HeroWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-bottom: 6rem;
-  margin-top: ${props => props.isBannerDisplayed ? setSharedHeights.navHeight : setSharedHeights.navHeightNoMessaging};
-  padding-top: 10vh;
- 
+  margin-top: ${props =>
+    props.isBannerDisplayed
+      ? setSharedHeights.navHeight
+      : setSharedHeights.navHeightNoMessaging};
+  padding-top: 4rem;
   div:first-child {
     display: none;
-    width: 70%;
-    height: auto;
-    img {
-      width: 100%;
-      height: auto;
-      ${breakpoint.xs`
-      width: 70%;
-  `}
-    }
   }
+  div:last-child {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: ${setSharedSpacing.sectionPadding};
+  }
+
+ 
   ${breakpoint.sm`
-  margin-top: ${props => props.isBannerDisplayed ? setSharedHeights.navHeightSm : setSharedHeights.navHeightNoMessaging};
+  padding-bottom: 7rem;
+  margin-top: ${props =>
+    props.isBannerDisplayed
+      ? setSharedHeights.navHeightSm
+      : setSharedHeights.navHeightNoMessaging};
     flex-direction: row;
+  
     div:first-child {
+      margin-top: -3rem;
       display: block;
-     margin-left: -6rem;
       img {
-        width: 90%;
+        width: 220px;
       }
     }
     div:last-child {
+      padding-right: ${setSharedSpacing.sectionPadding};
       text-align: right;
     }
     `}
-  ${breakpoint.md`
-    margin-top: 0;
-    padding-bottom: 1.5rem;
+
+    ${breakpoint.md`
+    padding-top: 0;
+    padding-bottom: 4rem;
+    margin-top: ${props =>
+    props.isBannerDisplayed
+      ? setSharedHeights.navHeightMd
+      : setSharedHeights.navHeightNoMessaging};
     div:first-child {
+      margin-top: -2rem;
       img {
-        width: 75%;
+        width: 240px;
       }
     }
     div:last-child {
-      white-space: nowrap;
+      padding-right: ${setSharedSpacing.sectionPadding};
     }
+    
     `}
-    ${breakpoint.lg`
-    div:first-child {
-      img {
-        width: 60%;
-      }
-    }
-    div:last-child {
-      margin-right: ${setSharedSpacing.heroRightOffset};
-    }
-    `}
-    @media (min-width: 1400px){
-      div:first-child {
-      img {
-        width: 50%;
-      }
-    }
-    }
-    ${breakpoint.xl`
-    div:first-child{
-     
-      width: 45%;
-     
-    }`}
     
 `
 

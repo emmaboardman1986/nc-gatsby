@@ -88,25 +88,26 @@ export default function Homepage({ data }) {
   return (
     <Layout>
       <div>
-        <Section bgColor={setColor.brandPrimary} bgImg={TitleJP}>
+        <Section bgColor={setColor.brandPrimary} bgImg={TitleJP} isBannerDisplayed={state.isBannerDisplayed}>
           <Hero isBannerDisplayed={state.isBannerDisplayed}>
+         
             <FlexContainer
               justifyContent={{ _: "center", sm: "flex-start" }}
               alignItems={{ _: "flex-start" }}
             >
               <img src={Logo} alt="Nihongo Scotland"></img>
             </FlexContainer>
+
             <FlexContainer
               justifyContent={{ _: "center", sm: "flex-end" }}
               flexDirection={{ _: "column" }}
               flex={1}
             >
-              <VerticalSpacing size="x-large" sizeMd="2rem"></VerticalSpacing>
-
+          
               <Heading text={data.homepage.data.main_title.text}></Heading>
-              <VerticalSpacing />
+              <VerticalSpacing size="small" />
               <Subtitle>{data.homepage.data.sub_title.text}</Subtitle>
-              <VerticalSpacing />
+              <VerticalSpacing/>
             </FlexContainer>
           </Hero>
         </Section>
@@ -116,7 +117,7 @@ export default function Homepage({ data }) {
               {/* Friday Study Club */}
               <VerticalSpacing
                 size="7x-large--negative"
-                sizeMd="0"
+                sizeMd="-1rem"
               ></VerticalSpacing>
               <Gradient>
                 <Card>
@@ -162,11 +163,13 @@ export default function Homepage({ data }) {
                     variant="h3"
                     text={data.homepage.data.second_card_sub_title.text}
                   ></Heading>
-                    <Emphasis emphasisColor={setColor.brandBlack} padding="0">
+                  <Emphasis emphasisColor={setColor.brandBlack} padding="0">
                     <Card bgColor={setColor.brandWhiteOffset} alignCenter>
-                 
-                      <BodyText align="center" font={setFont.fontPrimarySemiBold}>
-                      Postponed
+                      <BodyText
+                        align="center"
+                        font={setFont.fontPrimarySemiBold}
+                      >
+                        Postponed
                       </BodyText>
                     </Card>
                   </Emphasis>
@@ -195,11 +198,13 @@ export default function Homepage({ data }) {
                     variant="h3"
                     text={data.homepage.data.third_card_sub_title.text}
                   ></Heading>
-                    <Emphasis emphasisColor={setColor.brandBlack} padding="0">
+                  <Emphasis emphasisColor={setColor.brandBlack} padding="0">
                     <Card bgColor={setColor.brandWhiteOffset} alignCenter>
-                 
-                      <BodyText align="center" font={setFont.fontPrimarySemiBold}>
-                      Available Online!
+                      <BodyText
+                        align="center"
+                        font={setFont.fontPrimarySemiBold}
+                      >
+                        Available Online!
                       </BodyText>
                     </Card>
                   </Emphasis>
@@ -246,7 +251,10 @@ export default function Homepage({ data }) {
                   </BodyText>
 
                   <BodyText font={setFont.fontSecondary}>
-                  <strong>Please note that due to the ongoing pandemic, we are currently only offering online classes.</strong>
+                    <strong>
+                      Please note that due to the ongoing pandemic, we are
+                      currently only offering online classes.
+                    </strong>
                   </BodyText>
 
                   <Button link="/about-us">Find out more</Button>
