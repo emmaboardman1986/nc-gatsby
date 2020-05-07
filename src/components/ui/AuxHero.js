@@ -21,7 +21,9 @@ const AuxHeroWrapper = styled.div`
   padding-bottom: 8rem;
   margin-top: ${props => props.isBannerDisplayed ? setSharedHeights.navHeight : setSharedHeights.navHeightNoMessaging};
   ${breakpoint.md`
-  padding-top: 4rem;`}
+  padding-top: 4rem;
+  margin-top: 0;
+  `}
   h1 {
     color: ${setColor.brandWhite};
     font-size: 3.5rem;

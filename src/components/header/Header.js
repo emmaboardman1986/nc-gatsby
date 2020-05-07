@@ -45,8 +45,10 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
   box-sizing: border-box;
   ${breakpoint.sm`
+  top: ${props => props.isBannerDisplayed ? "14vh" : "0px"};
   height: 12vh;`}
   ${breakpoint.md`
+  top: 0;
   position: relative;
   width: auto;
   padding-right: ${setSharedSpacing.sectionPaddingDesktop};
@@ -69,6 +71,7 @@ const StandardHeaderWrapper = styled.div`
 `
 
 const HeaderLogo = styled.div`
+
   /* Compensate for bottom spacing on SVG */
   padding-top: 3.5px;
   img {
@@ -76,7 +79,8 @@ const HeaderLogo = styled.div`
     padding-left: 1rem;
   }
   ${breakpoint.md`
-  padding-top: 0px;`}
+  margin-top: -12px;
+  padding-top: 3px;`}
 
   flex: 1;
 `

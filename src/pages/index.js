@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, { useContext } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
 import Section from "../components/layout/Section"
@@ -22,9 +22,10 @@ import Heading from "../components/ui/typography/Heading"
 import Outline from "../components/contentContainers/Outline"
 import Subtitle from "../components/ui/typography/Subtitle"
 import BodyText from "../components/ui/typography/BodyText"
+import Emphasis from "../components/contentContainers/Emphasis"
+import BrandWarn from "../../static/assets/brandwarn.svg"
 
 import { BannerContext } from "../context/UpdateBannerContext"
-
 
 export const query = graphql`
   query {
@@ -83,7 +84,7 @@ export const query = graphql`
   }
 `
 export default function Homepage({ data }) {
-  const { state } = useContext(BannerContext);
+  const { state } = useContext(BannerContext)
   return (
     <Layout>
       <div>
@@ -127,6 +128,17 @@ export default function Homepage({ data }) {
                     variant="h3"
                     text={data.homepage.data.first_card_sub_title1.text}
                   ></Heading>
+                  <Emphasis emphasisColor={setColor.brandBlack} padding="0">
+                    <Card bgColor={setColor.brandWhiteOffset} alignCenter>
+                      <BodyText
+                        align="center"
+                        font={setFont.fontPrimarySemiBold}
+                      >
+                        Available Online!
+                      </BodyText>
+                    </Card>
+                  </Emphasis>
+                  <VerticalSpacing size="small"></VerticalSpacing>
                   <BodyText font={setFont.fontSecondary}>
                     {data.homepage.data.first_card_content_line_one.text}
                   </BodyText>
@@ -150,6 +162,15 @@ export default function Homepage({ data }) {
                     variant="h3"
                     text={data.homepage.data.second_card_sub_title.text}
                   ></Heading>
+                    <Emphasis emphasisColor={setColor.brandBlack} padding="0">
+                    <Card bgColor={setColor.brandWhiteOffset} alignCenter>
+                 
+                      <BodyText align="center" font={setFont.fontPrimarySemiBold}>
+                      Postponed
+                      </BodyText>
+                    </Card>
+                  </Emphasis>
+                  <VerticalSpacing size="small"></VerticalSpacing>
                   <BodyText font={setFont.fontSecondary}>
                     {data.homepage.data.second_card_content_line_one.text}
                   </BodyText>
@@ -174,9 +195,22 @@ export default function Homepage({ data }) {
                     variant="h3"
                     text={data.homepage.data.third_card_sub_title.text}
                   ></Heading>
-                  <BodyText font={setFont.fontSecondary}>{data.homepage.data.third_card_content_line_1.text}</BodyText>
+                    <Emphasis emphasisColor={setColor.brandBlack} padding="0">
+                    <Card bgColor={setColor.brandWhiteOffset} alignCenter>
+                 
+                      <BodyText align="center" font={setFont.fontPrimarySemiBold}>
+                      Available Online!
+                      </BodyText>
+                    </Card>
+                  </Emphasis>
+                  <VerticalSpacing size="small"></VerticalSpacing>
+                  <BodyText font={setFont.fontSecondary}>
+                    {data.homepage.data.third_card_content_line_1.text}
+                  </BodyText>
 
-                  <BodyText font={setFont.fontSecondary}>{data.homepage.data.third_card_content_line_2.text}</BodyText>
+                  <BodyText font={setFont.fontSecondary}>
+                    {data.homepage.data.third_card_content_line_2.text}
+                  </BodyText>
 
                   <Button link="/beginners-bootcamp">Find out more</Button>
                 </Card>
@@ -204,11 +238,15 @@ export default function Homepage({ data }) {
                   <BodyText font={setFont.fontSecondary}>
                     Nihongo Scotland is a Japanese-language study club run by
                     volunteers.
-                    </BodyText>
+                  </BodyText>
 
                   <BodyText font={setFont.fontSecondary}>
                     Our purpose is provide an immersive study environment for
-                    all{" "}
+                    all, no matter the schedule or budget.
+                  </BodyText>
+
+                  <BodyText font={setFont.fontSecondary}>
+                  <strong>Please note that due to the ongoing pandemic, we are currently only offering online classes.</strong>
                   </BodyText>
 
                   <Button link="/about-us">Find out more</Button>
@@ -226,7 +264,9 @@ export default function Homepage({ data }) {
                   color={setColor.brandWhite}
                 ></Heading>
                 <VerticalSpacing size="small"></VerticalSpacing>
-                <BodyText color={setColor.brandWhite}>Subscribe to get invited to our events</BodyText>
+                <BodyText color={setColor.brandWhite}>
+                  Subscribe to get invited to our events
+                </BodyText>
                 <MailChimp emphasisColor={setColor.brandSecondaryLight} />
               </SpeechBubble>
               <VerticalSpacing size="4x-large" sizeMd="0"></VerticalSpacing>

@@ -15,6 +15,7 @@ const BodyTextWrapper = styled.p`
   color: ${props => props.color ? props.color : setColor.brandBlack};
   text-align: ${props => props.align ? props.align : null};
   margin-bottom: 0;
+  margin-top: ${props => props.font ? props.font === setFont.fontSecondary ? null : '3px' : null};
 `
 
 BodyText.propTypes = {

@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import React, { useRef, useEffect } from "react"
-import { setColor, breakpoint } from "../../styles/styleHelpers"
+import { setColor, breakpoint, breakpoints } from "../../styles/styleHelpers"
 
 const TopLevelLinkListItem = ({ children, isMenuExpanded }) => {
   const topLevelLinkItemEl = useRef()
+
   useEffect(() => {
     if (topLevelLinkItemEl) {
       if (!isMenuExpanded) {

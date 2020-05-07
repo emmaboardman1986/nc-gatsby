@@ -34,7 +34,7 @@ const HeroWrapper = styled.div`
     }
   }
   ${breakpoint.sm`
- 
+  margin-top: ${props => props.isBannerDisplayed ? setSharedHeights.navHeightSm : setSharedHeights.navHeightNoMessaging};
     flex-direction: row;
     div:first-child {
       display: block;

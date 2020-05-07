@@ -15,7 +15,7 @@ const TopLevelLinkList = ({ isMenuExpanded, children }) => {
 const TopLevelLinkListWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  height: ${props => props.isBannerDisplayed ? "75vh" : "90vh"};
+  height: ${props => props.isBannerDisplayed ? "73vh" : "90vh"};
   position: fixed;
   z-index: 1;
   bottom: 0;
@@ -32,6 +32,9 @@ const TopLevelLinkListWrapper = styled.ul`
   ${breakpoint.xs`
         width: 60vw;
   `}
+  ${breakpoint.sm`
+  height: ${props => props.isBannerDisplayed ? "76vh" : "90vh"};
+  width: 40vw;`}
   ${breakpoint.md`
     display: flex;
     transform: translateX(0);

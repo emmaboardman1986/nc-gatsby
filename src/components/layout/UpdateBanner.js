@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import styled from "styled-components"
 import BodyText from "../ui/typography/BodyText"
 import TextLink from "../ui/TextLink"
-import { setColor, setFont } from "../../styles/styleHelpers"
+import { setColor, setFont, breakpoint, breakpoints } from "../../styles/styleHelpers"
 import { BannerContext } from "../../context/UpdateBannerContext"
 
 const UpdateBanner = ({isBannerDisplayed}) => {
@@ -15,11 +15,11 @@ const UpdateBanner = ({isBannerDisplayed}) => {
           <BodyText color={setColor.brandWhite}>
             Due to covid-19, Nihongo Scotland has moved online. We hope you'll
             join us on Zoom for a{" "}
-            <TextLink link="/beginnersbootcamp" isOnBrandBg>
+            <TextLink link="/beginners-bootcamp" isOnBrandBg>
               Beginner's Bootcamp
             </TextLink>
             , or{" "}
-            <TextLink link="/fridaystudyclub" isOnBrandBg>
+            <TextLink link="/friday-study-club" isOnBrandBg>
               Friday Study Club
             </TextLink>
             !
@@ -47,12 +47,24 @@ const UpdateWrapper = styled.aside`
   z-index: 10;
   box-sizing: border-box;
   transition: height 0.25s ease;
-  &.dismissed {
-    height: 0;
-  }
+  ${breakpoint.xs`
+  text-align: center;
+  align-items: center;`}
+  ${breakpoint.sm`
+  height: 14vh;`}
+  ${breakpoint.md`
+  position: relative;
+  height: auto;
+  justify-content: center;
+  `}
+  ${breakpoint.xl`
+  max-width: ${breakpoints.xl};`}
+ 
 `
 
 const UpdateWrapperButton = styled.button`
+  border: 0;
+  background-color: transparent;
   height: 44px;
   position: absolute;
   bottom: 0;
