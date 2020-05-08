@@ -176,17 +176,17 @@ export default function BeginnersBootcampPage({ data }) {
               <List>
                 <li>
                   <strong>
-                   Sat 4 - Sun 5 April 2020
+                   Sat 16 - Sun 17 May 2020
                   </strong>
                 </li>
                 <li>
                   <strong>
-                   Sat 11 - Sun 12 April 2020
+                   Sat 23 - Sun 24 May 2020
                   </strong>
                 </li>
                 <li>
                   <strong>
-                   Sat 18 - Sun 19 April 2020
+                   Sat 30 - Sun 31 May 2020
                   </strong>
                 </li>
               </List>
